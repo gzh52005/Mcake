@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter,BrowserRouter,Route} from 'react-router-dom';
+import {HashRouter,BrowserRouter} from 'react-router-dom';
 
 
 
@@ -14,5 +14,5 @@ ReactDOM.render(
             {/* <Route component={App} /> */}
         </Router>
     ,
-    document.querySelector('#app')
+    document.querySelector('#root')
 )
