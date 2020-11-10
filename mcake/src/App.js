@@ -23,15 +23,10 @@ import './css/App.scss'
             xianshi:!this.state.xianshi
         })
     }
-//     handleClick=({key})=>{
-//         this.setState({
-//           current:key
-//         })
-// }
+
 
     render(){
-        // let {arr,current}=this.state
-    //  console.log(this.props)
+  
         return (
            
                 <div className='box'>
@@ -54,11 +49,7 @@ import './css/App.scss'
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
                         <li><NavLink to='/snack' activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
                         <li><NavLink to='/cart' activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
-                    {/* {
-                        this.state.arr.map(item=>(
-                        <li key={item.id}><NavLink to={item.path}>{item.title}</NavLink></li>
-                        ))
-                    } */}
+     
                 </ul>
                 
                 </div>
