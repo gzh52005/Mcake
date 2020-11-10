@@ -1,0 +1,4 @@
+@import  './base.css';
+@function vw($px) {
+    @return ($px*2/750)*100vw
+}

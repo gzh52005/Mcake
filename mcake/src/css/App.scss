@@ -1,0 +1,49 @@
+@import './vw.scss';
+.box{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .mask{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .2);
+    }
+    .header{
+         height: vw(62);
+    }
+    .footer{
+        display: flex;
+        height: vw(50);
+        li{
+            display: flex;
+            flex: 1;
+            text-align: center;
+            line-height: vw(50);
+            a{
+                flex: 1;
+                font-size: vw(15);
+                color: #000;
+            }
+        }
+        .jing{
+            justify-content: center;
+            line-height: vw(50);
+            
+                font-size: vw(15);
+        }
+        li+li::before{
+            content: '|';
+            text-align: left;
+            color: #b1b1b1;
+            font-size: vw(12);
+        }
+    }
+}
+// ul{
+//     display: flex;
+//     height: vw(100);
+// }

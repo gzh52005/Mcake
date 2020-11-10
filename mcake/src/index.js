@@ -4,6 +4,7 @@ import {HashRouter,BrowserRouter} from 'react-router-dom';
 import App from './App';
 // import {Provider} from './store'
 
+
 const Router = process.env.NODE_ENV === 'production' ? BrowserRouter : HashRouter
 
 ReactDOM.render(
