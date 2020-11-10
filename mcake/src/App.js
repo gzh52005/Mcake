@@ -8,6 +8,7 @@ import Xiao from './views/Xiao'
 import Mine from './views/Mine'
 
 
+
  class App extends React.Component{
     constructor(){
         super()
@@ -47,7 +48,7 @@ import Mine from './views/Mine'
                 <ul>
                     {
                         this.state.arr.map(item=>(
-                        <li key={item.id}><NavLink to={item.path}>{item.title}</NavLink></li>
+                        <li key={item.id} className='active'><NavLink to={item.path}>{item.title}</NavLink></li>
                         ))
                     }
                 </ul>
