@@ -1,0 +1,1178 @@
+[{
+        "id": 18580,
+        "type": 1,
+        "display": 3,
+        "title": "首页轮播",
+        "info": "Home Carousel",
+        "alias": "Carousel",
+        "show_title": 0,
+        "source": {
+            "adsense": [{
+                "title": "11月会员日",
+                "img": "https://mcake.oss-cn-hangzhou.aliyuncs.com/file/9147885c467375a4/f7d685fc2b76d5cf.jpg",
+                "href": "https://h5.mcake.com/?key1=hd_banner&key2=huiyuanrinov#/active?id=1889&type=2",
+                "target": 0
+            }, {
+                "title": "9周年庆",
+                "img": "https://mcake.oss-cn-hangzhou.aliyuncs.com/file/00367b1529193665/40545b0a55149fa7.jpg",
+                "href": "https://h5.mcake.com/?key1=hd_banner&key2=zhounian3#/active?id=1871&type=2",
+                "target": 0
+            }, {
+                "title": "榴莲雪塔",
+                "img": "https://mcake.oss-cn-hangzhou.aliyuncs.com/file/407aaff0db02e745/2d114ad2efbee2f2.jpg",
+                "href": "https://h5.mcake.com/?key1=hd_banner&key2=liulian#/detail/C0802",
+                "target": 0
+            }],
+            "goods": []
+        }
+    }, {
+        "id": 18581,
+        "type": 2,
+        "display": 2,
+        "title": "本季推荐",
+        "info": "Seasonal Recommend",
+        "alias": "Seasonal",
+        "show_title": 1,
+        "source": {
+            "adsense": [{
+                "title": "蔓越莓红丝绒",
+                "img": "https://mcake.oss-cn-hangzhou.aliyuncs.com/file/f6dfd8f0fdef8d0d/abe1e1579d2c9999.jpg",
+                "href": "#/detail/c0302",
+                "target": 0
+            }],
+            "goods": [{
+                "id": 14063,
+                "spec": "2磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "",
+                "name": "花漾·年华",
+                "french": "Floraison",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/huayangnianhua/R0329/list/1.jpg",
+                "list": [{
+                    "id": 14063,
+                    "name": "花漾·年华",
+                    "french": "Floraison",
+                    "edible": "4-7人食",
+                    "spec": "2磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/huayangnianhua/R0329",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 15301,
+                "spec": "2磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "男友款",
+                "name": "男友力",
+                "french": "Charmes masculins",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/nanyouli/R7002/list/1.jpg",
+                "list": [{
+                    "id": 15300,
+                    "name": "男友力",
+                    "french": "Charmes masculins",
+                    "edible": "2-3人食",
+                    "spec": "1磅",
+                    "price": "198.00",
+                    "pprice": "198.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "454g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/nanyouli/R7002",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 15301,
+                    "name": "男友力",
+                    "french": "Charmes masculins",
+                    "edible": "4-7人食",
+                    "spec": "2磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/nanyouli/R7002",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 15302,
+                    "name": "男友力",
+                    "french": "Charmes masculins",
+                    "edible": "8-12人食",
+                    "spec": "3磅",
+                    "price": "428.00",
+                    "pprice": "428.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "1.36kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/nanyouli/R7002",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 15303,
+                    "name": "男友力",
+                    "french": "Charmes masculins",
+                    "edible": "12-20人食",
+                    "spec": "5磅",
+                    "price": "728.00",
+                    "pprice": "728.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "2.27kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/nanyouli/R7002",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 11491,
+                "spec": "2磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "",
+                "name": "朗姆醇栗",
+                "french": "Mont Blanc",
+                "price": "318.00",
+                "pprice": "318.00",
+                "img": "https://static.mcake.com/new_goods/langmuchunli/C0602/list/1.jpg",
+                "list": [{
+                    "id": 11490,
+                    "name": "朗姆醇栗",
+                    "french": "Mont Blanc",
+                    "edible": "2-3人食",
+                    "spec": "1磅",
+                    "price": "218.00",
+                    "pprice": "218.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "454g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/langmuchunli/C0602",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 11491,
+                    "name": "朗姆醇栗",
+                    "french": "Mont Blanc",
+                    "edible": "4-7人食",
+                    "spec": "2磅",
+                    "price": "318.00",
+                    "pprice": "318.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/langmuchunli/C0602",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 11492,
+                    "name": "朗姆醇栗",
+                    "french": "Mont Blanc",
+                    "edible": "8-12人食",
+                    "spec": "3磅",
+                    "price": "458.00",
+                    "pprice": "458.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "1.36kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/langmuchunli/C0602",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 11493,
+                    "name": "朗姆醇栗",
+                    "french": "Mont Blanc",
+                    "edible": "12-20人食",
+                    "spec": "5磅",
+                    "price": "750.00",
+                    "pprice": "750.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "2.27kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/langmuchunli/C0602",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 14906,
+                "spec": "200克",
+                "bcid": 6,
+                "bcname": "周边商品",
+                "weight": "200g",
+                "tag": "新品",
+                "name": "黑糖棒棒",
+                "french": "Biscuits au sucre brun",
+                "price": "78.00",
+                "pprice": "78.00",
+                "img": "https://static.mcake.com/new_goods/heitangbangbang/R2501/list/1.jpg",
+                "list": [{
+                    "id": 14906,
+                    "name": "黑糖棒棒",
+                    "french": "Biscuits au sucre brun",
+                    "edible": "",
+                    "spec": "200克",
+                    "price": "78.00",
+                    "pprice": "78.00",
+                    "bcid": 6,
+                    "bcname": "周边商品",
+                    "weight": "200g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/heitangbangbang/R2501",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 14907,
+                    "name": "黑糖棒棒",
+                    "french": "Biscuits au sucre brun",
+                    "edible": "",
+                    "spec": "300克",
+                    "price": "108.00",
+                    "pprice": "108.00",
+                    "bcid": 6,
+                    "bcname": "周边商品",
+                    "weight": "300g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/heitangbangbang/R2501",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 14908,
+                    "name": "黑糖棒棒",
+                    "french": "Biscuits au sucre brun",
+                    "edible": "",
+                    "spec": "500克",
+                    "price": "168.00",
+                    "pprice": "168.00",
+                    "bcid": 6,
+                    "bcname": "周边商品",
+                    "weight": "500g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/heitangbangbang/R2501",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }]
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": 18582,
+        "type": 2,
+        "display": 2,
+        "title": "人气推荐",
+        "info": "Popularity Recommend",
+        "alias": "Popularity",
+        "show_title": 1,
+        "source": {
+            "adsense": [{
+                "title": "蓝莓轻乳拿破仑",
+                "img": "https://mcake.oss-cn-hangzhou.aliyuncs.com/file/dabd2a84b7638140/c2c056d9342afcc0.jpg",
+                "href": "#/detail/n0302",
+                "target": 0
+            }],
+            "goods": [{
+                "id": 10151,
+                "spec": "2磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "",
+                "name": "摩登茶道",
+                "french": "Le Thé",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/modengchadao/Z0401/list/1.jpg",
+                "list": [{
+                    "id": 10150,
+                    "name": "摩登茶道",
+                    "french": "Le Thé",
+                    "edible": "2-3人食",
+                    "spec": "1磅",
+                    "price": "198.00",
+                    "pprice": "198.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "454g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/modengchadao/Z0401",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 10151,
+                    "name": "摩登茶道",
+                    "french": "Le Thé",
+                    "edible": "4-7人食",
+                    "spec": "2磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/modengchadao/Z0401",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 10152,
+                    "name": "摩登茶道",
+                    "french": "Le Thé",
+                    "edible": "8-12人食",
+                    "spec": "3磅",
+                    "price": "428.00",
+                    "pprice": "428.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "1.36kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/modengchadao/Z0401",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 10153,
+                    "name": "摩登茶道",
+                    "french": "Le Thé",
+                    "edible": "12-20人食",
+                    "spec": "5磅",
+                    "price": "728.00",
+                    "pprice": "728.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "2.27kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/modengchadao/Z0401",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 14685,
+                "spec": "2磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "",
+                "name": "茉意芒芒",
+                "french": "Gâteau de mangue avec jasmin",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/moyimangmang/R0391/list/1.jpg",
+                "list": [{
+                    "id": 14457,
+                    "name": "茉意芒芒",
+                    "french": "Gâteau de mangue avec jasmin",
+                    "edible": "2-3人食",
+                    "spec": "1磅",
+                    "price": "198.00",
+                    "pprice": "198.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "454g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/moyimangmang/R0391",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 14685,
+                    "name": "茉意芒芒",
+                    "french": "Gâteau de mangue avec jasmin",
+                    "edible": "4-7人食",
+                    "spec": "2磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/moyimangmang/R0391",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 14686,
+                    "name": "茉意芒芒",
+                    "french": "Gâteau de mangue avec jasmin",
+                    "edible": "8-12人食",
+                    "spec": "3磅",
+                    "price": "428.00",
+                    "pprice": "428.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "1.36kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/moyimangmang/R0391",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 14687,
+                    "name": "茉意芒芒",
+                    "french": "Gâteau de mangue avec jasmin",
+                    "edible": "12-20人食",
+                    "spec": "5磅",
+                    "price": "728.00",
+                    "pprice": "728.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "2.27kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/moyimangmang/R0391",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 10187,
+                "spec": "2磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "",
+                "name": "巧克力黑兰",
+                "french": "Lotus Noir",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/qiaokeliheilan/J0102/list/1.jpg",
+                "list": [{
+                    "id": 10186,
+                    "name": "巧克力黑兰",
+                    "french": "Lotus Noir",
+                    "edible": "2-3人食",
+                    "spec": "1磅",
+                    "price": "198.00",
+                    "pprice": "198.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "454g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/qiaokeliheilan/J0102",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 10187,
+                    "name": "巧克力黑兰",
+                    "french": "Lotus Noir",
+                    "edible": "4-7人食",
+                    "spec": "2磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/qiaokeliheilan/J0102",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 10188,
+                    "name": "巧克力黑兰",
+                    "french": "Lotus Noir",
+                    "edible": "8-12人食",
+                    "spec": "3磅",
+                    "price": "428.00",
+                    "pprice": "428.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "1.36kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/qiaokeliheilan/J0102",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 10189,
+                    "name": "巧克力黑兰",
+                    "french": "Lotus Noir",
+                    "edible": "12-20人食",
+                    "spec": "5磅",
+                    "price": "728.00",
+                    "pprice": "728.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "2.27kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/qiaokeliheilan/J0102",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 12069,
+                "spec": "1盒",
+                "bcid": 6,
+                "bcname": "周边商品",
+                "weight": "175g",
+                "tag": "人气",
+                "name": "半熟芝士（原味）",
+                "french": "fromage semi-fermenté original",
+                "price": "48.00",
+                "pprice": "48.00",
+                "img": "https://static.mcake.com/new_goods/banshuzhishi/R0207/list/1.jpg",
+                "list": [{
+                    "id": 12069,
+                    "name": "半熟芝士（原味）",
+                    "french": "fromage semi-fermenté original",
+                    "edible": "4-7人食",
+                    "spec": "1盒",
+                    "price": "48.00",
+                    "pprice": "48.00",
+                    "bcid": 6,
+                    "bcname": "周边商品",
+                    "weight": "175g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/banshuzhishi/R0207",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }]
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": 18583,
+        "type": 2,
+        "display": 2,
+        "title": "萌系推荐",
+        "info": "Lovely Recommend",
+        "alias": "Lovely",
+        "show_title": 1,
+        "source": {
+            "adsense": [{
+                "title": "黛西",
+                "img": "https://mcake.oss-cn-hangzhou.aliyuncs.com/file/75d30753c705e4a7/458428a5b4ef9533.jpg",
+                "href": "#/detail/R1801",
+                "target": 0
+            }],
+            "goods": [{
+                "id": 11848,
+                "spec": "1.5磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "681g",
+                "tag": "",
+                "name": "爱丽丝花境",
+                "french": "Jardin d'Alice",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/ailisimengjing/R0102/list/1.jpg",
+                "list": [{
+                    "id": 11848,
+                    "name": "爱丽丝花境",
+                    "french": "Jardin d'Alice",
+                    "edible": "2-3人食",
+                    "spec": "1.5磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "681g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/ailisimengjing/R0102",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }, {
+                    "id": 14187,
+                    "name": "爱丽丝花境",
+                    "french": "Jardin d'Alice",
+                    "edible": "4-7人食",
+                    "spec": "2.5磅",
+                    "price": "398.00",
+                    "pprice": "398.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "1.14kg",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/ailisimengjing/R0102",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 15358,
+                "spec": "1.5磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "681g",
+                "tag": "新品",
+                "name": "Finn的蘑菇星球",
+                "french": "La planète champignon de Finn",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/moguxingqiu/R8004/list/1.jpg",
+                "list": [{
+                    "id": 15358,
+                    "name": "Finn的蘑菇星球",
+                    "french": "La planète champignon de Finn",
+                    "edible": "2-3人食",
+                    "spec": "1.5磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "681g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/moguxingqiu/R8004",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 14872,
+                "spec": "2磅",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "",
+                "name": "鼠嘟嘟",
+                "french": "Rat Tutu",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/shududu/R2302/list/1.jpg",
+                "list": [{
+                    "id": 14872,
+                    "name": "鼠嘟嘟",
+                    "french": "Rat Tutu",
+                    "edible": "4-7人食",
+                    "spec": "2磅",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/shududu/R2302",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }, {
+                "id": 11534,
+                "spec": "标准款",
+                "bcid": 1,
+                "bcname": "蛋糕",
+                "weight": "908g",
+                "tag": "",
+                "name": "尼诺",
+                "french": "Nino",
+                "price": "298.00",
+                "pprice": "298.00",
+                "img": "https://static.mcake.com/new_goods/ninuo/T0502/list/1.jpg",
+                "list": [{
+                    "id": 11534,
+                    "name": "尼诺",
+                    "french": "Nino",
+                    "edible": "4-7人食",
+                    "spec": "标准款",
+                    "price": "298.00",
+                    "pprice": "298.00",
+                    "bcid": 1,
+                    "bcname": "蛋糕",
+                    "weight": "908g",
+                    "pic": {
+                        "url": "https://static.mcake.com/goods/ninuo/T0502",
+                        "list": [{
+                            "b": "/big/1.jpg",
+                            "m": "/middle/1.jpg",
+                            "s": "/small/1.jpg"
+                        }, {
+                            "b": "/big/2.jpg",
+                            "m": "/middle/2.jpg",
+                            "s": "/small/2.jpg"
+                        }, {
+                            "b": "/big/3.jpg",
+                            "m": "/middle/3.jpg",
+                            "s": "/small/3.jpg"
+                        }, {
+                            "b": "/big/4.jpg",
+                            "m": "/middle/4.jpg",
+                            "s": "/small/4.jpg"
+                        }]
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": 18584,
+        "type": 1,
+        "display": 1,
+        "title": "银行专区",
+        "info": "Bank Zone",
+        "alias": "Bank",
+        "show_title": 0,
+        "source": {
+            "adsense": [{
+                "title": "银行优惠活动专区",
+                "img": "//mcake.oss-cn-hangzhou.aliyuncs.com/file/2f403b6b1d07a28a/247f819453472e25.jpg",
+                "href": "#/activeList?bank=1",
+                "target": 0
+            }],
+            "goods": []
+        }
+    }, {
+        "id": 18585,
+        "type": 1,
+        "display": 1,
+        "title": "企业专区",
+        "info": "Enterprise Zone",
+        "alias": "Enterprise Zone",
+        "show_title": 1,
+        "source": {
+            "adsense": [],
+            "goods": []
+        }
+    }]

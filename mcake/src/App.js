@@ -33,6 +33,7 @@ import './css/App.scss'
                     {this.state.xianshi?<div className='mask' onClick={this.gaibian}>遮罩</div>:''}
                     
                     <div className='header'><NavLink to='/home'>首页</NavLink></div>
+                    <div className="container">
                     <Switch>
                    <Route path='/home' component={Home}></Route>
                    <Route path='/cakes' component={Cakes}></Route>
@@ -44,6 +45,7 @@ import './css/App.scss'
                    <Redirect from="/" to='/home' exact></Redirect>
                    <Redirect to='/chucuole' ></Redirect>
                     </Switch>
+                    </div>
                     {
                         this.props.location.pathname === '/cart' ? 
                         <React.Fragment></React.Fragment>
