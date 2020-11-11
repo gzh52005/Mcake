@@ -2,7 +2,20 @@ import React from 'react'
 
 function Snack(){
     return (
-        <div>Snack</div>
+        <div className='snack'>
+            <ul className='snack-box'>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
     )
 }
 

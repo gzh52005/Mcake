@@ -6,9 +6,8 @@ import Home from './views/Home'
 import Cakes from './views/Cakes'
 import Snack from './views/Snack'
 import Cart from './views/Cart'
-
+import Handpick from './views/handpick'
 import './css/App.scss'
-
 
 
  class App extends React.Component{
@@ -17,6 +16,7 @@ import './css/App.scss'
         this.state={
             xianshi:false
         }
+      this.gaibian = this.gaibian.bind(this)
     }
     gaibian=()=>{
         this.setState({
@@ -29,13 +29,17 @@ import './css/App.scss'
   
         return (
            
-                <div className='box'>
-                    {this.state.xianshi?<div className='mask' onClick={this.gaibian}>遮罩</div>:''}
-                    
+                 <div className='box'>
+                    {
+                     <div className='mask' style={{display:this.state.xianshi?'block':'none'}} onClick={(e)=>{
+                            if(e.target.className=='mask')
+                               this.gaibian()
+                      }}>
+                          <Handpick status={{isshow:this.state.xianshi}}/>
+                      </div>
+                    }                    
                     <div className='header'>我是头部</div>
                     <Switch>
-                   {/* <Route path='/home' component={Home}></Route> */}
-                   <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
                    {/* <Route path='/login' component={Login}></Route>
@@ -51,7 +55,7 @@ import './css/App.scss'
                         <li><NavLink to='/cart' activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
      
                 </ul>
-                
+         
                 </div>
         )
     }
