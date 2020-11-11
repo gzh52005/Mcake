@@ -27,6 +27,24 @@
                 font-weight: 700;
                 color: #000;
             }
+            .recommend_list{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 vw(7);
+                .recommend_item{
+                    width: vw(180);
+                    height: vw(248.5);
+                    .recommend_item_box{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        img{
+                            width: vw(172);
+                            height: vw(172);
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -34,4 +52,22 @@
 
 .recommend_goods{
 
+}
+
+.cart-footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    height: vw(59);
+    width: 100%;
+    align-items: center;
+    .gotohome{
+        line-height: vw(44);
+        height: vw(44);
+        width: 100%;
+        background-color: #ffe32a!important;
+        text-align: center;
+        color: #000;
+        font-size: vw(17);
+    }
 }
