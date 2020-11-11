@@ -1,0 +1,121 @@
+@import './base.css';
+.box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.box .mask {
+  z-index: 999999;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.box .mask .drawer {
+  position: absolute;
+  left: -50vw;
+  width: 50vw;
+  height: 100%;
+  padding-top: 20vw;
+  transition: all 0.5s;
+  background-color: white;
+}
+.box .mask .drawer ul li {
+  box-sizing: border-box;
+  padding-left: 5.3333333333vw;
+  width: 100%;
+  height: 10.6666666667vw;
+  border-bottom: 1px solid #ccc;
+  line-height: 10.6666666667vw;
+}
+.box .mask .drawer ul li span {
+  margin-left: 1.3333333333vw;
+}
+.box .mask .drawer ul li:nth-child(1), .box .mask .drawer ul li:nth-child(4), .box .mask .drawer ul li:nth-child(5) {
+  display: flex;
+  align-items: center;
+}
+.box .mask .drawer ul li:nth-child(1) span, .box .mask .drawer ul li:nth-child(4) span, .box .mask .drawer ul li:nth-child(5) span {
+  display: inline-flex;
+  height: 10.6666666667vw;
+  width: 10.6666666667vw;
+  align-items: center;
+}
+.box .mask .drawer ul li:nth-child(1) span i, .box .mask .drawer ul li:nth-child(4) span i, .box .mask .drawer ul li:nth-child(5) span i {
+  display: inline-block;
+  border-radius: 50%;
+  height: 6.4vw;
+  width: 6.4vw;
+  font-size: 3.2vw;
+  color: #000;
+  background-color: #ffe32a;
+  font-style: normal;
+  line-height: 6.9333333333vw;
+  text-align: center;
+}
+.box .mask .drawer ul li:nth-child(3) span, .box .mask .drawer ul li:nth-child(2) span {
+  display: inline-flex;
+  height: 10.6666666667vw;
+  width: 10.6666666667vw;
+  align-items: center;
+}
+.box .mask .drawer ul li:nth-child(3) span .icon, .box .mask .drawer ul li:nth-child(2) span .icon {
+  display: block;
+  height: 4.2666666667vw;
+  width: 4.2666666667vw;
+}
+.box .mask .drawer ul li:nth-child(3) span .sjt, .box .mask .drawer ul li:nth-child(2) span .sjt {
+  background-image: url("../assets//images/sjt.png");
+  background-size: 100% 100%;
+}
+.box .header {
+  height: 16.5333333333vw;
+}
+.box .container {
+  flex: 1;
+  overflow-y: auto;
+}
+.box .footer {
+  display: flex;
+  height: 13.3333333333vw;
+}
+.box .footer li {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  line-height: 13.3333333333vw;
+}
+.box .footer li a {
+  flex: 1;
+  font-size: 4vw;
+  color: #000;
+}
+.box .footer .jing {
+  justify-content: center;
+  line-height: 13.3333333333vw;
+  font-size: 4vw;
+}
+.box .footer li + li::before {
+  content: "|";
+  text-align: left;
+  color: #b1b1b1;
+  font-size: 3.2vw;
+}
+.box .footer .gotohome {
+  line-height: 13.3333333333vw;
+  height: 11.7333333333vw;
+  width: 100%;
+  background-color: #ffe32a !important;
+  text-align: center;
+  color: #000;
+  font-size: 4.2666666667vw;
+}
+
+.am-carousel-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5vw;
+}

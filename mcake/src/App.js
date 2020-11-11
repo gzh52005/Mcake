@@ -6,21 +6,36 @@ import Home from './views/Home'
 import Cakes from './views/Cakes'
 import Snack from './views/Snack'
 import Cart from './views/Cart'
-
+import Handpick from './views/handpick'
 import './css/App.scss'
-
-
+// import './assets/iconfont/iconfont.css'
+import logo from './assets/images/logo.png'
+import  maps from './assets/images/mine/map.png'
+import  fangdajing from './assets/images/mine/fangdajing.png'
+import  caidan from './assets/images/mine/caidan.png'
+import  dangao from './assets/images/mine/dangao.png'
+import  dizhi from './assets/images/mine/dizhi.png'
+import  guanyu from './assets/images/mine/guanyu.png'
+import  wode from './assets/images/mine/wode.png'
 
  class App extends React.Component{
     constructor(){
         super()
         this.state={
-            xianshi:false
+            xianshi:false,
+            caidanshow:false
         }
+      this.gaibian = this.gaibian.bind(this)
     }
     gaibian=()=>{
         this.setState({
             xianshi:!this.state.xianshi
+        })
+    }
+    gaicaidan=(e)=>{
+        e.stopPropagation()
+        this.setState({
+            caidanshow:!this.state.caidanshow
         })
     }
 
@@ -29,11 +44,36 @@ import './css/App.scss'
         console.log(this.props);
         return (
            
-                <div className='box'>
-                    {this.state.xianshi?<div className='mask' onClick={this.gaibian}>遮罩</div>:''}
+                 <div className='box'>
+                    {
+                     <div className='mask' style={{display:this.state.xianshi?'block':'none'}} onClick={(e)=>{
+                            if(e.target.className=='mask')
+                               this.gaibian()
+                      }}>
+                          <Handpick status={{isshow:this.state.xianshi}}/>
+                      </div>
+                    }                    
                     
-                    <div className='header'><NavLink to='/home'>首页</NavLink></div>
-                    <div className="container">
+                    
+                    <div className='header'>
+                        <p className='header-left'><img src={maps}></img><span>北京市</span></p>
+                        <NavLink to='/home'><img className='logos'  src={logo}></img></NavLink>
+                        <p className='header-right'>
+                            <span><img src={fangdajing}></img></span>
+                            <i className='ge'></i>
+                            <span onClick={this.gaicaidan}><img src={caidan}></img></span></p>
+                        
+                    </div>
+                    {this.state.caidanshow?<div className='header-mask' onClick={this.gaicaidan}>
+                         <ul>
+                             <li><img src={dangao}></img><span>最新活动</span></li>
+                             <li><img src={wode}></img><span>个人中心</span></li>
+                             <li><img src={guanyu}></img><span>关于我们</span></li>
+                             <li><img src={dizhi}></img><span>配送范围</span></li>
+                         </ul>
+                    </div>:''}
+                    
+                    <div className='container'>
                     <Switch>
                    <Route path='/home' component={Home}></Route>
                    <Route path='/cakes' component={Cakes}></Route>
