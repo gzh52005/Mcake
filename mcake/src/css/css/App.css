@@ -106,6 +106,10 @@
 .box .header-mask ul li + li {
   border-left: solid 0.5333333333vw #eee;
 }
+.box .container {
+  flex: 1;
+  overflow-y: auto;
+}
 .box .footer {
   background-color: #fff;
   z-index: 900;
@@ -134,4 +138,13 @@
   text-align: left;
   color: #b1b1b1;
   font-size: 3.2vw;
+}
+.box .footer .gotohome {
+  line-height: 13.3333333333vw;
+  height: 11.7333333333vw;
+  width: 100%;
+  background-color: #ffe32a !important;
+  text-align: center;
+  color: #000;
+  font-size: 4.2666666667vw;
 }

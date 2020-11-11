@@ -107,6 +107,10 @@
               }
           }
     }
+    .container{
+        flex: 1;
+        overflow-y: auto;
+    }
     .footer{
         background-color: #fff;
         z-index: 900;
@@ -135,6 +139,15 @@
             text-align: left;
             color: #b1b1b1;
             font-size: vw(12);
+        }
+        .gotohome{
+            line-height: vw(50);
+            height: vw(44);
+            width: 100%;
+            background-color: #ffe32a!important;
+            text-align: center;
+            color: #000;
+            font-size: vw(16);
         }
     }
 }

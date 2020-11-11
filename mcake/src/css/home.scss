@@ -1,0 +1,59 @@
+@import './vw.scss';
+
+.floor{
+    width: 100%;
+    .title{
+        box-sizing: border-box;
+        height: vw(98);
+        padding: vw(30) vw(23);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: vw(12);
+        color: #7f7f7f;
+        img{
+            width: vw(57);
+            height: vw(32);
+        }
+        .titleCon{
+            flex: 1;
+            margin-left: vw(25);
+            .cname{
+                color: #000;
+                font-size: vw(16);
+                font-weight: 550;
+            }
+        }
+    }
+    .bigImg{
+        img{
+            width: 100%;
+            height: vw(190); 
+        }
+    }
+    .floorCon{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-between;padding: vw(4);
+        color: #000;
+        font-size: vw(12);
+        border-bottom: vw(.5) solid #ccc;
+        .conProduct{
+            box-sizing: border-box;
+            width: vw(183);
+            height: vw(243);
+            padding: 0 vw(4);
+            .conImg{
+                padding: vw(4) 0;
+               img{
+                width: vw(175);
+                height: vw(175);
+                } 
+            }
+            p{
+                color: #7f7f7f;
+            }
+        }
+    }
+}

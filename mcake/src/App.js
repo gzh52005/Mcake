@@ -1,6 +1,6 @@
 import React from 'react'
 // import store from './store'
-import { Route,Redirect,Switch,NavLink} from 'react-router-dom'
+import { Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
 // import { Menu,Row,Col,Button } from 'antd-mobile'
 import Home from './views/Home'
 import Cakes from './views/Cakes'
@@ -40,7 +40,7 @@ import  wode from './assets/images/mine/wode.png'
 
 
     render(){
-  
+        console.log(this.props);
         return (
            
                 <div className='box'>
@@ -76,20 +76,23 @@ import  wode from './assets/images/mine/wode.png'
                    <Redirect from="/" to='/home' exact></Redirect>
                    <Redirect to='/chucuole' ></Redirect>
                     </Switch>
-
                     </div>
-                    <ul className='footer'>
+                    {
+                        this.props.location.pathname === '/cart' ? 
+                        <React.Fragment></React.Fragment>
+                        :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
                         <li><NavLink to='/snack' activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
                         <li><NavLink to='/cart' activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
-     
-                </ul>
-                
+                    </ul>
+                    }
                 </div>
         )
     }
 }
+
+App = withRouter(App)
 export default App
 // App=withRouter(App)
 // App=withRedux(App)
