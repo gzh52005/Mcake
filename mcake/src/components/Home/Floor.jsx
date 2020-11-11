@@ -4,6 +4,7 @@ import titleImg from '../../assets/img/icon_cj.png';
 
 function Floor(props){
     console.log("props=",props);
+   
     return (
         <div>
             {
@@ -22,6 +23,18 @@ function Floor(props){
                         <div className="bigImg">
                             <img src={item.source.adsense[0].img} alt=""/>
                         </div>
+                        <ul className="floorCon">
+                            {
+                                item.source.goods.map(goods=>(
+                                    <li className="conProduct" key={goods.id}>
+                                        <div className="conImg"><img src={goods.img} alt=""/></div>
+                                        <b>{goods.name}</b>
+                                        <p>{goods.french}</p>
+                                        <span>{goods.price}</span>
+                                    </li>
+                                ))
+                            }
+                        </ul>
                     </div>
                 ))
             }
