@@ -1,6 +1,6 @@
 import React from 'react'
 // import store from './store'
-import {Link, Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
+import { Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
 // import { Menu,Row,Col,Button } from 'antd-mobile'
 import Home from './views/Home'
 import Cakes from './views/Cakes'
@@ -26,7 +26,7 @@ import './css/App.scss'
 
 
     render(){
-  
+        console.log(this.props);
         return (
            
                  <div className='box'>
@@ -40,6 +40,14 @@ import './css/App.scss'
                     }                    
                     <div className='header'>我是头部</div>
                     <Switch>
+                <div className='box'>
+                    {this.state.xianshi?<div className='mask' onClick={this.gaibian}>遮罩</div>:''}
+                    
+                    <div className='header'><NavLink to='/home'>首页</NavLink></div>
+                    <div className="container">
+                    <Switch>
+                   <Route path='/home' component={Home}></Route>
+                   <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
                    {/* <Route path='/login' component={Login}></Route>
@@ -48,18 +56,29 @@ import './css/App.scss'
                    <Redirect from="/" to='/home' exact></Redirect>
                    <Redirect to='/chucuole' ></Redirect>
                     </Switch>
-                    <ul className='footer'>
+                    </div>
+                    {
+                        this.props.location.pathname === '/cart' ? 
+                        <React.Fragment></React.Fragment>
+                        :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
                         <li><NavLink to='/snack' activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
                         <li><NavLink to='/cart' activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
+<<<<<<< HEAD
      
                 </ul>
          
+=======
+                    </ul>
+                    }
+>>>>>>> b5a6ff3adc2a107782b80f5a451406ccf311d7d5
                 </div>
         )
     }
 }
+
+App = withRouter(App)
 export default App
 // App=withRouter(App)
 // App=withRedux(App)
