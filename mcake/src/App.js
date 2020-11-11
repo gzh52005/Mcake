@@ -33,6 +33,7 @@ import './css/App.scss'
                     {this.state.xianshi?<div className='mask' onClick={this.gaibian}>遮罩</div>:''}
                     
                     <div className='header'><NavLink to='/home'>首页</NavLink></div>
+                    <div className="container">
                     <Switch>
                    <Route path='/home' component={Home}></Route>
                    <Route path='/cakes' component={Cakes}></Route>
@@ -44,6 +45,7 @@ import './css/App.scss'
                    <Redirect from="/" to='/home' exact></Redirect>
                    <Redirect to='/chucuole' ></Redirect>
                     </Switch>
+                    </div>
                     <ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
