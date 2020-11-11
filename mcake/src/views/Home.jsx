@@ -17,7 +17,7 @@ function Home(){
     const [floorData,changeFloor] = useState([]);
     const [divisionData,changeDivision] = useState([]);
     useEffect(function(){
-        console.log("homeData=",homeData);
+        // console.log("homeData=",homeData);
         const newFloor = homeData.filter(item=>{
             return item.type === 2;
         })
@@ -31,8 +31,7 @@ function Home(){
         changeDivision(division);
     },[])
     
-    return (
-        
+    return (  
        <div>
            {/* 轮播图 */}
            <Banner Bannerlist={homeData[0].source.adsense}></Banner>
