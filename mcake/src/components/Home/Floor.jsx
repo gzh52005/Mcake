@@ -30,7 +30,8 @@ function Floor(props){
                                         <div className="conImg"><img src={goods.img} alt=""/></div>
                                         <b>{goods.name}</b>
                                         <p>{goods.french}</p>
-                                        <span>{goods.price}</span>
+                                        <span>￥{goods.price}</span>
+                                        
                                     </li>
                                 ))
                             }
