@@ -36,18 +36,24 @@
         flex-wrap: wrap;
         justify-content: space-around;
         align-content: space-between;padding: vw(4);
+        color: #000;
+        font-size: vw(12);
+        border-bottom: vw(.5) solid #ccc;
         .conProduct{
+            box-sizing: border-box;
             width: vw(183);
             height: vw(243);
-            
+            padding: 0 vw(4);
             .conImg{
-                padding: vw(4);
+                padding: vw(4) 0;
                img{
                 width: vw(175);
                 height: vw(175);
                 } 
             }
-            
+            p{
+                color: #7f7f7f;
+            }
         }
     }
 }
