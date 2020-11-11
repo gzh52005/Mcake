@@ -3,7 +3,7 @@ import React from 'react';
 import '../../css/home.scss';
 
 function Division(props){
-    console.log("division.props=",props);
+    // console.log("division.props=",props);
     return (
         <div>
             {

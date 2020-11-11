@@ -1,11 +1,14 @@
-import React from 'react';
+import React,{useCallback}from 'react';
 import '../../css/home.scss';
 import titleImg from '../../assets/images/Home/icon_cj.png';
 import cartIcon from '../../assets/images/cart-icon.png';
 
 function Floor(props){
-    console.log("props=",props);
-   
+    // console.log("props=",props);
+    const cartShow = useCallback(function(goods){
+        console.log("goods=",goods);
+    },[])
+    
     return (
         <div>
             {
@@ -32,7 +35,7 @@ function Floor(props){
                                         <b>{goods.name}</b>
                                         <p>{goods.french}</p>
                                         <span>￥{goods.price}</span>
-                                        <i className="cartIcon">
+                                        <i className="cartIcon" onClick={cartShow.bind(null,goods.list)}>
                                             <img src={cartIcon} alt=""/>
                                         </i>
                                     </li>
