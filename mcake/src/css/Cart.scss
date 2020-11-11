@@ -1,0 +1,37 @@
+@import './vw.scss';
+
+.cart-box{
+    flex: 1;
+    .no-cart-box{
+        .no-cart-box-pic{
+            box-sizing: border-box;
+            height: vw(189);
+            padding-top: vw(150);
+            background: url('../assets/images/Cart/cart-empty.png') no-repeat center vw(36);
+            background-color: #c2c2c2;
+            p{
+                font-size: vw(14.5);
+                color: #fff;
+                text-align: center;
+                .tohome{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .no-cart-list{
+            h2{
+                height: vw(41);
+                padding-left: vw(20);
+                line-height: vw(41);
+                font-size: vw(17);
+                font-weight: 700;
+                color: #000;
+            }
+        }
+    }
+}
+
+
+.recommend_goods{
+
+}
