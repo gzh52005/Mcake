@@ -47,12 +47,8 @@ import './css/App.scss'
                     </Switch>
                     </div>
                     {
-                        this.props.location.pathname != '/home' ? 
-                        <div className='footer'>
-                            <div className='gotohome'>
-                                再逛逛
-                            </div>
-                        </div>
+                        this.props.location.pathname === '/cart' ? 
+                        <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
