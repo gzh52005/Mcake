@@ -1172,7 +1172,12 @@
         "alias": "Enterprise Zone",
         "show_title": 1,
         "source": {
-            "adsense": [],
+            "adsense": [{
+                "title": "万向信托兑换专区",
+                "img": "//mcake.oss-cn-hangzhou.aliyuncs.com/file/d8b9ff8e021b8bf5/d0d93b1cb44a603f.jpg",
+                "href": "#/activeList?bank=1",
+                "target": 0
+            }],
             "goods": []
         }
     }]
