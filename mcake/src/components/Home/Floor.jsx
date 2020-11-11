@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../css/home.scss';
-import titleImg from '../../assets/img/icon_cj.png';
+import titleImg from '../../assets/images/Home/icon_cj.png';
+import cartIcon from '../../assets/images/cart-icon.png';
 
 function Floor(props){
     console.log("props=",props);
@@ -31,7 +32,9 @@ function Floor(props){
                                         <b>{goods.name}</b>
                                         <p>{goods.french}</p>
                                         <span>￥{goods.price}</span>
-                                        
+                                        <i className="cartIcon">
+                                            <img src={cartIcon} alt=""/>
+                                        </i>
                                     </li>
                                 ))
                             }

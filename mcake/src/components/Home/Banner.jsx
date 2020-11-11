@@ -12,7 +12,6 @@ export default class Banner extends React.Component {
           {this.props.Bannerlist.map(item => (
             <a
               key={item.title}
-              href={item.href}
               style={{ display: 'inline-block', width: '100%'}}
             >
               <img
@@ -22,7 +21,7 @@ export default class Banner extends React.Component {
                 onLoad={() => {
                   // fire window resize event to change height
                   window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
+                  // this.setState({ imgHeight: 'auto' });
                 }}
               />
             </a>
