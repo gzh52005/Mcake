@@ -3,9 +3,9 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .box .mask {
+  z-index: 999999;
   position: fixed;
   left: 0;
   right: 0;
@@ -73,6 +73,10 @@
 .box .header {
   height: 16.5333333333vw;
 }
+.box .container {
+  flex: 1;
+  overflow-y: auto;
+}
 .box .footer {
   display: flex;
   height: 13.3333333333vw;
@@ -98,4 +102,20 @@
   text-align: left;
   color: #b1b1b1;
   font-size: 3.2vw;
+}
+.box .footer .gotohome {
+  line-height: 13.3333333333vw;
+  height: 11.7333333333vw;
+  width: 100%;
+  background-color: #ffe32a !important;
+  text-align: center;
+  color: #000;
+  font-size: 4.2666666667vw;
+}
+
+.am-carousel-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5vw;
 }

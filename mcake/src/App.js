@@ -39,11 +39,6 @@ import './css/App.scss'
                       </div>
                     }                    
                     <div className='header'>我是头部</div>
-                    <Switch>
-                <div className='box'>
-                    {this.state.xianshi?<div className='mask' onClick={this.gaibian}>遮罩</div>:''}
-                    
-                    <div className='header'><NavLink to='/home'>首页</NavLink></div>
                     <div className="container">
                     <Switch>
                    <Route path='/home' component={Home}></Route>
@@ -65,14 +60,8 @@ import './css/App.scss'
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
                         <li><NavLink to='/snack' activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
                         <li><NavLink to='/cart' activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
-<<<<<<< HEAD
-     
-                </ul>
-         
-=======
                     </ul>
                     }
->>>>>>> b5a6ff3adc2a107782b80f5a451406ccf311d7d5
                 </div>
         )
     }
