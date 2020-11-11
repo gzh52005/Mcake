@@ -1,6 +1,6 @@
 import React from 'react'
 // import store from './store'
-import {Link, Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
+import { Route,Redirect,Switch,NavLink} from 'react-router-dom'
 // import { Menu,Row,Col,Button } from 'antd-mobile'
 import Home from './views/Home'
 import Cakes from './views/Cakes'
@@ -32,9 +32,9 @@ import './css/App.scss'
                 <div className='box'>
                     {this.state.xianshi?<div className='mask' onClick={this.gaibian}>遮罩</div>:''}
                     
-                    <div className='header'>我是头部</div>
+                    <div className='header'><NavLink to='/home'>首页</NavLink></div>
                     <Switch>
-                   {/* <Route path='/home' component={Home}></Route> */}
+                   <Route path='/home' component={Home}></Route>
                    <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
