@@ -1,4 +1,4 @@
-import React,{useState,useCallback} from 'react';
+import React,{useState,useCallback,useEffect, useRef} from 'react';
 
 import '../../css/home.scss';
 
@@ -30,7 +30,6 @@ function CartMask(props){
         changeGuige(`${newguige.spec} (${newguige.weight}) -${newguige.edible}`);
         changeIdx(index);
         changeWeight(!weight);
-
     })
 
     const changeInput = useCallback((e)=>{
@@ -38,8 +37,17 @@ function CartMask(props){
         changeQty(e.currentTarget.value);
     },[qty]);
 
-    
+    const myel = useRef(null);
+    console.log("myel=",myel.current);
     console.log("cartMask.props=",showCart,showData);
+    // const [showMe,setShow] = useState(showCart);
+    useEffect(function(){
+        console.log(showCart,myel,999);
+        if(showCart){
+            myel.current.style.top = "200px";
+        }
+    })
+    // setShow()
     return (
        <div className="cartMask" onClick={(e)=>{
            let clickName = e.target.className
@@ -48,7 +56,7 @@ function CartMask(props){
            }
                 
             }}>
-            <div className="maskCon">
+            <div className="maskCon" ref={myel}>
                 <ul>
                     <li className="contentDesc">
                         <img src={showData.img} alt=""/>
