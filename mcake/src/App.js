@@ -23,7 +23,7 @@ import  guanyu from './assets/images/mine/guanyu.png'
 import  wode from './assets/images/mine/wode.png'
 import  zuo from './assets/images/mine/zuo.png'
 import  cart from './assets/images/mine/cart.png'
-
+import 'antd-mobile/dist/antd-mobile.css'; 
 
  class App extends React.Component{
     constructor(){
