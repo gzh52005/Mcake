@@ -1,0 +1,115 @@
+@import './vw.scss';
+*{
+    box-sizing: border-box;
+}
+.mine-box{
+    
+    .mine-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #eee;
+        height: vw(210);
+        padding: 0 vw(10);
+        padding-top: vw(60);
+        position: relative;
+        .head-portrait{
+            height: vw(104);
+            width: vw(104);
+            border: vw(4) solid #c4c4c4;
+            border-radius: vw(52);
+            background-image: url(https://img.mcake.com/customer/default_user.gif?x-oss-process=image/auto-orient,1);
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            position: absolute;
+            top: vw(40);
+            .vip{
+            height: vw(28);
+            width: vw(28);
+            border-radius: vw(14);
+            background-color: #ffe32a;
+            color: #000;
+                font-size: vw(15);
+                text-align: center;
+                line-height: vw(30);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+        .username{
+            box-sizing: content-box;
+            margin: 0 vw(10);
+            margin-top: vw(38);
+            padding-top: vw(45.5);
+            background-color: #fff;
+            height: vw(41.5);
+            color: #000;
+            font-size: vw(15);
+            font-weight: 700;
+            text-align: center;
+            line-height: vw(41.5);
+            width: 100%;
+            border-radius: vw(10);
+            
+        }
+        .qiehuan{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: content-box;
+            padding-bottom: vw(8.5);
+            background-color: #fff;
+            color: #8d8d8d;
+            font-size: vw(12);           
+            text-align: center;
+            line-height: vw(18);
+            height: vw(18);
+            width: 100%;
+            img{
+                height: vw(12);
+                width: vw(12);
+                margin-right: vw(10);
+            }
+        }
+    }
+    .mine-bottom{
+        height: vw(205);
+        padding: 0 vw(10);
+        display: flex;
+        flex-direction: column;
+        ul{
+                flex: 1;
+                display: flex;
+                li{
+                    border-top: vw(1) solid #e9e9e9;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        height: vw(32);
+                        width: vw(32);
+                        
+                    }
+                    span{
+                        height: vw(12);
+                        font-size: vw(12);
+                        color: #8d8d8d;
+                        margin-top: vw(10);
+                    }
+                }
+                li+li{
+                    border-left: vw(1) solid #e9e9e9;
+                }
+        }
+        ul+ul{
+            li{
+                border-bottom: vw(1) solid #e9e9e9;
+            }
+        }
+    }
+}

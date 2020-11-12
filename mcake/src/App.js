@@ -8,6 +8,7 @@ import Snack from './views/Snack'
 import Cart from './views/Cart.jsx'
 import Handpick from './views/handpick'
 import Details from './views/Details'
+import Mine from './views/Mine'
 import './css/App.scss'
 // import './assets/iconfont/iconfont.css'
 import logo from './assets/images/logo.png'
@@ -18,6 +19,9 @@ import  dangao from './assets/images/mine/dangao.png'
 import  dizhi from './assets/images/mine/dizhi.png'
 import  guanyu from './assets/images/mine/guanyu.png'
 import  wode from './assets/images/mine/wode.png'
+import  zuo from './assets/images/mine/zuo.png'
+import  cart from './assets/images/mine/cart.png'
+
 
  class App extends React.Component{
     constructor(){
@@ -38,10 +42,19 @@ import  wode from './assets/images/mine/wode.png'
         this.setState({
             caidanshow:!this.state.caidanshow
         })
+    }    
+    goto=()=>{
+         
+       this.props.history.push('/mine?'+this.props.location.pathname)
     }
-
+    goback=()=>{
+        let path=this.props.location.search.slice(1)
+        this.props.history.push(path)
+    }
+    
 
     render(){
+      
         console.log(this.props);
         return (
            
@@ -57,10 +70,11 @@ import  wode from './assets/images/mine/wode.png'
                     
                     
                     <div className='header'>
-                        <p className='header-left'><img src={maps}></img><span>北京市</span></p>
+                    {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
+                        
                         <NavLink to='/home'><img className='logos'  src={logo}></img></NavLink>
                         <p className='header-right'>
-                            <span><img src={fangdajing}></img></span>
+                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine') ?<img src={cart}></img>:<img src={fangdajing}></img>}</span>
                             <i className='ge'></i>
                             <span onClick={this.gaicaidan}><img src={caidan}></img></span></p>
                         
@@ -68,7 +82,7 @@ import  wode from './assets/images/mine/wode.png'
                     {this.state.caidanshow?<div className='header-mask' onClick={this.gaicaidan}>
                          <ul>
                              <li><img src={dangao}></img><span>最新活动</span></li>
-                             <li><img src={wode}></img><span>个人中心</span></li>
+                             <li onClick={this.goto}><img src={wode}></img><span>个人中心</span></li>
                              <li><img src={guanyu}></img><span>关于我们</span></li>
                              <li><img src={dizhi}></img><span>配送范围</span></li>
                          </ul>
@@ -81,6 +95,7 @@ import  wode from './assets/images/mine/wode.png'
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
                    <Route path='/details/:id' component={Details}></Route>
+                   <Route path='/mine' component={Mine}></Route>
                    {/* <Route path='/login' component={Login}></Route>
                    <Route path='/reg' component={Reg}></Route> */}
                    <Route path='/chucuole' render={()=>(<div>出错了</div>)}></Route>
@@ -89,13 +104,13 @@ import  wode from './assets/images/mine/wode.png'
                     </Switch>
                     </div>
                     {
-                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')) ? 
+                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine') ? 
                         <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
                         <li><NavLink to='/snack' activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
-                        <li><NavLink to='/cart' activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
+                        <li><NavLink to={`/cart?${this.props.location.pathname}`} activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
                     </ul>
                     }
                 </div>

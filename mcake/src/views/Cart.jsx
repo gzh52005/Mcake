@@ -13,7 +13,7 @@ function Cart(props){
     //改变推荐列表的数据
     const getRecommend = useEffect(function(){
         if(!goods.length){
-                request('/cakelist',{pageSize:10}).then((data)=>{
+                request('/goods/cakelist',{pageSize:10}).then((data)=>{
                    changeList(data.data)
                 })
         }
