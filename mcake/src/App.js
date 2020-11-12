@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useRef} from 'react'
 // import store from './store'
+
 import { Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
 // import { Menu,Row,Col,Button } from 'antd-mobile'
 import Home from './views/Home'
@@ -17,15 +18,34 @@ import  dangao from './assets/images/mine/dangao.png'
 import  dizhi from './assets/images/mine/dizhi.png'
 import  guanyu from './assets/images/mine/guanyu.png'
 import  wode from './assets/images/mine/wode.png'
+import context from './context'
 
- class App extends React.Component{
+function throttle(that,interval){
+    console.log(that);
+    var timer = null;
+    var page =that.state.page
+    return function(el){
+        console.log(timer);
+        if(!timer){
+            timer=setTimeout(()=>{
+                if( el.target.scrollHeight-el.target.scrollTop<600&&page<3){
+                    ++page;   
+                    that.setState({page})
+                }
+                timer=null
+            },interval)
+        }
+    }
+}
+class App extends React.Component{
     constructor(){
         super()
         this.state={
             xianshi:false,
-            caidanshow:false
+            caidanshow:false,
+            page:1
         }
-      this.gaibian = this.gaibian.bind(this)
+        this.gaibian = this.gaibian.bind(this)
     }
     gaibian=()=>{
         this.setState({
@@ -38,10 +58,9 @@ import  wode from './assets/images/mine/wode.png'
             caidanshow:!this.state.caidanshow
         })
     }
-
-
     render(){
         console.log(this.props);
+        const that = this
         return (
            
                  <div className='box'>
@@ -73,8 +92,9 @@ import  wode from './assets/images/mine/wode.png'
                          </ul>
                     </div>:''}
                     
-                    <div className='container'>
-                    <Switch>
+                    <div className='container'  onScroll={throttle(that,1000)}>
+            <context.Provider value={{page:this.state.page}}>
+            <Switch>
                    <Route path='/home' component={Home}></Route>
                    <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
@@ -85,6 +105,7 @@ import  wode from './assets/images/mine/wode.png'
                    <Redirect from="/" to='/home' exact></Redirect>
                    <Redirect to='/chucuole' ></Redirect>
                     </Switch>
+            </context.Provider>
                     </div>
                     {
                         this.props.location.pathname === '/cart' ? 
