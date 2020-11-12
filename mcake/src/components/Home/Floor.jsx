@@ -1,10 +1,21 @@
-import React from 'react';
+import React,{useState,useCallback}from 'react';
 import '../../css/home.scss';
-import titleImg from '../../assets/img/icon_cj.png';
+import titleImg from '../../assets/images/Home/icon_cj.png';
+import cartIcon from '../../assets/images/cart-icon.png';
+
+import CartMask from '../../components/Home/CartMask';
 
 function Floor(props){
-    console.log("props=",props);
-   
+    // console.log("props=",props);
+    const [showCart,changeShow] = useState(false);
+    const [showData,changeData] = useState([]);
+    const cartShow = useCallback(function(goods){
+        console.log("goods=",goods);
+        changeShow(!showCart);
+        // console.log("cartshow=",cartshow);
+        changeData(goods);
+    },[showData]);
+    
     return (
         <div>
             {
@@ -31,13 +42,18 @@ function Floor(props){
                                         <b>{goods.name}</b>
                                         <p>{goods.french}</p>
                                         <span>￥{goods.price}</span>
-                                        
+                                        <i className="cartIcon" onClick={cartShow.bind(null,goods)}>
+                                            <img src={cartIcon} alt=""/>
+                                        </i>
                                     </li>
                                 ))
                             }
                         </ul>
                     </div>
                 ))
+            }
+            {
+                showCart?<CartMask showCart={showCart} changeShow={changeShow} showData={showData}/>:''
             }
         </div>
         

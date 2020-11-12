@@ -1,6 +1,6 @@
 // const baseUrl = process.env.NODE_ENV === 'development' ? 'http://120.76.247.5:2001' : 'http://offer.qfh5.cn';
 
-const apiUrl = 'http://120.27.231.166:3009' + '/goods'
+const apiUrl = 'http://120.27.231.166:3009'
 export function request(url,data,options={}){
     url = apiUrl + url;
 

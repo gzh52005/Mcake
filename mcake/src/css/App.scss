@@ -105,25 +105,49 @@
         background-color: #fff;
         z-index: 900;
         border-bottom: vw(2) solid #eee;
-        height: vw(62);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .header-left {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            width: vw(93.5);
-
-            img {
-                width: vw(15);
-                height: vw(15);
-            }
-
-            span {
-                margin-left: vw(3);
-                color: #8d8d8d;
+         height: vw(62);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         .zuo{
+             margin-left: vw(11);
+             margin-right: vw(27);
+             height: vw(23);
+             width: vw(34);
+         }
+         .header-left{
+             display: flex;
+             justify-content: flex-end;
+             align-items: center;
+             width: vw(93.5);
+             img{
+                 width: vw(15);
+                 height: vw(15);
+             }
+               span{
+                   margin-left: vw(3);
+                   color: #8d8d8d;
+                   font-size: vw(15);
+                   line-height: vw(62);
+               }
+         }
+         .logos{
+             flex: 1;
+             padding: 0 vw(49);
+             height: vw(14);
+         }
+         .header-right{
+             height: vw(62);
+             width: vw(92);
+             display: flex;
+             align-items: center;
+             span{
+                 display: flex;
+                 height: vw(62);
+                 flex: 1;
+                 justify-content: center;
+                 align-items: center;
+                 color: #8d8d8d;
                 font-size: vw(15);
                 line-height: vw(62);
             }
@@ -331,8 +355,6 @@
                         height: vw(30);
                         margin-top: vw(4);
                         margin-right: vw(7.5);
-
-                        img {}
                     }
                 }
             }

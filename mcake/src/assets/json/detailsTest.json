@@ -1,0 +1,496 @@
+{
+    "id": 14685,
+    "gid": 4450,
+    "twoId": 14450,
+    "sku": "R0392",
+    "ahead": "提前5小时预定",
+    "edible": "4-7人食",
+    "name": "茉意芒芒",
+    "french": "Gâteau de mangue avec jasmin",
+    "spec": "2磅",
+    "salePrice": "298.00",
+    "size": "18cm*8cm（直径*高）",
+    "brief": "芒果果肉是蛋糕上的一簇星芒，\n闪烁着金色的甜，直抵心的深处。\n萃取茉莉绿茶原叶，藏下茶意绵绵，\n如同将花田、茶乡植入慕斯夹心。\n穿过朦胧的茗香，世界清澈岁月甜。",
+    "frenchBrief": "La pulpe de mangue est une étoile sur le gâteau.\nScintillant de douceur dorée, droit au fond de mon cœur.\nExtraire les feuilles du jasmin, en cachant le thé, \nComme les champs de fleurs, de thé se sont planté au coeur d’un mousse. \nEn passant à travers le parfum de thé, le monde est clair et doux.",
+    "cityId": 110,
+    "useFlg": 1,
+    "forSale": 1,
+    "sendStartDate": "2018-01-01",
+    "sendEndDate": "2099-12-31",
+    "sendStartTime": "10:00:00",
+    "sendEndTime": "22:00:00",
+    "sendSpace": 0,
+    "cutTime": "17:00:00",
+    "bid": 82,
+    "bname": "mcake",
+    "bcid": 1,
+    "bcname": "蛋糕",
+    "mcid": 0,
+    "mcname": "",
+    "scid": 0,
+    "scname": "",
+    "tid": 0,
+    "tname": "",
+    "fgid": "1",
+    "fid": "35",
+    "fname": "慕斯",
+    "saleTotal": 6688211,
+    "weight": "908g",
+    "express": 0,
+    "img": "https:\/\/static.mcake.com\/new_goods\/moyimangmang\/R0391\/list\/1.jpg",
+    "list": [{
+        "id": 14457,
+        "sku": "R0391",
+        "ahead": "提前5小时预定",
+        "edible": "2-3人食",
+        "name": "茉意芒芒",
+        "french": "Gâteau de mangue avec jasmin",
+        "spec": "1磅",
+        "salePrice": "198.00",
+        "pprice": "198.00",
+        "size": "13cm*6cm(直径*高)",
+        "cityId": 110,
+        "weight": "454g",
+        "fittings": {
+            "51": {
+                "id": 51,
+                "name": "标配餐具(免费)",
+                "uid": 2,
+                "uname": "份",
+                "num": 5,
+                "sale": 0,
+                "price": "0.00",
+                "img": "",
+                "buy": 0
+            },
+            "52": {
+                "id": 52,
+                "name": "额外餐具",
+                "uid": 6,
+                "uname": "包（5个餐盘5个餐勺）",
+                "num": 1,
+                "sale": 1,
+                "price": "5.00",
+                "img": "",
+                "buy": 0
+            },
+            "53": {
+                "id": 53,
+                "name": "生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 0,
+                "price": "0.00",
+                "img": "http:\/\/www.mcake.com\/postsystem\/docroot\/images\/system\/fittings\/20170927\/2017092713240766438.jpg",
+                "buy": 0
+            },
+            "55": {
+                "id": 55,
+                "name": "额外生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 1,
+                "price": "2.00",
+                "img": "",
+                "buy": 0
+            }
+        },
+        "pic": {
+            "url": "https:\/\/static.mcake.com\/goods\/moyimangmang\/R0391",
+            "list": [{
+                "b": "\/big\/1.jpg",
+                "m": "\/middle\/1.jpg",
+                "s": "\/small\/1.jpg"
+            }, {
+                "b": "\/big\/2.jpg",
+                "m": "\/middle\/2.jpg",
+                "s": "\/small\/2.jpg"
+            }, {
+                "b": "\/big\/3.jpg",
+                "m": "\/middle\/3.jpg",
+                "s": "\/small\/3.jpg"
+            }, {
+                "b": "\/big\/4.jpg",
+                "m": "\/middle\/4.jpg",
+                "s": "\/small\/4.jpg"
+            }]
+        },
+        "from": 0
+    }, {
+        "id": 14685,
+        "sku": "R0392",
+        "ahead": "提前5小时预定",
+        "edible": "4-7人食",
+        "name": "茉意芒芒",
+        "french": "Gâteau de mangue avec jasmin",
+        "spec": "2磅",
+        "salePrice": "298.00",
+        "pprice": "298.00",
+        "size": "18cm*8cm（直径*高）",
+        "cityId": 110,
+        "weight": "908g",
+        "fittings": {
+            "51": {
+                "id": 51,
+                "name": "标配餐具(免费)",
+                "uid": 2,
+                "uname": "份",
+                "num": 10,
+                "sale": 0,
+                "price": "0.00",
+                "img": "",
+                "buy": 0
+            },
+            "52": {
+                "id": 52,
+                "name": "额外餐具",
+                "uid": 6,
+                "uname": "包（5个餐盘5个餐勺）",
+                "num": 1,
+                "sale": 1,
+                "price": "5.00",
+                "img": "",
+                "buy": 0
+            },
+            "53": {
+                "id": 53,
+                "name": "生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 0,
+                "price": "0.00",
+                "img": "http:\/\/www.mcake.com\/postsystem\/docroot\/images\/system\/fittings\/20170927\/2017092713240766438.jpg",
+                "buy": 0
+            },
+            "55": {
+                "id": 55,
+                "name": "额外生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 1,
+                "price": "2.00",
+                "img": "",
+                "buy": 0
+            }
+        },
+        "pic": {
+            "url": "https:\/\/static.mcake.com\/goods\/moyimangmang\/R0391",
+            "list": [{
+                "b": "\/big\/1.jpg",
+                "m": "\/middle\/1.jpg",
+                "s": "\/small\/1.jpg"
+            }, {
+                "b": "\/big\/2.jpg",
+                "m": "\/middle\/2.jpg",
+                "s": "\/small\/2.jpg"
+            }, {
+                "b": "\/big\/3.jpg",
+                "m": "\/middle\/3.jpg",
+                "s": "\/small\/3.jpg"
+            }, {
+                "b": "\/big\/4.jpg",
+                "m": "\/middle\/4.jpg",
+                "s": "\/small\/4.jpg"
+            }]
+        },
+        "from": 0
+    }, {
+        "id": 14686,
+        "sku": "R0393",
+        "ahead": "提前24小时预定",
+        "edible": "8-12人食",
+        "name": "茉意芒芒",
+        "french": "Gâteau de mangue avec jasmin",
+        "spec": "3磅",
+        "salePrice": "428.00",
+        "pprice": "428.00",
+        "size": "22cm*8cm（直径*高）",
+        "cityId": 110,
+        "weight": "1.36kg",
+        "fittings": {
+            "51": {
+                "id": 51,
+                "name": "标配餐具(免费)",
+                "uid": 2,
+                "uname": "份",
+                "num": 15,
+                "sale": 0,
+                "price": "0.00",
+                "img": "",
+                "buy": 0
+            },
+            "52": {
+                "id": 52,
+                "name": "额外餐具",
+                "uid": 6,
+                "uname": "包（5个餐盘5个餐勺）",
+                "num": 1,
+                "sale": 1,
+                "price": "5.00",
+                "img": "",
+                "buy": 0
+            },
+            "53": {
+                "id": 53,
+                "name": "生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 0,
+                "price": "0.00",
+                "img": "http:\/\/www.mcake.com\/postsystem\/docroot\/images\/system\/fittings\/20170927\/2017092713240766438.jpg",
+                "buy": 0
+            },
+            "55": {
+                "id": 55,
+                "name": "额外生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 1,
+                "price": "2.00",
+                "img": "",
+                "buy": 0
+            }
+        },
+        "pic": {
+            "url": "https:\/\/static.mcake.com\/goods\/moyimangmang\/R0391",
+            "list": [{
+                "b": "\/big\/1.jpg",
+                "m": "\/middle\/1.jpg",
+                "s": "\/small\/1.jpg"
+            }, {
+                "b": "\/big\/2.jpg",
+                "m": "\/middle\/2.jpg",
+                "s": "\/small\/2.jpg"
+            }, {
+                "b": "\/big\/3.jpg",
+                "m": "\/middle\/3.jpg",
+                "s": "\/small\/3.jpg"
+            }, {
+                "b": "\/big\/4.jpg",
+                "m": "\/middle\/4.jpg",
+                "s": "\/small\/4.jpg"
+            }]
+        },
+        "from": 0
+    }, {
+        "id": 14687,
+        "sku": "R0395",
+        "ahead": "提前24小时预定",
+        "edible": "12-20人食",
+        "name": "茉意芒芒",
+        "french": "Gâteau de mangue avec jasmin",
+        "spec": "5磅",
+        "salePrice": "728.00",
+        "pprice": "728.00",
+        "size": "25cm*9cm(直径*高）",
+        "cityId": 110,
+        "weight": "2.27kg",
+        "fittings": {
+            "51": {
+                "id": 51,
+                "name": "标配餐具(免费)",
+                "uid": 2,
+                "uname": "份",
+                "num": 20,
+                "sale": 0,
+                "price": "0.00",
+                "img": "",
+                "buy": 0
+            },
+            "52": {
+                "id": 52,
+                "name": "额外餐具",
+                "uid": 6,
+                "uname": "包（5个餐盘5个餐勺）",
+                "num": 1,
+                "sale": 1,
+                "price": "5.00",
+                "img": "",
+                "buy": 0
+            },
+            "53": {
+                "id": 53,
+                "name": "生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 0,
+                "price": "0.00",
+                "img": "http:\/\/www.mcake.com\/postsystem\/docroot\/images\/system\/fittings\/20170927\/2017092713240766438.jpg",
+                "buy": 0
+            },
+            "55": {
+                "id": 55,
+                "name": "额外生日蜡烛",
+                "uid": 5,
+                "uname": "支",
+                "num": 1,
+                "sale": 1,
+                "price": "2.00",
+                "img": "",
+                "buy": 0
+            }
+        },
+        "pic": {
+            "url": "https:\/\/static.mcake.com\/goods\/moyimangmang\/R0391",
+            "list": [{
+                "b": "\/big\/1.jpg",
+                "m": "\/middle\/1.jpg",
+                "s": "\/small\/1.jpg"
+            }, {
+                "b": "\/big\/2.jpg",
+                "m": "\/middle\/2.jpg",
+                "s": "\/small\/2.jpg"
+            }, {
+                "b": "\/big\/3.jpg",
+                "m": "\/middle\/3.jpg",
+                "s": "\/small\/3.jpg"
+            }, {
+                "b": "\/big\/4.jpg",
+                "m": "\/middle\/4.jpg",
+                "s": "\/small\/4.jpg"
+            }]
+        },
+        "from": 0
+    }],
+    "pic": {
+        "url": "https:\/\/static.mcake.com\/goods\/moyimangmang\/R0391",
+        "list": [{
+            "b": "\/big\/1.jpg",
+            "m": "\/middle\/1.jpg",
+            "s": "\/small\/1.jpg"
+        }, {
+            "b": "\/big\/2.jpg",
+            "m": "\/middle\/2.jpg",
+            "s": "\/small\/2.jpg"
+        }, {
+            "b": "\/big\/3.jpg",
+            "m": "\/middle\/3.jpg",
+            "s": "\/small\/3.jpg"
+        }, {
+            "b": "\/big\/4.jpg",
+            "m": "\/middle\/4.jpg",
+            "s": "\/small\/4.jpg"
+        }]
+    },
+    "mater": {
+        "url": "https:\/\/img.mcake.com\/goods\/",
+        "list": [{
+            "name": "法国果茸",
+            "img": "mater\/2014081311071089296.jpg"
+        }, {
+            "name": "法国淡奶油",
+            "img": "mater\/2015082416012639780.jpg"
+        }, {
+            "name": "比利时巧克力",
+            "img": "mater\/2016102509565145977.jpg"
+        }, {
+            "name": "韩国幼砂糖",
+            "img": "mater\/2017112110484734829.jpg"
+        }, {
+            "name": "天然小麦粉",
+            "img": "mater\/2019070210065997765.jpg"
+        }, {
+            "name": "巴氏杀菌鸡蛋液",
+            "img": "mater\/2018121917323193859.jpg"
+        }, {
+            "name": "臻选茉莉绿茶原叶",
+            "img": "mater\/2019091614335191521.jpg"
+        }]
+    },
+    "basic": {
+        "list": [{
+            "gid": 3,
+            "name": "甜味",
+            "french": "Sweetness",
+            "value": "2"
+        }, {
+            "gid": 4,
+            "name": "口味基底",
+            "french": "Base",
+            "value": "Mousse"
+        }, {
+            "gid": 5,
+            "name": "口感",
+            "french": "Texture",
+            "value": "入口即化"
+        }, {
+            "gid": 6,
+            "name": "口味",
+            "french": "Flavor",
+            "value": "水果\/茉莉绿茶"
+        }]
+    },
+    "fittings": {
+        "51": {
+            "id": 51,
+            "name": "标配餐具(免费)",
+            "uid": 2,
+            "uname": "份",
+            "num": 10,
+            "sale": 0,
+            "price": "0.00",
+            "img": "",
+            "buy": 0
+        },
+        "52": {
+            "id": 52,
+            "name": "额外餐具",
+            "uid": 6,
+            "uname": "包（5个餐盘5个餐勺）",
+            "num": 1,
+            "sale": 1,
+            "price": "5.00",
+            "img": "",
+            "buy": 0
+        },
+        "53": {
+            "id": 53,
+            "name": "生日蜡烛",
+            "uid": 5,
+            "uname": "支",
+            "num": 1,
+            "sale": 0,
+            "price": "0.00",
+            "img": "http:\/\/www.mcake.com\/postsystem\/docroot\/images\/system\/fittings\/20170927\/2017092713240766438.jpg",
+            "buy": 0
+        },
+        "55": {
+            "id": 55,
+            "name": "额外生日蜡烛",
+            "uid": 5,
+            "uname": "支",
+            "num": 1,
+            "sale": 1,
+            "price": "2.00",
+            "img": "",
+            "buy": 0
+        }
+    },
+    "addtime": 1604725014,
+    "buy": 1,
+    "bdcard": "",
+    "segmentation": 0,
+    "pnum": 0,
+    "channel": 0,
+    "from": 0,
+    "ptag": "",
+    "ptags": [],
+    "pprice": "298.00",
+    "discount": 0,
+    "getIntegral": 0,
+    "cardMoney": 0,
+    "remark": "",
+    "promotion": [],
+    "gift": [],
+    "exchange": [],
+    "price": "298.00",
+    "details": "<p>\n\t<img src=\"https:\/\/static.mcake.com\/desc\/moyimangmang\/wap.jpg\" \/> \n<\/p>",
+    "banner": ""
+}

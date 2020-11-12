@@ -83,6 +83,12 @@
   justify-content: space-between;
   align-items: center;
 }
+.box .header .zuo {
+  margin-left: 2.9333333333vw;
+  margin-right: 7.2vw;
+  height: 6.1333333333vw;
+  width: 9.0666666667vw;
+}
 .box .header .header-left {
   display: flex;
   justify-content: flex-end;
@@ -95,6 +101,27 @@
 }
 .box .header .header-left span {
   margin-left: 0.8vw;
+  color: #8d8d8d;
+  font-size: 4vw;
+  line-height: 16.5333333333vw;
+}
+.box .header .logos {
+  flex: 1;
+  padding: 0 13.0666666667vw;
+  height: 3.7333333333vw;
+}
+.box .header .header-right {
+  height: 16.5333333333vw;
+  width: 24.5333333333vw;
+  display: flex;
+  align-items: center;
+}
+.box .header .header-right span {
+  display: flex;
+  height: 16.5333333333vw;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
   color: #8d8d8d;
   font-size: 4vw;
   line-height: 16.5333333333vw;
