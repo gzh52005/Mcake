@@ -7,6 +7,7 @@ import Cakes from './views/Cakes'
 import Snack from './views/Snack'
 import Cart from './views/Cart.jsx'
 import Handpick from './views/handpick'
+import Details from './views/Details'
 import Mine from './views/Mine'
 import Login from './views/Login'
 import Reg from './views/Reg'
@@ -97,6 +98,7 @@ import  cart from './assets/images/mine/cart.png'
                    <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
+                   <Route path='/details/:id' component={Details}></Route>
                    <Route path='/mine' component={Mine}></Route>
                    {/* <Route path='/login' component={Login}></Route>
                    <Route path='/reg' component={Reg}></Route> */}
@@ -106,7 +108,8 @@ import  cart from './assets/images/mine/cart.png'
                     </Switch>
                     </div>
                     {
-                        (this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine' ||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? 
+                        
+                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? 
                         <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
