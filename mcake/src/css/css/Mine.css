@@ -3,6 +3,59 @@
   box-sizing: border-box;
 }
 
+.mine-box .mine-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mine-box .mine-mask div {
+  background-color: #fff;
+  height: 32.2666666667vw;
+  width: 84.8vw;
+  border-radius: 2.6666666667vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.mine-box .mine-mask div h4 {
+  height: 9.3333333333vw;
+  padding-top: 4vw;
+  color: #333;
+  font-size: 4vw;
+  text-align: center;
+}
+.mine-box .mine-mask div .mask-ti {
+  height: 12.9333333333vw;
+  color: #888;
+  font-size: 3.4vw;
+  padding-top: 2.6666666667vw;
+  text-align: center;
+}
+.mine-box .mine-mask div .mask-an {
+  flex: 1;
+  display: flex;
+  color: #fff;
+  font-size: 4vw;
+}
+.mine-box .mine-mask div .mask-an span {
+  flex: 1;
+  line-height: 10vw;
+  text-align: center;
+}
+.mine-box .mine-mask div .mask-an span:nth-child(1) {
+  background-color: #857a72;
+}
+.mine-box .mine-mask div .mask-an span:nth-child(2) {
+  color: #000;
+  background-color: #ffe32a;
+}
 .mine-box .mine-top {
   display: flex;
   flex-direction: column;
