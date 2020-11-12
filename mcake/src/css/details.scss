@@ -80,7 +80,7 @@
     }
     .tips{
         color: #f0250f;
-        height: vw(28);
+        height: vw(43);
         padding: vw(7.5) 0;
         line-height: vw(28);
         span{
@@ -129,4 +129,14 @@
         }
     }
 
+}
+
+.product{
+    .proSim{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: vw(250);
+        background-color: #fff;
+    }
 }
