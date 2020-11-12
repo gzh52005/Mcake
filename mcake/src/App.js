@@ -7,6 +7,7 @@ import Cakes from './views/Cakes'
 import Snack from './views/Snack'
 import Cart from './views/Cart.jsx'
 import Handpick from './views/handpick'
+import Details from './views/Details'
 import './css/App.scss'
 // import './assets/iconfont/iconfont.css'
 import logo from './assets/images/logo.png'
@@ -79,6 +80,7 @@ import  wode from './assets/images/mine/wode.png'
                    <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
+                   <Route path='/details/:id' component={Details}></Route>
                    {/* <Route path='/login' component={Login}></Route>
                    <Route path='/reg' component={Reg}></Route> */}
                    <Route path='/chucuole' render={()=>(<div>出错了</div>)}></Route>
@@ -87,7 +89,7 @@ import  wode from './assets/images/mine/wode.png'
                     </Switch>
                     </div>
                     {
-                        this.props.location.pathname === '/cart' ? 
+                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')) ? 
                         <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>

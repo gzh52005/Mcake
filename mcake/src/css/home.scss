@@ -79,6 +79,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999999;
     .maskCon{
         width: vw(338);
         // height: vw(258);
@@ -92,6 +93,10 @@
             display: flex;
             padding: 0 vw(10) vw(10);
             position: relative;
+            img{
+                width: vw(99);
+                height: vw(99);
+            }
             .disc{
                 width: vw(99);
                 margin: 0 vw(20);
@@ -127,7 +132,24 @@
 
         .specification{
             .chooseSpecify{
-                
+                position: relative;
+                font-size: vw(13);
+                .chooseWeight{
+                    width: vw(200);
+                    position: absolute;
+                    top: vw(45);
+                    right: vw(-20);
+                    background-color: #fff;
+                    border-left: 1px solid #151515;
+                    border-bottom: 2px solid #151515;
+                    box-shadow: 0 vw(-2) vw(5) 0 rgb(26, 24, 24);
+                    li{
+                        height: vw(40);
+                    }
+                    .activeWeight{
+                        background-color: skyblue;
+                    }
+                }
             }
         }
         .number{
