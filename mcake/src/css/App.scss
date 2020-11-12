@@ -93,6 +93,12 @@
          display: flex;
          justify-content: space-between;
          align-items: center;
+         .zuo{
+             margin-left: vw(11);
+             margin-right: vw(27);
+             height: vw(23);
+             width: vw(34);
+         }
          .header-left{
              display: flex;
              justify-content: flex-end;
