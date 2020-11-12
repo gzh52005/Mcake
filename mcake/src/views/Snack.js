@@ -7,10 +7,10 @@ function Snack(){
     let [show,isshow]=useState(false)
     let data =  useContext(context).page
     useEffect(function(){
+        console.log(data,99999999999999999999);
         isshow(true)
-       request.get('/cakelist',{page:data,pageSize:8}).then(reg=>{change([...goodslist,...reg.data],isshow(false))})
+       request.get('/goods/snacklist',{page:data,pageSize:6}).then(reg=>{change([...goodslist,...reg.data],isshow(false))})
     },[data]);
-    console.log(data);
     console.log(goodslist);
     return (
         <div className='snack'  >

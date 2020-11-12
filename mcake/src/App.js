@@ -24,17 +24,18 @@ import  guanyu from './assets/images/mine/guanyu.png'
 import  wode from './assets/images/mine/wode.png'
 import  zuo from './assets/images/mine/zuo.png'
 import  cart from './assets/images/mine/cart.png'
-
+import context from './context'
 
 function throttle(that,interval){
     console.log(that);
+    let path =  that.props.location.pathname
     var timer = null;
     var page =that.state.page
     return function(el){
         console.log(timer);
         if(!timer){
             timer=setTimeout(()=>{
-                if( el.target.scrollHeight-el.target.scrollTop<600&&page<3){
+                if( el.target.scrollHeight-el.target.scrollTop<750&&page<(path==='/snack'?3:4)){
                     ++page;   
                     that.setState({page})
                 }
@@ -44,8 +45,9 @@ function throttle(that,interval){
     }
 }
 class App extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
+        console.log(this.props);
         this.state={
             xianshi:false,
             caidanshow:false,
@@ -72,7 +74,9 @@ class App extends React.Component{
         let path=this.props.location.search.slice(1)
         this.props.history.push(path)
     }
-    
+    resetPage=()=>{
+        this.setState({page:1})
+    }
 
     render(){
       
@@ -110,7 +114,7 @@ class App extends React.Component{
                          </ul>
                     </div>:''}
                     
-                    <div className='container'  onScroll={throttle(that,1000)}>
+                    <div className='container'  onScroll={throttle(that,500)}>
             <context.Provider value={{page:this.state.page}}>
             <Switch>
                    <Route path='/home' component={Home}></Route>
@@ -130,13 +134,12 @@ class App extends React.Component{
             </context.Provider>
                     </div>
                     {
-                        
                         (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? 
                         <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
-                        <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
-                        <li><NavLink to='/snack' activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
+                        <li><NavLink to='/cakes' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
+                        <li><NavLink to='/snack' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
                         <li><NavLink to={`/cart?${this.props.location.pathname}`} activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
                     </ul>
                     }

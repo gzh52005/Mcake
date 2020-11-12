@@ -276,7 +276,6 @@
 }
 .snack .snack-box li div .describe .goodsdata .tname {
   overflow: hidden;
-  line-height: 2.6666666667vw;
   display: inline-block;
   white-space: nowrap;
   background-color: yellow;
