@@ -72,11 +72,11 @@ import  cart from './assets/images/mine/cart.png'
                     
                     
                     <div className='header'>
-                    {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
+                    {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
                         
                         <NavLink to='/home'><img className='logos'  src={logo}></img></NavLink>
                         <p className='header-right'>
-                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine') ?<img src={cart}></img>:<img src={fangdajing}></img>}</span>
+                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img src={cart}></img>:<img src={fangdajing}></img>}</span>
                             <i className='ge'></i>
                             <span onClick={this.gaicaidan}><img src={caidan}></img></span></p>
                         
@@ -109,8 +109,7 @@ import  cart from './assets/images/mine/cart.png'
                     </div>
                     {
                         
-                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? 
-                        <React.Fragment></React.Fragment>
+                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>

@@ -1,4 +1,4 @@
-import {useState,useCallback} from 'react'
+import {useState,useCallback,useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
 import '../css/Mine.scss'
 import qiehuan from '../assets/images/mine/qiehuan.png'
@@ -12,11 +12,28 @@ import hongbao from '../assets/images/mine/hongbao.png'
 import ka from '../assets/images/mine/ka.png'
 export default function Mine(props){
     console.log(props)
+    console.log(JSON.parse(localStorage.getItem('currentUser')))
     let [isback,changelogin]=useState(false)
+    let [users,changeusers]=useState("未登录")
     let fn1=useCallback(function(){
         changelogin(!isback)
+        localStorage.removeItem('currentUser')
         props.history.push('/login')
         })
+        useEffect(function(){
+              if(localStorage.getItem('currentUser')){
+                changeusers((JSON.parse(localStorage.getItem('currentUser'))).username)
+              }else{
+                changelogin(true)
+              }
+        })
+    let fn2=useCallback(function(){
+        if(localStorage.getItem('currentUser')){
+            changelogin(false)
+          }else{
+            props.history.push(props.location.search.slice(1))
+          }
+    })
     return (
         <div className='mine-box'>
              {isback?<div className='mine-mask'>
@@ -24,7 +41,7 @@ export default function Mine(props){
                       <h4>提示信息</h4>
                       <p className='mask-ti'>确定要退出账号吗？</p>
                       <p className='mask-an'>
-                          <span onClick={()=>{changelogin(!isback)}}>取消</span>
+                          <span onClick={fn2}>取消</span>
                           <span onClick={fn1}>确定</span>
                       </p>
                   </div>
@@ -33,8 +50,8 @@ export default function Mine(props){
               <div className='mine-top'>
                    <p className='head-portrait'><img></img> <span className='vip'>v1</span></p>
                    
-                   <p className='username'>17126712612</p>
-                   <p className='qiehuan' onClick={()=>{changelogin(!isback)}}><img src={qiehuan}></img><span>切换账号</span></p>
+    <p className='username'>{users}</p>
+                   <p className='qiehuan' onClick={()=>{changelogin(true)}}><img src={qiehuan}></img><span>切换账号</span></p>
               </div>
               <div className='mine-bottom'>
                    <ul>

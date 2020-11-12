@@ -1,8 +1,7 @@
 @import './vw.scss';
-*{
-    box-sizing: border-box;
-}
+
 .mine-box{
+    box-sizing: border-box;
     .mine-mask{
         position: fixed;
         left: 0;
