@@ -14,8 +14,18 @@ import wx_code from '../assets/images/Home/wx_code.jpg';
 
 function Home(){
     // let floorData = [];
+    const [bannerData,changeBanner] = useState([]);
     const [floorData,changeFloor] = useState([]);
     const [divisionData,changeDivision] = useState([]);
+
+    useEffect(function(){
+        let newBanner = [];
+        homeData[0].source.adsense.forEach(item=>{
+            newBanner.push(item.img);
+        })
+        changeBanner(newBanner);
+    },[])
+
     useEffect(function(){
         // console.log("homeData=",homeData);
         const newFloor = homeData.filter(item=>{
@@ -34,7 +44,7 @@ function Home(){
     return (  
        <div>
            {/* 轮播图 */}
-           <Banner Bannerlist={homeData[0].source.adsense}></Banner>
+           <Banner Bannerlist={bannerData}></Banner>
            {/* 产品楼层 */}
            <Floor data={floorData}/>
             {/* 专区 */}
