@@ -17,8 +17,31 @@ function Cart(props){
                 request('/goods/cakelist',{pageSize:10}).then((data)=>{
                    changeList(data.data)
                 })
+        }else{
+            request('/goods/partslist',{pageSize:4}).then((data)=>{
+                changeList(data.data)
+                console.log(data.data,"推荐列表");
+             })
         }
     },[goods])
+    //给商品数据添加ischeck属性
+    useEffect(function(){
+        goods.forEach(good=>{
+            if(good.ischeck=='undefind'){
+                good.ischeck = false
+            }
+        })
+    },[goods])
+
+    //请求购物车数据
+    useMemo(async function(){
+        request('/cart/usergoods',{username:'刘德'}).then((data)=>{
+            console.log(data.data[0].goods,'用户商品数据');
+            changeGoods(data.data[0].goods)
+         })
+    },[])
+
+    
     useEffect(function(){
         if(!localStorage.getItem('currentUser')){
             changelogin(true)
@@ -26,14 +49,20 @@ function Cart(props){
             changelogin(false)
         }
   },[])
-  let fn1=useCallback(function(){
+
+
+    let fn1=useCallback(function(){
     props.history.push('/login?/cart')
     })
+
+
     let fn2=useCallback(function(){
 
         props.history.push(props.location.search.slice(1))
           
     })
+
+    
     return (
         <div className="cart-box">
             {isback?<div className='cart-mask'>
@@ -50,8 +79,71 @@ function Cart(props){
                 
                 //渲染结构（有数据/无数据）
                 goods.length > 0 ?
-                <div>111</div>
-                :<div className="no-cart-box">{/*无数据时结构*/}
+                <div className="cart-box">
+                    <ul className = "cart-box-list">
+                        {
+                            goods.map(good=>{
+                                return (
+                                    <li key={good.id}>
+                                        <div className="cart-item-box">
+                                            <label htmlFor={"good"+good.id}><input type="checkbox" id={"good"+good.id}/></label>
+                                           <img src={good.img}/>
+                                           <div className="cart-item-content-box">
+                                               <div className="cart-item-content-top">
+                                               <div className="cart-item-content-title">
+                                                    <p className="chinese">{good.name}</p>
+                                                    <p className="french">{good.french}</p>
+                                               </div>
+                                               <div className="cart-item-content-edit"></div>
+                                               </div>
+                                                <div className="cart-item-content-btm">
+                                                    <span className="cart-item-price">￥{good.pprice || good.price}</span>
+                                                    <span className="cart-item-wight">{good.spec} ({good.weight}) x {good.num}</span>
+                                                </div>
+                                           </div>
+                                        </div>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                    <div className="cart-list">
+                        <h2 className="recommend_goods">
+                            加购配件
+                        </h2>
+                        <ul className="recommend_list">
+                            {
+                                recommendList.map(good=>{
+                                    return (
+                                        <li key={good.id}>
+                                            <figure className="recommend_item">
+                                                <img src={good.img} alt=""/>
+                                                <figcaption>
+                                    <p className="recommend_item_tilte">{good.name}</p>
+                                    <p className="recommend_item_price">￥{good.pprice||good.price}</p>
+                                                    <span className="recommend_item_add"></span>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                        <div className="cart-pay-footer">
+                            <label htmlFor="total">
+                            <input type="checkbox" id="total"/>
+                            </label>全选
+                            <span className="totalPrice">合计：￥500</span>
+                            <span className="pay">去结算(2)</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                :
+                
+                
+                <div className="no-cart-box">{/*无数据时结构*/}
                 <div className="no-cart-box-pic">
                     <p>
                         <span>您的购物车还是空的，</span>
