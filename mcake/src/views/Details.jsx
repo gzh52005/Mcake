@@ -1,13 +1,14 @@
-import React, { useState,useEffect, useCallback } from 'react';
-
+import React, { useState,useEffect, useCallback, useMemo } from 'react';
+import {withRouter} from 'react-router-dom'
 //组件
 import Banner from '../components/Home/Banner';
 import { Tabs,WhiteSpace } from 'antd-mobile';
-
+import request from '../utils/request'
 // 样式
 import '../css/details.scss';
 
 import Data from '../assets/json/detailsTest.json';
+import { defaultProps } from 'antd-mobile/lib/search-bar/PropsType';
 
 // console.log("Details.data=",Data);
 // 促销数据
@@ -16,16 +17,47 @@ const promotion = [
 ] 
 
 
-function Details(){
+function Details(props){
     /* 轮播图数据 */
     const [bannerData,changeBanner] = useState([]);
+    let [datalist,changedatalist]=useState([])
+    let [musi,changemusi]=useState('')
+    // let [currentSku,setcurrentSku]=useState('')
+    useEffect(function(){        
+        if(datalist[0]){           
+            let newBanner = [];
+            datalist[0].pic.list.forEach(item=>{
+                newBanner.push(datalist[0].pic.url+item.m);
+            });
+            changeBanner(newBanner);
+        }
+        console.log(datalist[0])
+    },[datalist]);
     useEffect(function(){
-        let newBanner = [];
-        Data.pic.list.forEach(item=>{
-            newBanner.push(Data.pic.url+item.m);
-        });
-        changeBanner(newBanner);
-    },[]);
+       if(datalist[0]){
+        // let newBanner = [];
+        changemusi(datalist[0].fname.split(','))
+       }
+    },[datalist])
+    // useEffect(function(){
+    //     if(datalist[0]){
+    //      // let newBanner = [];
+    //      setcurrentSku(datalist[0].sku)
+    //     }
+    //  },[datalist])
+    useEffect(async function(){
+        let bcname=props.location.search.slice(1).split('&')[0]
+        console.log(bcname)
+        let id=parseInt(props.location.search.slice(1).split('&')[1])
+        console.log(id)
+        let p=await request('/goods/cakesearch',{
+            bcname,
+            id
+        })
+        console.log(p)
+        changedatalist(p.data)   
+    },[])
+
 
     /* 规格数据 */
     const [currentSku,setSku] = useState(Data.sku);
@@ -37,10 +69,10 @@ function Details(){
     },[]);
 
     /* 不变部分的数据 */
-    const [musi,setMusi] = useState([]);
-    useEffect(function(){
-        setMusi(Data.fname.split(','));
-    },[])
+    // const [musi,setMusi] = useState([]);
+    // useEffect(function(){
+    //     setMusi(Data.fname.split(','));
+    // },[])
 
     const tabs = [
         { title: '商品详情', key: 't1' },
@@ -55,9 +87,8 @@ function Details(){
 
             {/* 可选规格 */}
             <div className="detailsMain">
-                <ul className="mainTitle">
-                    {
-                       Data.list.map(item=>(
+                {(datalist[0] && datalist[0].list.length>1)?<ul className="mainTitle">
+                    {datalist[0].list.map(item=>(
                            <li key={item.id}
                            className={item.sku===currentSku?'activeWeight':''}
                            onClick={changeSku.bind(null,item)}
@@ -66,29 +97,33 @@ function Details(){
                                 <p>({item.weight})</p>
                                 <span>{item.edible}</span>
                            </li>
-                       )) 
+                       ))
                     }
-                </ul>
-                <ul className="mainCon">
-                    <li className="mainprice">￥<span>{currentGuige.pprice}</span>
+                </ul>:''}
+                {datalist[0]?<ul className="mainCon">
+                    <li className="mainprice">￥<span>{datalist[0].pprice}</span>
                     </li>
                     <li className="mainGuige">
-                        <p>{currentGuige.ahead}</p>
-                        <p>{currentGuige.size}</p>
-                        <p>{currentGuige.weight}</p>
-                        <p>{currentGuige.fittings['51'].name}X{currentGuige.fittings['51'].num}</p>
+                        <p>{datalist[0].ahead}</p>
+                        <p>{datalist[0].size}</p>
+                        <p>{datalist[0].weight}</p>
+                        <p>{datalist[0].fittings['51'].name}X{datalist[0].fittings['51'].num}</p>
                     </li>
-                </ul>
+                </ul>:''}
+                
             </div>
 
             {/* 不变的部分 */}
             <div className="noChange">
                 <div className="musi floor">
-                    {
+                    {musi?musi.map((item,index)=>(
+                            <span key={index}>{item}</span>
+                        )):''}
+                    {/* {
                         musi.map((item,index)=>(
                             <span key={index}>{item}</span>
                         ))
-                    }
+                    } */}
                 </div>
                 <div className="tips floor">
                     <span>!</span>若不及时食用，请放置0-10℃冷藏
@@ -135,5 +170,5 @@ function Details(){
         </div>
     )
 }
-
+Details=withRouter(Details)
 export default Details;

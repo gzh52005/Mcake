@@ -1,8 +1,9 @@
-import React,{useEffect,useState,useRef, useContext} from 'react'
+import React,{useEffect,useState,useRef, useContext,useCallback} from 'react'
+import {withRouter} from 'react-router-dom'
 import request from '../utils/request';
 import cartLogo from '../assets/images/cart-icon.png'
 import context from '../context' 
-function Snack(){
+function Snack(props){
     let [goodslist,change] = useState([])
     let [show,isshow]=useState(false)
     let data =  useContext(context).page
@@ -11,6 +12,7 @@ function Snack(){
         isshow(true)
        request.get('/goods/snacklist',{page:data,pageSize:6}).then(reg=>{change([...goodslist,...reg.data],isshow(false))})
     },[data]);
+
     // console.log(goodslist);
     return (
         <div className='snack'  >
@@ -38,5 +40,5 @@ function Snack(){
         </div>
     )
 }
-
+Snack=withRouter(Snack)
 export default Snack;

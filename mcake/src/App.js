@@ -99,11 +99,11 @@ class App extends React.Component{
                     
                     
                     <div className='header'>
-                    {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
+                    {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg'||this.props.location.pathname === '/details') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
                         
                         <NavLink to='/home'><img className='logos'  src={logo}></img></NavLink>
                         <p className='header-right'>
-                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img src={cart} onClick={()=>{this.props.history.push('/cart')}}></img>:<img src={fangdajing}></img>}</span>
+                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg'||this.props.location.pathname === '/details') ?<img src={cart} onClick={()=>{this.props.history.push('/cart')}}></img>:<img src={fangdajing}></img>}</span>
                             <i className='ge'></i>
                             <span onClick={this.gaicaidan}><img src={caidan}></img></span></p>
                         
@@ -126,7 +126,7 @@ class App extends React.Component{
                    <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
-                   <Route path='/details/:id' component={Details}></Route>
+                   <Route path='/details' component={Details}></Route>
                    <Route path='/mine' component={Mine}></Route>
                    {/* <Route path='/login' component={Login}></Route>
                    <Route path='/reg' component={Reg}></Route> */}
@@ -138,7 +138,7 @@ class App extends React.Component{
                     </div>
                     {
                         
-                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? <React.Fragment></React.Fragment>
+                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login'||this.props.location.pathname === '/details') ? <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>

@@ -31,9 +31,10 @@ export default function Reg(props){
      },[username])
      useEffect(function(){
          if(password){
-            changemimati(false)
-         }else{
             changemimati(reg3.test(password))
+            
+         }else{
+            changemimati(false)
          }
         
      },[password])
@@ -103,7 +104,7 @@ export default function Reg(props){
             </p>
             <p className='reg-shu'>
                 <img src={suo}></img>
-                <input type="password" placeholder="密码" onChange={(e)=>{changepassword(e.currentTarget.value)}}/>
+                <input type="password"  placeholder="密码" onChange={(e)=>{changepassword(e.currentTarget.value)}}/>
             </p>
             {mimati?'':<span>请输入6-18个字符的密码</span>}
             

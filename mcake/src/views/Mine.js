@@ -26,21 +26,19 @@ export default function Mine(props){
               }
         },[])
     let fn1=useCallback(function(){
-            changelogin(!isback)
+            // changelogin(!isback)
             localStorage.removeItem('currentUser')
             props.history.push('/login')
-            })
-    let fn2=useCallback(function(){
-        if(localStorage.getItem('currentUser')){
-            changelogin(false)
-          }else{
-            props.history.push(props.location.search.slice(1))
-          }
-    })
+        })
+    // let fn2=useCallback(function(){
+        
+    //         changelogin(false)
+         
+    // })
     let fn3=useCallback(function(){
         props.history.push('/login?/mine')
         })
-        let fn4=useCallback(function(){
+    let fn4=useCallback(function(){
     
             props.history.push(props.location.search.slice(1))
               
@@ -52,7 +50,7 @@ export default function Mine(props){
                       <h4>提示信息</h4>
                       <p className='mask-ti'>确定要退出账号吗？</p>
                       <p className='mask-an'>
-                          <span onClick={fn2}>取消</span>
+                          <span onClick={()=>{changelogin(false)}}>取消</span>
                           <span onClick={fn1}>确定</span>
                       </p>
                   </div>
