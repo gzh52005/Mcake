@@ -15,18 +15,21 @@ export default function Mine(props){
     console.log(JSON.parse(localStorage.getItem('currentUser')))
     let [isback,changelogin]=useState(false)
     let [users,changeusers]=useState("未登录")
-    let fn1=useCallback(function(){
-        changelogin(!isback)
-        localStorage.removeItem('currentUser')
-        props.history.push('/login')
-        })
-        useEffect(function(){
+    let [shouwei,changeshouwei]=useState(false)
+
+   
+    useEffect(function(){
               if(localStorage.getItem('currentUser')){
                 changeusers((JSON.parse(localStorage.getItem('currentUser'))).username)
               }else{
-                changelogin(true)
+                changeshouwei(true)
               }
-        })
+        },[])
+    let fn1=useCallback(function(){
+            changelogin(!isback)
+            localStorage.removeItem('currentUser')
+            props.history.push('/login')
+            })
     let fn2=useCallback(function(){
         if(localStorage.getItem('currentUser')){
             changelogin(false)
@@ -34,6 +37,14 @@ export default function Mine(props){
             props.history.push(props.location.search.slice(1))
           }
     })
+    let fn3=useCallback(function(){
+        props.history.push('/login?/mine')
+        })
+        let fn4=useCallback(function(){
+    
+            props.history.push(props.location.search.slice(1))
+              
+        })
     return (
         <div className='mine-box'>
              {isback?<div className='mine-mask'>
@@ -46,7 +57,16 @@ export default function Mine(props){
                       </p>
                   </div>
               </div>:''}
-              
+              {shouwei?<div className='mine-mask'>
+                  <div>
+                      <h4>温馨提示</h4>
+                      <p className='mask-ti'>您需要先登录才能继续您的操作</p>
+                      <p className='mask-an'>
+                          <span onClick={fn4}>以后再说</span>
+                          <span onClick={fn3}>立即登录</span>
+                      </p>
+                  </div>
+              </div>:''} 
               <div className='mine-top'>
                    <p className='head-portrait'><img></img> <span className='vip'>v1</span></p>
                    

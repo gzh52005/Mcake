@@ -26,7 +26,7 @@ function Cart(props){
             changelogin(false)
         }
   },[])
-  let fn1=useCallback(function(){
+    let fn1=useCallback(function(){
     props.history.push('/login?/cart')
     })
     let fn2=useCallback(function(){

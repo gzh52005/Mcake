@@ -103,7 +103,7 @@ class App extends React.Component{
                         
                         <NavLink to='/home'><img className='logos'  src={logo}></img></NavLink>
                         <p className='header-right'>
-                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img src={cart}></img>:<img src={fangdajing}></img>}</span>
+                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img src={cart} onClick={()=>{this.props.history.push('/cart')}}></img>:<img src={fangdajing}></img>}</span>
                             <i className='ge'></i>
                             <span onClick={this.gaicaidan}><img src={caidan}></img></span></p>
                         

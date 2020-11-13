@@ -15,11 +15,31 @@ export default function Reg(props){
     let [jieguo,changejieguo]=useState(false)
     let [gaitishi,changegaitishi]=useState('')
     let [tongyi,changetongyi]=useState(false)
-    let fn1=useCallback(function(){
-        let reg1=/^[\da-zA-Z_]{6,14}$/
-        let reg2 = /^[1]([3-9])[0-9]{9}$/
-        let reg3=/^[A-Za-z\d.!%*#?]{6,18}$/
-        let len = username.replace(/[\u4e00-\u9fa5]/g,"aaa")
+    let [mimati,changemimati]=useState(false)
+    let [nameti,changenameti]=useState(false)
+    let reg1=/^[\da-zA-Z_]{6,14}$/
+    let reg2 = /^[1]([3-9])[0-9]{9}$/
+    let reg3=/^[A-Za-z\d.!%*#?]{6,18}$/
+    let len = username.replace(/[\u4e00-\u9fa5]/g,"aaa")
+      useEffect(function(){
+          if(!username){
+            changenameti(false)
+          }else{
+               changenameti(reg1.test(len))
+          }
+       
+     },[username])
+     useEffect(function(){
+         if(password){
+            changemimati(false)
+         }else{
+            changemimati(reg3.test(password))
+         }
+        
+     },[password])
+    let fn1=useCallback(async function(){
+        
+        
         if(!reg1.test(len)){
             changegaitishi('请输入7-14个字符的用户名（中文占三个字符）')
             
@@ -36,7 +56,32 @@ export default function Reg(props){
             changegaitishi('请阅读并同意《MCAKE购物协议》')
            
         }else{
-            changegaitishi('注册成功')
+           let p=await request.get('/users/checkname',{
+            username,
+            tel:telphone
+           })
+           if(!p.flag){
+            changegaitishi('账号已存在')
+           }else{
+               let q=await request.post('/users/reg',{
+                   username,
+                   tel:telphone,
+                   password
+               })
+               if(q.flag){
+
+                props.history.replace({
+                    pathname:'/login',
+                    state:{
+                        username
+                    }
+                })
+               return
+               }else{
+                changegaitishi('注册失败，请重新尝试')
+               }
+           }
+            
            
         }
         changejieguo(true)
@@ -50,7 +95,8 @@ export default function Reg(props){
                 <img src={yonghu}></img>
                 <input value={username}  onChange={(e)=>{changeusername(e.currentTarget.value)}} type="text" placeholder="用户名" />
             </p>
-            <span>请输入7-14个字符的用户名（中文占三个字符）</span>
+            {nameti?'':<span>请输入7-14个字符的用户名（中文占三个字符）</span>}
+            
             <p className='reg-shu'>
                 <img src={phone}></img>
                 <input value={telphone}  onChange={(e)=>{changetelphone(e.currentTarget.value)}} type="text" placeholder="手机号码" />
@@ -59,7 +105,8 @@ export default function Reg(props){
                 <img src={suo}></img>
                 <input type="password" placeholder="密码" onChange={(e)=>{changepassword(e.currentTarget.value)}}/>
             </p>
-            <span>请输入6-18个字符的密码</span>
+            {mimati?'':<span>请输入6-18个字符的密码</span>}
+            
             <p className='reg-shu'>
                 <img src={suo}></img>
                 <input type="password" placeholder="密码确认" onChange={(e)=>{changeagainpassword(e.currentTarget.value)}}/>

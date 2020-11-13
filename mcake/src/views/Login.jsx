@@ -1,4 +1,4 @@
-import {useState,useCallback} from 'react'
+import {useState,useCallback,useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
 import '../css/Login.scss'
 import phone from '../assets/images/Login/phone.png'
@@ -6,10 +6,16 @@ import suo from '../assets/images/Login/suo.png'
 import zhifubao from '../assets/images/Login/zhifubao.png'
 import weibo from '../assets/images/Login/weibo.png'
 import request from '../utils/request'
+
 export default function Login(props){
     let [username,changeusername]=useState('')
     let [password,changepassword]=useState('')
     let [jieguo,changejieguo]=useState(false)
+    useEffect(function(){
+        if(props.location.state){
+            changeusername(props.location.state.username)
+        }
+    },[])
     let fn1=useCallback(async function(){
             let p= await request.get('/users/login',{
                 username,
