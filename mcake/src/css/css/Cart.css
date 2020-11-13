@@ -1,0 +1,166 @@
+@import './base.css';
+.cart-box {
+  flex: 1;
+}
+.cart-box .cart-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-box .cart-mask div {
+  background-color: #fff;
+  height: 32.2666666667vw;
+  width: 84.8vw;
+  border-radius: 2.6666666667vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cart-box .cart-mask div h4 {
+  height: 9.3333333333vw;
+  padding-top: 4vw;
+  color: #333;
+  font-size: 4vw;
+  text-align: center;
+}
+.cart-box .cart-mask div .mask-ti {
+  height: 12.9333333333vw;
+  color: #888;
+  font-size: 3.4vw;
+  padding-top: 2.6666666667vw;
+  text-align: center;
+}
+.cart-box .cart-mask div .mask-an {
+  flex: 1;
+  display: flex;
+  color: #fff;
+  font-size: 4vw;
+}
+.cart-box .cart-mask div .mask-an span {
+  flex: 1;
+  line-height: 10vw;
+  text-align: center;
+}
+.cart-box .cart-mask div .mask-an span:nth-child(1) {
+  background-color: #857a72;
+}
+.cart-box .cart-mask div .mask-an span:nth-child(2) {
+  color: #000;
+  background-color: #ffe32a;
+}
+.cart-box .no-cart-box .no-cart-box-pic {
+  box-sizing: border-box;
+  height: 50.4vw;
+  padding-top: 40vw;
+  background: url("../assets/images/Cart/cart-empty.png") no-repeat center 9.6vw;
+  background-color: #c2c2c2;
+}
+.cart-box .no-cart-box .no-cart-box-pic p {
+  font-size: 3.8666666667vw;
+  color: #fff;
+  text-align: center;
+}
+.cart-box .no-cart-box .no-cart-box-pic p .tohome {
+  text-decoration: underline;
+}
+.cart-box .no-cart-box .no-cart-list {
+  margin-bottom: 15.7333333333vw;
+}
+.cart-box .no-cart-box .no-cart-list h2 {
+  height: 10.9333333333vw;
+  padding-left: 5.3333333333vw;
+  line-height: 10.9333333333vw;
+  font-size: 4.5333333333vw;
+  font-weight: 700;
+  color: #000;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2vw 2vw 0 2vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item {
+  width: 48vw;
+  height: 66.2666666667vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box > img {
+  width: 45.8666666667vw;
+  height: 45.8666666667vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box .recommend_item_figc {
+  display: flex;
+  height: 11.2vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box .recommend_item_figc .recommend_item_title {
+  width: 36vw;
+  height: 11.2vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box .recommend_item_figc .recommend_item_title .recommend_item_name {
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 6.1333333333vw;
+  font-size: 3.4666666667vw;
+  padding: 2.08vw 1.3866666667vw 1.0666666667vw 1.3866666667vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box .recommend_item_figc .recommend_item_title .recommend_item_french {
+  box-sizing: border-box;
+  height: 4vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #7f7f7f;
+  font-size: 3.2vw;
+  padding: 0 1vw;
+  margin-top: 0.8vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box .recommend_item_figc .recommend_item_buy {
+  width: 8vw;
+  height: 8vw;
+  background: url("../assets/images/cart-icon.png");
+  background-size: 100% 100%;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box .recommend_item_price {
+  margin-left: 5.3333333333vw;
+  margin-top: 2.6666666667vw;
+  text-align: left;
+  width: 100%;
+  font-size: 3.4666666667vw;
+}
+.cart-box .no-cart-box .no-cart-list .recommend_list .recommend_item .recommend_item_box .recommend_item_price b {
+  color: #000;
+  font-size: 2.6666666667vw;
+  vertical-align: baseline !important;
+}
+
+.cart-footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  height: 15.7333333333vw;
+  width: 100%;
+  align-items: center;
+  background-color: #fff;
+}
+.cart-footer .gotohome {
+  line-height: 11.7333333333vw;
+  height: 11.7333333333vw;
+  width: 100%;
+  background-color: #ffe32a !important;
+  text-align: center;
+  color: #000;
+  font-size: 4.5333333333vw;
+}

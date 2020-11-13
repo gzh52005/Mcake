@@ -1,4 +1,7 @@
 @import './vw.scss';
+.detailsContainer{
+background-color: #fff;
+
 .detailsMain{
     // width: 100%;
     padding: vw(7) vw(7) 0;
@@ -129,4 +132,18 @@
         }
     }
 
+}
+
+.product{
+    .proTitle{
+        height: vw(43);
+        .proSim{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: vw(250);
+            background-color: #fff;
+        }
+    }
+}
 }

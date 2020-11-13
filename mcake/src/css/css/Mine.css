@@ -1,8 +1,7 @@
 @import './base.css';
-* {
+.mine-box {
   box-sizing: border-box;
 }
-
 .mine-box .mine-mask {
   position: fixed;
   left: 0;

@@ -1,0 +1,110 @@
+@import './base.css';
+.reg-box {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+}
+.reg-box .reg-shu {
+  height: 12.5333333333vw;
+  border-radius: 2.1333333333vw;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 3.2vw;
+  background-color: #ededed;
+}
+.reg-box .reg-shu img {
+  width: 6.9466666667vw;
+  height: 7.2vw;
+  margin-left: 2.9333333333vw;
+  margin-right: 2.1333333333vw;
+  margin-top: 2.6666666667vw;
+}
+.reg-box .reg-shu input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  background-color: #ededed;
+  padding-left: 1.3333333333vw;
+  font-size: 4vw;
+  outline: none;
+}
+.reg-box > span:nth-of-type(1),
+.reg-box > span:nth-of-type(2) {
+  height: 4vw;
+  font-size: 3.2vw;
+  color: #8d8d8d;
+  text-align: center;
+  margin-bottom: 2.6666666667vw;
+}
+.reg-box .reg-que {
+  height: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6vw;
+}
+.reg-box .reg-que input {
+  visibility: hidden;
+}
+.reg-box .reg-que input + label {
+  display: block;
+  background-color: #fff;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  border: 0.5333333333vw solid #ffe32a;
+  position: relative;
+}
+.reg-box .reg-que input:checked + label::after {
+  content: "";
+  outline: none;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 2.6666666667vw;
+  height: 2.6666666667vw;
+  border-radius: 50%;
+  border: none;
+  top: 50%;
+  left: 50%;
+  background-color: #ffe32a;
+}
+.reg-box .reg-que span {
+  margin-left: 1.3333333333vw;
+  font-size: 3.6vw;
+  color: #8d8d8d;
+}
+.reg-box > span:nth-of-type(3) {
+  height: 11.4666666667vw;
+  font-size: 3.6vw;
+  line-height: 11.4666666667vw;
+  color: #8d8d8d;
+  text-align: center;
+}
+.reg-box button {
+  margin-top: 10vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  background-color: #ffe32a;
+  text-align: center;
+  line-height: 12vw;
+  font-size: 4.5333333333vw;
+  border-radius: 1.6vw;
+  border: none;
+  outline: none;
+}
+.reg-box .reg-tishi {
+  position: fixed;
+  top: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.reg-box .reg-tishi span {
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  height: 10.6666666667vw;
+  font-size: 4vw;
+  padding: 2.6666666667vw;
+  border-radius: 1.3333333333vw;
+}

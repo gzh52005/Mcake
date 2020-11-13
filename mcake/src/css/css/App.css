@@ -3,6 +3,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 }
 .box .container {
   flex: 1;
@@ -124,6 +125,27 @@
   align-items: center;
   color: #8d8d8d;
   font-size: 4vw;
+  line-height: 16.5333333333vw;
+}
+.box .header .logos {
+  flex: 1;
+  padding: 0 13.0666666667vw;
+  height: 3.7333333333vw;
+}
+.box .header .header-right {
+  height: 16.5333333333vw;
+  width: 24.5333333333vw;
+  display: flex;
+  align-items: center;
+}
+.box .header .header-right span {
+  display: flex;
+  height: 16.5333333333vw;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  color: #8d8d8d;
+  font-size: 4vw;
 }
 .box .header .header-right span img {
   width: 5.3333333333vw;
@@ -172,6 +194,7 @@
 .box .container {
   flex: 1;
   overflow-y: auto;
+  position: relative;
 }
 .box .footer {
   background-color: #fff;
@@ -217,4 +240,69 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 5vw;
+}
+
+.snack {
+  flex: 1;
+}
+.snack .snack-box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2.1333333333vw;
+}
+.snack .snack-box li {
+  width: 46.6666666667vw;
+}
+.snack .snack-box li div {
+  width: 100%;
+}
+.snack .snack-box li div img {
+  width: 100%;
+}
+.snack .snack-box li div .describe {
+  width: 100%;
+  height: 13.3333333333vw;
+  display: flex;
+}
+.snack .snack-box li div .describe .goodsdata {
+  width: 36vw;
+  font-size: 3.2vw;
+}
+.snack .snack-box li div .describe .goodsdata .goodsName {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 29.3333333333vw;
+}
+.snack .snack-box li div .describe .goodsdata .tname {
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  background-color: yellow;
+  padding: 0, 1.0666666667vw, 0;
+}
+.snack .snack-box li div .describe .goodsdata .ename {
+  color: #7f7f7f;
+}
+.snack .snack-box li div .describe .goodsdata b {
+  font-weight: normal;
+}
+.snack .snack-box li div .describe .cartLogo {
+  width: 8vw;
+  height: 8vw;
+  margin-top: 1.0666666667vw;
+  margin-right: 2vw;
+}
+.snack li:nth-child(odd) {
+  margin-right: 2.4vw;
+}
+.snack .loading {
+  width: 100%;
+  height: 26.6666666667vw;
+  margin: 0 auto;
+  border-radius: 2.6666666667vw;
+  background: url("../assets/images/loading.gif") no-repeat;
+  background-size: 26.6666666667vw 18.6666666667vw;
+  background-position: center;
 }

@@ -1,4 +1,4 @@
-import React,{useState,useMemo,useEffect} from 'react'
+import React,{useState,useMemo,useCallback,useEffect} from 'react'
 import request from '../utils/request'
 
 
@@ -6,6 +6,7 @@ import '../css/Cart.scss';
 
 
 function Cart(props){
+    let [isback,changelogin]=useState(false)
     //设置已买商品状态
     const [goods,changeGoods] = useState([])
     //设置推荐列表状态
@@ -18,10 +19,33 @@ function Cart(props){
                 })
         }
     },[goods])
+    useEffect(function(){
+        if(!localStorage.getItem('currentUser')){
+            changelogin(true)
+        }else{
+            changelogin(false)
+        }
+  },[])
+  let fn1=useCallback(function(){
+    props.history.push('/login?/cart')
+    })
+    let fn2=useCallback(function(){
 
-
+        props.history.push(props.location.search.slice(1))
+          
+    })
     return (
         <div className="cart-box">
+            {isback?<div className='cart-mask'>
+                  <div>
+                      <h4>温馨提示</h4>
+                      <p className='mask-ti'>您需要先登录才能继续您的操作</p>
+                      <p className='mask-an'>
+                          <span onClick={fn2}>以后再说</span>
+                          <span onClick={fn1}>立即登录</span>
+                      </p>
+                  </div>
+              </div>:''}
             {
                 
                 //渲染结构（有数据/无数据）

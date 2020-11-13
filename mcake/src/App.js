@@ -24,15 +24,18 @@ import  guanyu from './assets/images/mine/guanyu.png'
 import  wode from './assets/images/mine/wode.png'
 import  zuo from './assets/images/mine/zuo.png'
 import  cart from './assets/images/mine/cart.png'
+import 'antd-mobile/dist/antd-mobile.css'; 
+
+ 
 import context from './context'
 
 function throttle(that,interval){
-    console.log(that);
+    // console.log(that);
     let path =  that.props.location.pathname
     var timer = null;
     var page =that.state.page
     return function(el){
-        console.log(timer);
+        // console.log(timer);
         if(!timer){
             timer=setTimeout(()=>{
                 if( el.target.scrollHeight-el.target.scrollTop<750&&page<(path==='/snack'?3:4)){
@@ -47,7 +50,7 @@ function throttle(that,interval){
 class App extends React.Component{
     constructor(props){
         super(props)
-        console.log(this.props);
+        // console.log(this.props);
         this.state={
             xianshi:false,
             caidanshow:false,
@@ -80,7 +83,7 @@ class App extends React.Component{
 
     render(){
       
-        console.log(this.props);
+        // console.log(this.props);
         const that = this
         return (
            
@@ -96,11 +99,11 @@ class App extends React.Component{
                     
                     
                     <div className='header'>
-                    {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
+                    {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
                         
                         <NavLink to='/home'><img className='logos'  src={logo}></img></NavLink>
                         <p className='header-right'>
-                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine') ?<img src={cart}></img>:<img src={fangdajing}></img>}</span>
+                            <span>{(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg') ?<img src={cart}></img>:<img src={fangdajing}></img>}</span>
                             <i className='ge'></i>
                             <span onClick={this.gaicaidan}><img src={caidan}></img></span></p>
                         
@@ -134,8 +137,8 @@ class App extends React.Component{
             </context.Provider>
                     </div>
                     {
-                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? 
-                        <React.Fragment></React.Fragment>
+                        
+                        (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
