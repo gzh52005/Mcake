@@ -64,6 +64,10 @@
             }
 
             p {
+                width: vw(120);
+                overflow: hidden;
+                text-overflow:ellipsis ;
+                white-space: nowrap;
                 color: #7f7f7f;
             }
 

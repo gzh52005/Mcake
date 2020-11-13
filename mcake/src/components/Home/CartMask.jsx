@@ -1,13 +1,16 @@
 import React,{useState,useCallback,useEffect, useRef} from 'react';
+import { withRouter } from 'react-router-dom';
 
 import '../../css/home.scss';
+import Pop from '../common/popLogin'
 
 function CartMask(props){
     const [qty,changeQty] = useState(1);
     const [weight,changeWeight] = useState(false);
-    
+    const [btn,changeBtn] = useState(false)
+    console.log('props=',props);
     // 选择重量
-    let {showCart,showData,changeShow} = props;
+    let {showCart,showData,changeShow,changeData} = props;
     let eatNum = showData.list.filter(item=>(
         item.weight === showData.weight
     ))[0];
@@ -30,6 +33,7 @@ function CartMask(props){
         changeGuige(`${newguige.spec} (${newguige.weight}) -${newguige.edible}`);
         changeIdx(index);
         changeWeight(!weight);
+        
     })
 
     const changeInput = useCallback((e)=>{
@@ -46,7 +50,13 @@ function CartMask(props){
         if(showCart){
             myel.current.style.top = "200px";
         }
-    })
+    },[showCart])
+    // useCallback(function(){
+    //     if(showCart){
+    //         myel.current.style.top = "200px";
+    //     }
+    // })
+
     // setShow()
     return (
        <div className="cartMask" onClick={(e)=>{
@@ -54,7 +64,6 @@ function CartMask(props){
            if(clickName=="cartMask"||clickName=="closeBtn"||clickName=="cancel"){
             changeShow(false);
            }
-                
             }}>
             <div className="maskCon" ref={myel}>
                 <ul>
@@ -63,7 +72,7 @@ function CartMask(props){
                         <div className="disc">
                             <h5>{showData.name}</h5>
                             <p>{showData.french}</p>
-                            <h5>￥{showData.price}</h5>
+                            <h5>￥{showData.list[currentIdx].pprice}</h5>
                         </div>
                         <span className="closeBtn">✕</span>
                     </li>
@@ -86,7 +95,7 @@ function CartMask(props){
                                         className={index===currentIdx?"activeWeight":''}
                                         onClick={fn1.bind(null,item,index)}
                                         >
-                                            {item.spec}（{showData.weight}）  - {item.edible}
+                                            {item.spec}（{item.weight}）  - {item.edible}
                                         </li>
                                     ))
                                 }
@@ -97,18 +106,23 @@ function CartMask(props){
                     <li className="number choose">
                         <h4>数量选择</h4>
                         <div className="chooseQty">
-                            <input type="button" value="-"/>
+                            <input type="button" value="-" onClick={()=>{if(qty>1)changeQty(qty-1)}}/>
                             <input type="text" id="" value={qty} onChange={changeInput.bind(null)}/>
-                            <input type="button" value="+"/>
+                            <input type="button" value="+" onClick={()=>{
+                                changeQty(qty+1)
+                            }}/>
                         </div>
                         
                     </li>
                 </ul>
                 <div className="sureButton">
                     <button className="cancel">取消</button>
-                    <button >确认</button>
+                    <button onClick={()=>{
+                        changeBtn(true)
+                    }}>确认</button>
                 </div>
             </div>
+           {btn? <Pop btn={btn} changeBtn={changeBtn} />:''}
         </div>
     )
     
