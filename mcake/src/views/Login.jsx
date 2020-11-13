@@ -19,7 +19,7 @@ export default function Login(props){
                 changejieguo(!jieguo)
             }else if(p.code===2000){
                 
-                p.username=username
+                
                 localStorage.setItem('currentUser',JSON.stringify(p))
                 props.history.push('/mine')
             }
