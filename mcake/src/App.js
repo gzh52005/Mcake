@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useRef} from 'react'
 // import store from './store'
+
 import { Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
 // import { Menu,Row,Col,Button } from 'antd-mobile'
 import Home from './views/Home'
@@ -23,16 +24,39 @@ import  guanyu from './assets/images/mine/guanyu.png'
 import  wode from './assets/images/mine/wode.png'
 import  zuo from './assets/images/mine/zuo.png'
 import  cart from './assets/images/mine/cart.png'
+import 'antd-mobile/dist/antd-mobile.css'; 
 
+ 
+import context from './context'
 
- class App extends React.Component{
-    constructor(){
-        super()
+function throttle(that,interval){
+    console.log(that);
+    let path =  that.props.location.pathname
+    var timer = null;
+    var page =that.state.page
+    return function(el){
+        console.log(timer);
+        if(!timer){
+            timer=setTimeout(()=>{
+                if( el.target.scrollHeight-el.target.scrollTop<750&&page<(path==='/snack'?3:4)){
+                    ++page;   
+                    that.setState({page})
+                }
+                timer=null
+            },interval)
+        }
+    }
+}
+class App extends React.Component{
+    constructor(props){
+        super(props)
+        console.log(this.props);
         this.state={
             xianshi:false,
-            caidanshow:false
+            caidanshow:false,
+            page:1
         }
-      this.gaibian = this.gaibian.bind(this)
+        this.gaibian = this.gaibian.bind(this)
     }
     gaibian=()=>{
         this.setState({
@@ -53,11 +77,14 @@ import  cart from './assets/images/mine/cart.png'
         let path=this.props.location.search.slice(1)
         this.props.history.push(path)
     }
-    
+    resetPage=()=>{
+        this.setState({page:1})
+    }
 
     render(){
       
         console.log(this.props);
+        const that = this
         return (
            
                  <div className='box'>
@@ -90,8 +117,9 @@ import  cart from './assets/images/mine/cart.png'
                          </ul>
                     </div>:''}
                     
-                    <div className='container'>
-                    <Switch>
+                    <div className='container'  onScroll={throttle(that,500)}>
+            <context.Provider value={{page:this.state.page}}>
+            <Switch>
                    <Route path='/home' component={Home}></Route>
                    <Route path='/reg' component={Reg}></Route>
                    <Route path='/login' component={Login}></Route>
@@ -106,14 +134,15 @@ import  cart from './assets/images/mine/cart.png'
                    <Redirect from="/" to='/home' exact></Redirect>
                    <Redirect to='/chucuole' ></Redirect>
                     </Switch>
+            </context.Provider>
                     </div>
                     {
                         
                         (this.props.location.pathname === '/cart' || this.props.location.pathname. includes('/details')|| this.props.location.pathname === '/mine'||this.props.location.pathname === '/reg'||this.props.location.pathname === '/login') ? <React.Fragment></React.Fragment>
                         :<ul className='footer'>
                         <li className='jing' onClick={this.gaibian}>精选</li>
-                        <li><NavLink to='/cakes' activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
-                        <li><NavLink to='/snack' activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
+                        <li><NavLink to='/cakes' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
+                        <li><NavLink to='/snack' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
                         <li><NavLink to={`/cart?${this.props.location.pathname}`} activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
                     </ul>
                     }

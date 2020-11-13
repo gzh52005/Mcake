@@ -19,9 +19,8 @@ class Handpick extends Component{
         console.log(this.props.status);
         if(this.props.status.isshow){
             setTimeout(()=>{
-                this.el.style.left=0
+                this.el.style.left = 0;
                         })
-
         }else{
 
             this.el.style.left=-50+'vw'
