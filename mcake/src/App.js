@@ -30,12 +30,12 @@ import 'antd-mobile/dist/antd-mobile.css';
 import context from './context'
 
 function throttle(that,interval){
-    console.log(that);
+    // console.log(that);
     let path =  that.props.location.pathname
     var timer = null;
     var page =that.state.page
     return function(el){
-        console.log(timer);
+        // console.log(timer);
         if(!timer){
             timer=setTimeout(()=>{
                 if( el.target.scrollHeight-el.target.scrollTop<750&&page<(path==='/snack'?3:4)){
@@ -50,7 +50,7 @@ function throttle(that,interval){
 class App extends React.Component{
     constructor(props){
         super(props)
-        console.log(this.props);
+        // console.log(this.props);
         this.state={
             xianshi:false,
             caidanshow:false,
@@ -83,7 +83,7 @@ class App extends React.Component{
 
     render(){
       
-        console.log(this.props);
+        // console.log(this.props);
         const that = this
         return (
            
