@@ -4,7 +4,7 @@ import {Link, Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
 class Handpick extends Component{
     constructor(props){
         super(props)
-        console.log(this.props);
+        // console.log(this.props);
         this.state={
             goodslist:['全部小食','口味筛选','场景筛选','所有小食','所有配件']
         }
@@ -16,7 +16,7 @@ class Handpick extends Component{
     }
     
     componentDidUpdate(){
-        console.log(this.props.status);
+        // console.log(this.props.status);
         if(this.props.status.isshow){
             setTimeout(()=>{
                 this.el.style.left = 0;
@@ -27,7 +27,7 @@ class Handpick extends Component{
         }
     }
     render(){
-        console.log(1);
+        // console.log(1);
             return  (
                 <div className='drawer' ref={el=>{this.el = el}}>
                   <ul>

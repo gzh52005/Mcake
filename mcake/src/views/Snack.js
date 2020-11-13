@@ -7,11 +7,11 @@ function Snack(){
     let [show,isshow]=useState(false)
     let data =  useContext(context).page
     useEffect(function(){
-        console.log(data,99999999999999999999);
+        // console.log(data,99999999999999999999);
         isshow(true)
        request.get('/goods/snacklist',{page:data,pageSize:6}).then(reg=>{change([...goodslist,...reg.data],isshow(false))})
     },[data]);
-    console.log(goodslist);
+    // console.log(goodslist);
     return (
         <div className='snack'  >
             <ul className='snack-box' >
