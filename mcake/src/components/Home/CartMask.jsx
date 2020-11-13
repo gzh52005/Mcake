@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import '../../css/home.scss';
 import Pop from '../common/popLogin'
-
+import request from '../../utils/request'
 function CartMask(props){
     const [qty,changeQty] = useState(1);
     const [weight,changeWeight] = useState(false);
@@ -118,7 +118,27 @@ function CartMask(props){
                 <div className="sureButton">
                     <button className="cancel">取消</button>
                     <button onClick={()=>{
-                        changeBtn(true)
+                        const userData = JSON.parse(localStorage.getItem('currentUser'))
+                        if(userData){
+                            // console.log(userData);
+                            // console.log(userData.username);
+                            // console.log(showData.id);
+                            // console.log(showData.list[currentIdx].id);
+                            // console.log(qty);
+                            // console.log(showData.bcname);
+                            let bcname ='';
+                            if(showData.bcname=='蛋糕'){
+                                 bcname = 'cake'
+                            }else if(showData.bcname=='商品配件'){
+                                bcname='parts'
+                            }else if(showData.bcname=='周边商品'){
+                                bcname='snack'
+                            }
+                            console.log(bcname);
+                            request.put('/cart/push/:'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname}).then((reg)=>{console.log(reg);})
+                        }else{
+                            changeBtn(true)
+                        }
                     }}>确认</button>
                 </div>
             </div>
