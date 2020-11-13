@@ -2,9 +2,12 @@ import React,{useEffect,useState,useRef, useContext} from 'react'
 import request from '../utils/request';
 import cartLogo from '../assets/images/cart-icon.png'
 import context from '../context' 
+import CartMask from '../components/Home/CartMask.jsx';
 function Cakes(){
     let [goodslist,change] = useState([])
     let [show,isshow]=useState(false)
+    const [cartShow,changeShow]= useState(false)
+    const [goodsData,changedata] = useState({})
     let data =  useContext(context).page
     useEffect(function(){
         isshow(true)
@@ -23,7 +26,7 @@ function Cakes(){
              <p className='ename'>{item.french}</p>
                         <p><b>￥</b> <span>{item.price}</span></p>
                         </div>
-                        <div className='cartLogo'>
+                        <div className='cartLogo'onClick={()=>{changedata(item);changeShow(!cartShow) }}>
                             <img src={cartLogo} />
                         </div>
                     </div>
@@ -32,6 +35,7 @@ function Cakes(){
       
         })}
             </ul>
+            {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}  
             <div className='loading' style={{display:show?'block':'none'}}></div>
         </div>
     )

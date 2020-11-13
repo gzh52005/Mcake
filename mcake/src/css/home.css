@@ -1,0 +1,241 @@
+@import './base.css';
+.floor {
+  width: 100%;
+}
+.floor .title {
+  box-sizing: border-box;
+  height: 26.1333333333vw;
+  padding: 8vw 6.1333333333vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3.2vw;
+  color: #7f7f7f;
+  border-top: 0.1333333333vw solid #eaeaea;
+}
+.floor .title img {
+  width: 15.2vw;
+  height: 8.5333333333vw;
+}
+.floor .title .titleCon {
+  flex: 1;
+  margin-left: 6.6666666667vw;
+}
+.floor .title .titleCon .cname {
+  color: #000;
+  font-size: 4.2666666667vw;
+  font-weight: 550;
+}
+.floor .bigImg img {
+  width: 100%;
+  height: 50.6666666667vw;
+}
+.floor .floorCon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  padding: 1.0666666667vw;
+  color: #000;
+  font-size: 3.2vw;
+}
+.floor .floorCon .conProduct {
+  box-sizing: border-box;
+  width: 48.8vw;
+  height: 64.8vw;
+  padding: 0 1.0666666667vw;
+  position: relative;
+}
+.floor .floorCon .conProduct .conImg {
+  padding: 1.0666666667vw 0;
+}
+.floor .floorCon .conProduct .conImg img {
+  width: 46.6666666667vw;
+  height: 46.6666666667vw;
+}
+.floor .floorCon .conProduct p {
+  width: 32vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #7f7f7f;
+}
+.floor .floorCon .conProduct i {
+  display: block;
+  position: absolute;
+  right: 2.6666666667vw;
+  bottom: 5.8666666667vw;
+}
+.floor .floorCon .conProduct i img {
+  width: 8vw;
+  height: 8vw;
+}
+
+.cartMask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+}
+.cartMask .maskCon {
+  position: absolute;
+  width: 90.1333333333vw;
+  background-color: #fff;
+  top: 0;
+  border-radius: 1.3333333333vw;
+  font-size: 3.2vw;
+  color: #8d8d8d;
+  padding-top: 2.6666666667vw;
+  transform: translateX(-50%);
+  left: 50%;
+  transition: all 0.5s;
+}
+.cartMask .maskCon ul .contentDesc {
+  display: flex;
+  padding: 0 2.6666666667vw 2.6666666667vw;
+  position: relative;
+}
+.cartMask .maskCon ul .contentDesc img {
+  width: 26.4vw;
+  height: 26.4vw;
+}
+.cartMask .maskCon ul .contentDesc .disc {
+  width: 26.4vw;
+  margin: 0 5.3333333333vw;
+  padding-top: 1.0666666667vw;
+}
+.cartMask .maskCon ul .contentDesc .disc h5 {
+  color: #000;
+  font-weight: 500;
+}
+.cartMask .maskCon ul .contentDesc .disc p {
+  margin: 1.0666666667vw 0;
+}
+.cartMask .maskCon ul .contentDesc .closeBtn {
+  display: inline-block;
+  width: 6.6666666667vw;
+  height: 6.6666666667vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 4.2666666667vw;
+}
+.cartMask .maskCon ul .choose {
+  border-top: 0.2666666667vw solid #eaeaea;
+  height: 12.8vw;
+  padding: 0 4.2666666667vw;
+  display: flex;
+  justify-content: space-between;
+  line-height: 12.8vw;
+  font-weight: 500;
+}
+.cartMask .maskCon ul .specification .chooseSpecify {
+  position: relative;
+  font-size: 3.4666666667vw;
+}
+.cartMask .maskCon ul .specification .chooseSpecify .chooseWeight {
+  width: 53.3333333333vw;
+  position: absolute;
+  top: 12vw;
+  right: -5.3333333333vw;
+  background-color: #fff;
+  border-left: 1px solid #151515;
+  border-bottom: 2px solid #151515;
+  box-shadow: 0 -0.5333333333vw 1.3333333333vw 0 #1a1818;
+}
+.cartMask .maskCon ul .specification .chooseSpecify .chooseWeight li {
+  height: 10.6666666667vw;
+}
+.cartMask .maskCon ul .specification .chooseSpecify .chooseWeight .activeWeight {
+  background-color: skyblue;
+}
+.cartMask .maskCon ul .number .chooseQty input {
+  outline: none;
+  border: none;
+  width: 7.4666666667vw;
+  height: 7.4666666667vw;
+  text-align: center;
+}
+.cartMask .maskCon ul .number .chooseQty input[type=button] {
+  background-color: #ffe32a;
+}
+.cartMask .maskCon .sureButton {
+  height: 12vw;
+}
+.cartMask .maskCon .sureButton button {
+  width: 50%;
+  outline: none;
+  border: none;
+  line-height: 12vw;
+}
+.cartMask .maskCon .sureButton :nth-child(1) {
+  color: #fff;
+  background-color: #888;
+}
+.cartMask .maskCon .sureButton :nth-child(2) {
+  color: #000;
+  background-color: #ffe32a;
+}
+
+.division {
+  height: 55.4666666667vw;
+  width: 100%;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+.division .title {
+  padding: 3.7333333333vw 0;
+  font-size: 3.7333333333vw;
+  font-weight: 700;
+  color: #151515;
+  text-align: center;
+}
+.division .title span {
+  margin-left: 1.0666666667vw;
+}
+.division .divisionImg {
+  width: 100%;
+}
+.division .divisionImg img {
+  width: 96vw;
+  height: 38.4vw;
+}
+
+.homeBottom {
+  width: 100%;
+  height: 96.5333333333vw;
+  background-color: #000;
+  color: #8D8d8d;
+  font-size: 3.2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14.9333333333vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+.homeBottom li:not(.copyRight) {
+  width: 29.8666666667vw;
+}
+.homeBottom .footerLogo img {
+  height: 4.2666666667vw;
+}
+.homeBottom .wxCode {
+  margin: 7.4666666667vw 0;
+}
+.homeBottom .wxCode img {
+  width: 100%;
+  height: 29.8666666667vw;
+}
+.homeBottom .chat {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5.3333333333vw;
+}
+.homeBottom .chat img {
+  width: 10.1333333333vw;
+  height: 10.1333333333vw;
+}
