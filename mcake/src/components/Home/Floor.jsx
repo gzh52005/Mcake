@@ -14,7 +14,7 @@ function Floor(props){
         changeShow(!showCart);
         // console.log("cartshow=",cartshow);
         changeData(goods);
-    },[showData]);
+    });
     
     return (
         <div>

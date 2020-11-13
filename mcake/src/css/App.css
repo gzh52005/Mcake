@@ -19,6 +19,7 @@
 }
 .box .mask .drawer {
   position: absolute;
+  overflow: auto;
   left: -50vw;
   width: 50vw;
   height: 100%;
@@ -26,53 +27,124 @@
   transition: all 0.5s;
   background-color: white;
 }
-.box .mask .drawer ul li {
+.box .mask .drawer > ul > li {
   box-sizing: border-box;
   padding-left: 5.3333333333vw;
   width: 100%;
   height: 10.6666666667vw;
-  border-bottom: 1px solid #ccc;
   line-height: 10.6666666667vw;
-}
-.box .mask .drawer ul li span {
-  margin-left: 1.3333333333vw;
-}
-.box .mask .drawer ul li:nth-child(1), .box .mask .drawer ul li:nth-child(4), .box .mask .drawer ul li:nth-child(5) {
   display: flex;
   align-items: center;
 }
-.box .mask .drawer ul li:nth-child(1) span, .box .mask .drawer ul li:nth-child(4) span, .box .mask .drawer ul li:nth-child(5) span {
+.box .mask .drawer > ul > li span {
+  margin-left: 1.3333333333vw;
+}
+.box .mask .drawer > ul > li:nth-of-type(1), .box .mask .drawer > ul > li:nth-of-type(4), .box .mask .drawer > ul > li:nth-of-type(5) {
+  border-bottom: 1px solid #ccc;
+}
+.box .mask .drawer > ul > li:nth-of-type(1) span, .box .mask .drawer > ul > li:nth-of-type(4) span, .box .mask .drawer > ul > li:nth-of-type(5) span {
   display: inline-flex;
-  height: 10.6666666667vw;
-  width: 10.6666666667vw;
+  height: 5.3333333333vw;
+  width: 5.3333333333vw;
   align-items: center;
 }
-.box .mask .drawer ul li:nth-child(1) span i, .box .mask .drawer ul li:nth-child(4) span i, .box .mask .drawer ul li:nth-child(5) span i {
+.box .mask .drawer > ul > li:nth-of-type(1) span i, .box .mask .drawer > ul > li:nth-of-type(4) span i, .box .mask .drawer > ul > li:nth-of-type(5) span i {
   display: inline-block;
   border-radius: 50%;
-  height: 6.4vw;
-  width: 6.4vw;
+  height: 4.8vw;
+  width: 4.8vw;
   font-size: 3.2vw;
   color: #000;
   background-color: #ffe32a;
   font-style: normal;
-  line-height: 6.9333333333vw;
+  line-height: 5.3333333333vw;
   text-align: center;
 }
-.box .mask .drawer ul li:nth-child(3) span, .box .mask .drawer ul li:nth-child(2) span {
+.box .mask .drawer > ul > li:nth-of-type(3), .box .mask .drawer > ul > li:nth-of-type(2) {
+  border-bottom: 1px dashed #ccc;
+}
+.box .mask .drawer > ul > li:nth-of-type(3) span, .box .mask .drawer > ul > li:nth-of-type(2) span {
   display: inline-flex;
   height: 10.6666666667vw;
   width: 10.6666666667vw;
   align-items: center;
 }
-.box .mask .drawer ul li:nth-child(3) span .icon, .box .mask .drawer ul li:nth-child(2) span .icon {
+.box .mask .drawer > ul > li:nth-of-type(3) span .icon, .box .mask .drawer > ul > li:nth-of-type(2) span .icon {
   display: block;
   height: 4.2666666667vw;
   width: 4.2666666667vw;
 }
-.box .mask .drawer ul li:nth-child(3) span .sjt, .box .mask .drawer ul li:nth-child(2) span .sjt {
+.box .mask .drawer > ul > li:nth-of-type(3) span .sjt, .box .mask .drawer > ul > li:nth-of-type(2) span .sjt {
   background-image: url("../assets//images/sjt.png");
   background-size: 100% 100%;
+}
+.box .mask .drawer > ul > li:nth-of-type(3) span .yjt, .box .mask .drawer > ul > li:nth-of-type(2) span .yjt {
+  background-image: url("../assets/images/yjt.png");
+  background-size: 100% 100%;
+}
+.box .mask .drawer > ul ul li {
+  box-sizing: border-box;
+  padding-left: 5.3333333333vw;
+  width: 100%;
+  height: 10.6666666667vw;
+  line-height: 10.6666666667vw;
+  display: flex;
+  align-items: center;
+}
+.box .mask .drawer > ul ul li .iconLogo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .mask .drawer > ul ul li .iconLogo i {
+  width: 5.4933333333vw;
+  height: 5.4933333333vw;
+  background-image: url("../assets/images/elf.png");
+  background-size: 33.3333333333vw 32vw;
+}
+.box .mask .drawer > ul ul li .select {
+  height: 100%;
+  width: 33.6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box .mask .drawer > ul ul li .select .yjt {
+  background-image: url("../assets/images/yjt.png");
+  background-size: 100% 100%;
+}
+.box .mask .drawer > ul ul li .select .icon {
+  display: block;
+  height: 4.2666666667vw;
+  width: 4.2666666667vw;
+}
+.box .mask .drawer > ul ul li .elf_01 {
+  background-position: -13.8666666667vw -0.7466666667vw;
+}
+.box .mask .drawer > ul ul li .elf_02 {
+  background-position: -26.6666666667vw -0.4666666667vw;
+}
+.box .mask .drawer > ul ul li .elf_03 {
+  background-position: -20.2666666667vw -0.76736vw;
+}
+.box .mask .drawer > ul ul li .elf_04 {
+  background-position: -1.6vw -6.9333333333vw;
+}
+.box .mask .drawer > ul ul li .elf_05 {
+  background-position: -8vw -6.9333333333vw;
+}
+.box .mask .drawer > ul ul li .elf_06 {
+  background-position: -14.1333333333vw -6.9333333333vw;
+}
+.box .mask .drawer > ul ul li .elf_07 {
+  background-position: -7.7333333333vw -0.8vw;
+}
+.box .mask .drawer > ul ul li .elf_08 {
+  background-position: -1.3006933333vw -0.8vw;
+}
+.box .mask .drawer > ul ul li .elf_09 {
+  background-position: -20vw -6.9333333333vw;
 }
 .box .header {
   background-color: #fff;
@@ -251,6 +323,7 @@
 }
 .snack .snack-box li {
   width: 46.6666666667vw;
+  padding-top: 4vw;
 }
 .snack .snack-box li div {
   width: 100%;
@@ -283,6 +356,9 @@
 }
 .snack .snack-box li div .describe .goodsdata .ename {
   color: #7f7f7f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .snack .snack-box li div .describe .goodsdata b {
   font-weight: normal;
@@ -304,4 +380,8 @@
   background: url("../assets/images/loading.gif") no-repeat;
   background-size: 26.6666666667vw 18.6666666667vw;
   background-position: center;
+}
+
+.mr10 {
+  margin-right: 2.6666666667vw;
 }

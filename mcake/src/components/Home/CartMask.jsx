@@ -46,7 +46,13 @@ function CartMask(props){
         if(showCart){
             myel.current.style.top = "200px";
         }
-    })
+    },[showCart])
+    // useCallback(function(){
+    //     if(showCart){
+    //         myel.current.style.top = "200px";
+    //     }
+    // })
+
     // setShow()
     return (
        <div className="cartMask" onClick={(e)=>{
