@@ -1,17 +1,19 @@
-import React,{useEffect,useState,useRef, useContext} from 'react'
+import React,{useEffect,useState,useRef, useContext,useCallback} from 'react'
+import {withRouter} from 'react-router-dom'
 import request from '../utils/request';
 import cartLogo from '../assets/images/cart-icon.png'
 import context from '../context' 
+import CartMask from '../components/Home/CartMask.jsx'
 function Snack(){
     let [goodslist,change] = useState([])
-    let [show,isshow]=useState(false)
+    const [show,isshow]=useState(false)
+    const [cartShow,changeShow]= useState(false)
+    const [goodsData,changedata] = useState({})
     let data =  useContext(context).page
     useEffect(function(){
-        // console.log(data,99999999999999999999);
         isshow(true)
        request.get('/goods/snacklist',{page:data,pageSize:6}).then(reg=>{change([...goodslist,...reg.data],isshow(false))})
     },[data]);
-    // console.log(goodslist);
     return (
         <div className='snack'  >
             <ul className='snack-box' >
@@ -25,7 +27,7 @@ function Snack(){
              <p className='ename'>{item.french}</p>
                         <p><b>￥</b> <span>{item.price}</span></p>
                         </div>
-                        <div className='cartLogo'>
+                        <div className='cartLogo'onClick={()=>{changedata(item);changeShow(!cartShow) }}>
                             <img src={cartLogo} />
                         </div>
                     </div>
@@ -34,9 +36,10 @@ function Snack(){
       
         })}
             </ul>
+           {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}  
             <div className='loading' style={{display:show?'block':'none'}}></div>
         </div>
     )
 }
-
+Snack=withRouter(Snack)
 export default Snack;

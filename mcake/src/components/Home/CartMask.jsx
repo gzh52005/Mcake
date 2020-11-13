@@ -1,13 +1,16 @@
 import React,{useState,useCallback,useEffect, useRef} from 'react';
+import { withRouter } from 'react-router-dom';
 
 import '../../css/home.scss';
-
+import Pop from '../common/popLogin'
+import request from '../../utils/request'
 function CartMask(props){
     const [qty,changeQty] = useState(1);
     const [weight,changeWeight] = useState(false);
-    
+    const [btn,changeBtn] = useState(false)
+    console.log('props=',props);
     // 选择重量
-    let {showCart,showData,changeShow} = props;
+    let {showCart,showData,changeShow,changeData} = props;
     let eatNum = showData.list.filter(item=>(
         item.weight === showData.weight
     ))[0];
@@ -30,6 +33,7 @@ function CartMask(props){
         changeGuige(`${newguige.spec} (${newguige.weight}) -${newguige.edible}`);
         changeIdx(index);
         changeWeight(!weight);
+        
     })
 
     const changeInput = useCallback((e)=>{
@@ -60,7 +64,6 @@ function CartMask(props){
            if(clickName=="cartMask"||clickName=="closeBtn"||clickName=="cancel"){
             changeShow(false);
            }
-                
             }}>
             <div className="maskCon" ref={myel}>
                 <ul>
@@ -69,7 +72,7 @@ function CartMask(props){
                         <div className="disc">
                             <h5>{showData.name}</h5>
                             <p>{showData.french}</p>
-                            <h5>￥{showData.price}</h5>
+                            <h5>￥{showData.list[currentIdx].pprice}</h5>
                         </div>
                         <span className="closeBtn">✕</span>
                     </li>
@@ -92,7 +95,7 @@ function CartMask(props){
                                         className={index===currentIdx?"activeWeight":''}
                                         onClick={fn1.bind(null,item,index)}
                                         >
-                                            {item.spec}（{showData.weight}）  - {item.edible}
+                                            {item.spec}（{item.weight}）  - {item.edible}
                                         </li>
                                     ))
                                 }
@@ -103,18 +106,43 @@ function CartMask(props){
                     <li className="number choose">
                         <h4>数量选择</h4>
                         <div className="chooseQty">
-                            <input type="button" value="-"/>
+                            <input type="button" value="-" onClick={()=>{if(qty>1)changeQty(qty-1)}}/>
                             <input type="text" id="" value={qty} onChange={changeInput.bind(null)}/>
-                            <input type="button" value="+"/>
+                            <input type="button" value="+" onClick={()=>{
+                                changeQty(qty+1)
+                            }}/>
                         </div>
                         
                     </li>
                 </ul>
                 <div className="sureButton">
                     <button className="cancel">取消</button>
-                    <button >确认</button>
+                    <button onClick={()=>{
+                        const userData = JSON.parse(localStorage.getItem('currentUser'))
+                        if(userData){
+                            // console.log(userData);
+                            // console.log(userData.username);
+                            // console.log(showData.id);
+                            // console.log(showData.list[currentIdx].id);
+                            // console.log(qty);
+                            // console.log(showData.bcname);
+                            let bcname ='';
+                            if(showData.bcname=='蛋糕'){
+                                 bcname = 'cake'
+                            }else if(showData.bcname=='商品配件'){
+                                bcname='parts'
+                            }else if(showData.bcname=='周边商品'){
+                                bcname='snack'
+                            }
+                            console.log(bcname);
+                            request.put('/cart/push/:'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname}).then((reg)=>{console.log(reg);})
+                        }else{
+                            changeBtn(true)
+                        }
+                    }}>确认</button>
                 </div>
             </div>
+           {btn? <Pop btn={btn} changeBtn={changeBtn} />:''}
         </div>
     )
     
