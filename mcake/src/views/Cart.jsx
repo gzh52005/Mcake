@@ -11,14 +11,51 @@ function Cart(props){
     const [goods,changeGoods] = useState([])
     //设置推荐列表状态
     const [recommendList,changeList] = useState([])
+    //选择列表
+    const [checklists,changeCheckLists] = useState([])
+    const [allPick,changePick] = useState(false)
+    //total初始值
+    const [totalPrice,changeTotal] = useState([0,0])//第一位为总数，第二位为总价
     //改变推荐列表的数据
     const getRecommend = useEffect(function(){
         if(!goods.length){
                 request('/goods/cakelist',{pageSize:10}).then((data)=>{
                    changeList(data.data)
                 })
+        }else{
+            request('/goods/partslist',{pageSize:4}).then((data)=>{
+                changeList(data.data)
+                console.log(data.data,"推荐列表");
+             })
         }
     },[goods])
+    
+    //请求购物车数据
+    useMemo(async function(){
+        request('/cart/usergoods',{username:'刘德'}).then((data)=>{
+            console.log(data.data[0].goods,'用户商品数据');
+            let arr =data.data[0].goods
+            let checklist = []
+            for(let i=0;i<arr.length;i++){
+                checklist.push(false)
+            }
+            changeCheckLists(checklist)
+            changeGoods(arr)
+         })
+    },[])
+    //总价,总数计算
+    useMemo(function(){
+        let totalP = 0
+        let total = 0
+        goods.forEach((good,index)=>{
+            if(checklists[index]){
+                totalP += ((good.pprice*1) * good.num)
+                total += good.num
+            }
+        })
+        changeTotal([total,totalP])
+    },[checklists])
+    
     useEffect(function(){
         if(!localStorage.getItem('currentUser')){
             changelogin(true)
@@ -26,14 +63,24 @@ function Cart(props){
             changelogin(false)
         }
   },[])
+
+    //删除商品后数据
+    // useMemo(function(){
+        
+    // },[goods])
+
     let fn1=useCallback(function(){
     props.history.push('/login?/cart')
     })
+
+
     let fn2=useCallback(function(){
 
         props.history.push(props.location.search.slice(1))
           
     })
+
+    
     return (
         <div className="cart-box">
             {isback?<div className='cart-mask'>
@@ -50,8 +97,92 @@ function Cart(props){
                 
                 //渲染结构（有数据/无数据）
                 goods.length > 0 ?
-                <div>111</div>
-                :<div className="no-cart-box">{/*无数据时结构*/}
+                <div className="cart-box">
+                    <ul className = "cart-box-list">
+                        {
+                            goods.map((good,goodIndex)=>{
+                                return (
+                                    <li key={good.id}>
+                                        <div className="cart-item-box">
+                                            <label htmlFor={"good"+good.id}><input type="checkbox" id={"good"+good.id} checked={checklists[goodIndex]} onChange={()=>{
+                                                checklists[goodIndex] = !checklists[goodIndex]
+                                                changeCheckLists([...checklists])
+                                                let isAllPick = checklists.every(good=>good)
+                                                changePick(isAllPick)
+                                            }}/></label>
+                                           <img src={good.img}/>
+                                           <div className="cart-item-content-box">
+                                               <div className="cart-item-content-top">
+                                               <div className="cart-item-content-title">
+                                                    <p className="chinese">{good.name}</p>
+                                                    <p className="french">{good.french}</p>
+                                               </div>
+                                               <div className="cart-item-content-edit"></div>
+                                               </div>
+                                                <div className="cart-item-content-btm">
+                                                    <span className="cart-item-price">￥{good.pprice || good.price}</span>
+                                                    <span className="cart-item-wight">{good.spec} ({good.weight}) x {good.num}</span>
+                                                </div>
+                                                
+                                           </div>
+                                           <div className="delete-item" onClick={()=>{
+                                               goods.slice(goodIndex,1)
+                                               let arr = goods.filter((good,index)=>index != goodIndex)
+                                               let checkArr = checklists.filter((check,index)=>index != goodIndex)
+                                               changeGoods(arr)
+                                               changeCheckLists(checkArr)
+                                           }}>删除</div>
+                                        </div>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                    <div className="cart-list">
+                        <h2 className="recommend_goods">
+                            加购配件
+                        </h2>
+                        <ul className="recommend_list">
+                            {
+                                recommendList.map(good=>{
+                                    return (
+                                        <li key={good.id}>
+                                            <figure className="recommend_item">
+                                                <img src={good.img} alt=""/>
+                                                <figcaption>
+                                    <p className="recommend_item_tilte">{good.name}</p>
+                                    <p className="recommend_item_price">￥{good.pprice||good.price}</p>
+                                                    <span className="recommend_item_add"></span>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                        <div className="cart-pay-footer">
+                            <label htmlFor="total">
+                            <input type="checkbox" id="total" checked={allPick} onChange={()=>{
+                                    changePick(!allPick)
+                                    console.log(allPick);
+                                    let arr = new Array()
+                                    for(let i = 0;i<checklists.length;i++){
+                                        arr.push(!allPick)
+                                    }                  
+                                    changeCheckLists([...arr])
+                            }}/>全选
+                            </label>
+                        <span className="totalPrice">合计：￥{totalPrice[1]}</span>
+                        <span className="pay">去结算({totalPrice[0]})</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                :
+                
+                
+                <div className="no-cart-box">{/*无数据时结构*/}
                 <div className="no-cart-box-pic">
                     <p>
                         <span>您的购物车还是空的，</span>

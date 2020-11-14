@@ -3,11 +3,13 @@ import { withRouter } from 'react-router-dom';
 
 import '../../css/home.scss';
 import Pop from '../common/popLogin'
-
+import request from '../../utils/request'
+import Sadd from '../common/succeedAdd'
 function CartMask(props){
     const [qty,changeQty] = useState(1);
     const [weight,changeWeight] = useState(false);
     const [btn,changeBtn] = useState(false)
+    const [addHide,changeHide]=useState(false)
     console.log('props=',props);
     // 选择重量
     let {showCart,showData,changeShow,changeData} = props;
@@ -118,11 +120,39 @@ function CartMask(props){
                 <div className="sureButton">
                     <button className="cancel">取消</button>
                     <button onClick={()=>{
-                        changeBtn(true)
+                        const userData = JSON.parse(localStorage.getItem('currentUser'))
+                        if(userData){
+                            let bcname ='';
+                            if(showData.bcname=='蛋糕'){
+                                 bcname = 'cake'
+                            }else if(showData.bcname=='商品配件'){
+                                bcname='parts'
+                            }else if(showData.bcname=='周边商品'){
+                                bcname='snack'
+                            }
+                            console.log(bcname);
+                            console.log(userData);
+                            console.log(userData.username);
+                            console.log(showData.id);
+                            console.log(showData.list[currentIdx].id);
+                            console.log(qty);
+                            console.log(bcname);
+                            // fetch('http://120.27.231.166:3009/cart/push/'+userData.username,{method:'put',headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),body:{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname}}).then(reg=>{console.log(reg.json().then(reg=>{console.log(reg);}))})
+                            request.put('/cart/push/'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname})
+                            .then((reg)=>{
+                                changeHide(true)
+                                    setTimeout(() => {
+                                    changeShow(false);
+                                }, 300);
+                            })
+                        }else{
+                            changeBtn(true)
+                        }
                     }}>确认</button>
                 </div>
             </div>
            {btn? <Pop btn={btn} changeBtn={changeBtn} />:''}
+         {  addHide? <Sadd /> : ''}
         </div>
     )
     
