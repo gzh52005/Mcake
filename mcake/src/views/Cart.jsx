@@ -1,12 +1,18 @@
 import React,{useState,useMemo,useCallback,useEffect} from 'react'
 import request from '../utils/request'
-
+import CartMask from '../components/Home/CartMask.jsx' 
 
 import '../css/Cart.scss'; 
 
 
 function Cart(props){
+
+    const [cartShow,changeShow]= useState(false)
+    const [goodsData,changedata] = useState({})
+
     let [isback,changelogin]=useState(false)
+    //设置用户名
+    const [username,changeName] = useState('')
     //设置已买商品状态
     const [goods,changeGoods] = useState([])
     //设置推荐列表状态
@@ -32,7 +38,10 @@ function Cart(props){
     
     //请求购物车数据
     useMemo(async function(){
-        request('/cart/usergoods',{username:'刘德'}).then((data)=>{
+        request('/cart/usergoods',{username}).then((data)=>{
+            console.log('user',username,data);
+            if(data.data.length){
+                console.log(data.data,'用户商品');
             console.log(data.data[0].goods,'用户商品数据');
             let arr =data.data[0].goods
             let checklist = []
@@ -41,8 +50,9 @@ function Cart(props){
             }
             changeCheckLists(checklist)
             changeGoods(arr)
+            }
          })
-    },[])
+    },[username])
     //总价,总数计算
     useMemo(function(){
         let totalP = 0
@@ -61,13 +71,10 @@ function Cart(props){
             changelogin(true)
         }else{
             changelogin(false)
+            changeName(JSON.parse(localStorage.getItem('currentUser')).username)
         }
   },[])
 
-    //删除商品后数据
-    // useMemo(function(){
-        
-    // },[goods])
 
     let fn1=useCallback(function(){
     props.history.push('/login?/cart')
@@ -131,12 +138,23 @@ function Cart(props){
                                                let checkArr = checklists.filter((check,index)=>index != goodIndex)
                                                changeGoods(arr)
                                                changeCheckLists(checkArr)
+                                               if(goods.length>1){
+                                                   console.log(arr);
+                                                request.put('/cart/delete/'+username,{goods:arr}).then(data=>{
+                                                    console.log(data);
+                                                })
+                                                }else{
+                                                    request.delete('/cart/remove',{username}).then(data=>{
+                                                        console.log(data);
+                                                    })
+                                                }
                                            }}>删除</div>
                                         </div>
                                     </li>
                                 )
                             })
                         }
+                        
                     </ul>
                     <div className="cart-list">
                         <h2 className="recommend_goods">
@@ -152,7 +170,11 @@ function Cart(props){
                                                 <figcaption>
                                     <p className="recommend_item_tilte">{good.name}</p>
                                     <p className="recommend_item_price">￥{good.pprice||good.price}</p>
-                                                    <span className="recommend_item_add"></span>
+                                                    <span className="recommend_item_add" onClick={
+                                                        ()=>{
+                                                            changedata(good);changeShow(!cartShow)
+                                                        }
+                                                    }></span>
                                                 </figcaption>
                                             </figure>
                                         </li>
@@ -160,6 +182,7 @@ function Cart(props){
                                 })
                             }
                         </ul>
+                        
                         <div className="cart-pay-footer">
                             <label htmlFor="total">
                             <input type="checkbox" id="total" checked={allPick} onChange={()=>{
@@ -173,9 +196,31 @@ function Cart(props){
                             }}/>全选
                             </label>
                         <span className="totalPrice">合计：￥{totalPrice[1]}</span>
-                        <span className="pay">去结算({totalPrice[0]})</span>
+                        <span className="pay" onClick={()=>{
+                            
+                            if(!allPick){
+                                //筛选出新数组
+                                let arr = goods.filter((good,index)=>{
+                                    return checklists[index] == false
+                                })
+                                let checkArr = checklists.filter(check=>check==false)
+                                changeGoods(arr)
+                                changeCheckLists(checkArr)
+                                request.put('/cart/delete/'+username,{goods:arr}).then(data=>{
+                                    console.log(data);
+                                })
+                                }else{
+                                    changeGoods([])
+                                changeCheckLists([])
+                                    request.delete('/cart/remove',{username}).then(data=>{
+                                        console.log(data);
+                                    })
+                                }
+                            
+                        }}>去结算({totalPrice[0]})</span>
                         </div>
                     </div>
+                    {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}
                 </div>
 
 

@@ -15,8 +15,8 @@ export function request(url,data,options={}){
             url = url + '?' + params.join('&')
         }
     }
-    console.log(url);
-    console.log(options);
+    // console.log(url);
+    // console.log(options);
     return fetch(url,{
         ...options
     }).then(res=>{
@@ -40,6 +40,15 @@ request.post = function(url,data={},options={}){
 }
 request.put = function(url,data={},options={}){
     options.method = 'put';
+    options.body =  JSON.stringify(data)
+
+    options.headers= {
+        'Content-Type': 'application/json'
+    }
+    return request(url,data,options);
+}
+request.delete = function(url,data={},options={}){
+    options.method = 'delete';
     options.body =  JSON.stringify(data)
 
     options.headers= {
