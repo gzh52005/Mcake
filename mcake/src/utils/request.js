@@ -15,8 +15,6 @@ export function request(url,data,options={}){
             url = url + '?' + params.join('&')
         }
     }
-    console.log(url);
-    console.log(options);
     return fetch(url,{
         ...options
     }).then(res=>{

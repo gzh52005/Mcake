@@ -24,6 +24,7 @@ import  guanyu from './assets/images/mine/guanyu.png'
 import  wode from './assets/images/mine/wode.png'
 import  zuo from './assets/images/mine/zuo.png'
 import  cart from './assets/images/mine/cart.png'
+import List from './views/List'
 import 'antd-mobile/dist/antd-mobile.css'; 
 
  
@@ -35,7 +36,6 @@ function throttle(that,interval){
     var timer = null;
     var page =that.state.page
     return function(el){
-        // console.log(timer);
         if(!timer){
             timer=setTimeout(()=>{
                 if( el.target.scrollHeight-el.target.scrollTop<750&&page<(path==='/snack'?3:4)){
@@ -93,11 +93,9 @@ class App extends React.Component{
                             if(e.target.className=='mask')
                                this.gaibian()
                       }}>
-                          <Handpick status={{isshow:this.state.xianshi}}/>
+                          <Handpick status={{isshow:this.state.xianshi,showFn:this.gaibian}}/>
                       </div>
                     }                    
-                    
-                    
                     <div className='header'>
                     {(this.props.location.pathname === '/cart' || this.props.location.pathname === '/mine'|| this.props.location.pathname === '/login'|| this.props.location.pathname === '/reg'||this.props.location.pathname === '/details') ?<img className='zuo' src={zuo} onClick={this.goback}></img>:<p className='header-left'><img src={maps}></img><span>北京市</span></p>}
                         
@@ -123,6 +121,7 @@ class App extends React.Component{
                    <Route path='/home' component={Home}></Route>
                    <Route path='/reg' component={Reg}></Route>
                    <Route path='/login' component={Login}></Route>
+                   <Route path='/list' component={List}></Route>
                    <Route path='/cakes' component={Cakes}></Route>
                    <Route path='/snack' component={Snack}></Route>
                    <Route path='/cart' component={Cart}></Route>
