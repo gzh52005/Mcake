@@ -11,8 +11,8 @@ import yue from '../assets/images/mine/yue.png'
 import hongbao from '../assets/images/mine/hongbao.png'
 import ka from '../assets/images/mine/ka.png'
 export default function Mine(props){
-    console.log(props)
-    console.log(JSON.parse(localStorage.getItem('currentUser')))
+    // console.log(props)
+    // console.log(JSON.parse(localStorage.getItem('currentUser')))
     let [isback,changelogin]=useState(false)
     let [users,changeusers]=useState("未登录")
     let [shouwei,changeshouwei]=useState(false)

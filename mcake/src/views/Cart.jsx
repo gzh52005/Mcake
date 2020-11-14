@@ -9,7 +9,7 @@ function Cart(props){
 
     const [cartShow,changeShow]= useState(false)
     const [goodsData,changedata] = useState({})
-
+    const [buy,changeBuy] = useState(0)
     let [isback,changelogin]=useState(false)
     //设置用户名
     const [username,changeName] = useState('')
@@ -27,11 +27,12 @@ function Cart(props){
         if(!goods.length){
                 request('/goods/cakelist',{pageSize:10}).then((data)=>{
                    changeList(data.data)
+                //    console.log(data.data,"推荐列表");
                 })
         }else{
             request('/goods/partslist',{pageSize:4}).then((data)=>{
                 changeList(data.data)
-                console.log(data.data,"推荐列表");
+                // console.log(data.data,"推荐列表");
              })
         }
     },[goods])
@@ -39,10 +40,10 @@ function Cart(props){
     //请求购物车数据
     useMemo(async function(){
         request('/cart/usergoods',{username}).then((data)=>{
-            console.log('user',username,data);
+            // console.log('user',username,data);
             if(data.data.length){
-                console.log(data.data,'用户商品');
-            console.log(data.data[0].goods,'用户商品数据');
+                // console.log(data.data,'用户商品');
+            // console.log(data.data[0].goods,'用户商品数据');
             let arr =data.data[0].goods
             let checklist = []
             for(let i=0;i<arr.length;i++){
@@ -52,6 +53,7 @@ function Cart(props){
             changeGoods(arr)
             }
          })
+        //  console.log('请求了');
     },[username])
     //总价,总数计算
     useMemo(function(){
@@ -63,6 +65,7 @@ function Cart(props){
                 total += good.num
             }
         })
+        totalP= totalP.toFixed(2)
         changeTotal([total,totalP])
     },[checklists])
     
@@ -105,6 +108,7 @@ function Cart(props){
                 //渲染结构（有数据/无数据）
                 goods.length > 0 ?
                 <div className="cart-box">
+                     {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}
                     <ul className = "cart-box-list">
                         {
                             goods.map((good,goodIndex)=>{
@@ -139,13 +143,13 @@ function Cart(props){
                                                changeGoods(arr)
                                                changeCheckLists(checkArr)
                                                if(goods.length>1){
-                                                   console.log(arr);
+                                                //    console.log(arr);
                                                 request.put('/cart/delete/'+username,{goods:arr}).then(data=>{
-                                                    console.log(data);
+                                                    // console.log(data);
                                                 })
                                                 }else{
                                                     request.delete('/cart/remove',{username}).then(data=>{
-                                                        console.log(data);
+                                                        // console.log(data);
                                                     })
                                                 }
                                            }}>删除</div>
@@ -165,14 +169,16 @@ function Cart(props){
                                 recommendList.map(good=>{
                                     return (
                                         <li key={good.id}>
-                                            <figure className="recommend_item">
+                                            <figure className="recommend_item" >
                                                 <img src={good.img} alt=""/>
                                                 <figcaption>
                                     <p className="recommend_item_tilte">{good.name}</p>
                                     <p className="recommend_item_price">￥{good.pprice||good.price}</p>
                                                     <span className="recommend_item_add" onClick={
-                                                        ()=>{
-                                                            changedata(good);changeShow(!cartShow)
+                                                        (e)=>{
+                                                            e.stopPropagation()
+                                                            changedata(good);
+                                                            changeShow(!cartShow);
                                                         }
                                                     }></span>
                                                 </figcaption>
@@ -187,7 +193,7 @@ function Cart(props){
                             <label htmlFor="total">
                             <input type="checkbox" id="total" checked={allPick} onChange={()=>{
                                     changePick(!allPick)
-                                    console.log(allPick);
+                                    // console.log(allPick);
                                     let arr = new Array()
                                     for(let i = 0;i<checklists.length;i++){
                                         arr.push(!allPick)
@@ -207,20 +213,20 @@ function Cart(props){
                                 changeGoods(arr)
                                 changeCheckLists(checkArr)
                                 request.put('/cart/delete/'+username,{goods:arr}).then(data=>{
-                                    console.log(data);
+                                    // console.log(data);
                                 })
                                 }else{
                                     changeGoods([])
                                 changeCheckLists([])
                                     request.delete('/cart/remove',{username}).then(data=>{
-                                        console.log(data);
+                                        // console.log(data);
                                     })
                                 }
                             
                         }}>去结算({totalPrice[0]})</span>
                         </div>
                     </div>
-                    {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}
+                   
                 </div>
 
 
@@ -228,6 +234,7 @@ function Cart(props){
                 
                 
                 <div className="no-cart-box">{/*无数据时结构*/}
+                {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}
                 <div className="no-cart-box-pic">
                     <p>
                         <span>您的购物车还是空的，</span>
@@ -247,14 +254,23 @@ function Cart(props){
                             recommendList.map(good=>{
                                 return (
                                 <li key={good.id} className="recommend_item">
-                                        <div className="recommend_item_box">
+                                        <div className="recommend_item_box" onClick={
+                                            ()=>{
+
+                                                    props.history.push('/details?'+props.location.pathname+"&cake&"+good.id)
+                                            }
+                                        }>
                                             <img src={good.img}/>
                                             <div className="recommend_item_figc">
                                                 <div className="recommend_item_title">
                                 <p className='recommend_item_name'>{good.name}</p>
                                 <p className='recommend_item_french'>{good.french}</p>
                                                 </div>
-                                                <div className="recommend_item_buy">
+                                                <div className="recommend_item_buy" onClick={(e)=>{
+                                                            e.stopPropagation()
+                                                            changedata(good);
+                                                            changeShow(!cartShow);
+                                                        }}>
                                                 </div>
                                             </div>
                                             <div className="recommend_item_price">

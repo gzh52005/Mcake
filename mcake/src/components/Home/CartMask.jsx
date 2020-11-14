@@ -1,16 +1,16 @@
 import React,{useState,useCallback,useEffect, useRef} from 'react';
-import { withRouter } from 'react-router-dom';
 
 import '../../css/home.scss';
 import Pop from '../common/popLogin'
 import request from '../../utils/request'
 import Sadd from '../common/succeedAdd'
+import { withRouter } from 'react-router-dom';
 function CartMask(props){
     const [qty,changeQty] = useState(1);
     const [weight,changeWeight] = useState(false);
     const [btn,changeBtn] = useState(false)
     const [addHide,changeHide]=useState(false)
-    console.log('props=',props);
+    // console.log('props=',props);
     // 选择重量
     let {showCart,showData,changeShow,changeData} = props;
     let eatNum = showData.list.filter(item=>(
@@ -18,8 +18,8 @@ function CartMask(props){
     ))[0];
     // 默认显示重量
     let moren=`${eatNum.spec} (${eatNum.weight}) -${eatNum.edible}`;
-    console.log("showData.list=",showData.list);
-    console.log("eatNum=",eatNum.weight);
+    // console.log("showData.list=",showData.list);
+    // console.log("eatNum=",eatNum.weight);
     
     // 默认重量下标
     let xiabiao;
@@ -44,11 +44,11 @@ function CartMask(props){
     },[qty]);
 
     const myel = useRef(null);
-    console.log("myel=",myel.current);
-    console.log("cartMask.props=",showCart,showData);
+    // console.log("myel=",myel.current);
+    // console.log("cartMask.props=",showCart,showData);
     // const [showMe,setShow] = useState(showCart);
     useEffect(function(){
-        console.log(showCart,myel,999);
+        // console.log(showCart,myel,999);
         if(showCart){
             myel.current.style.top = "200px";
         }
@@ -130,19 +130,25 @@ function CartMask(props){
                             }else if(showData.bcname=='周边商品'){
                                 bcname='snack'
                             }
-                            console.log(bcname);
-                            console.log(userData);
-                            console.log(userData.username);
-                            console.log(showData.id);
-                            console.log(showData.list[currentIdx].id);
-                            console.log(qty);
-                            console.log(bcname);
+                            // console.log(bcname);
+                            // console.log(userData);
+                            // console.log(userData.username);
+                            // console.log(showData.id);
+                            // console.log(showData.list[currentIdx].id);
+                            // console.log(qty);
+                            // console.log(bcname);
                             request.put('/cart/push/'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname})
                             .then((reg)=>{
                                 changeHide(true)
                                     setTimeout(() => {
                                     changeShow(false);
                                 }, 300);
+                                // console.log(props);
+                                if(props.location.pathname==='/cart'){
+                                    window.history.go(0)
+                                    // console.log('页面刷新');
+                                }
+                                // console.log(props,"props");
                             })
                         }else{
                             changeBtn(true)
@@ -157,4 +163,4 @@ function CartMask(props){
     
 }
 
-export default CartMask;
+export default withRouter(CartMask);

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import './base.css';
 .cart-box {
   flex: 1;
@@ -145,6 +146,153 @@
   font-size: 2.6666666667vw;
   vertical-align: baseline !important;
 }
+.cart-box .cart-box {
+  box-sizing: border-box;
+}
+.cart-box .cart-box .cart-box-list {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+}
+.cart-box .cart-box .cart-box-list li {
+  height: 40vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.cart-box .cart-box .cart-box-list li::-webkit-scrollbar {
+  width: 0px;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box {
+  box-sizing: border-box;
+  padding: 2vw 0;
+  height: 40vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 114.6666666667vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box img {
+  width: 23.7333333333vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box {
+  height: 23.7333333333vw;
+  width: 58.6666666667vw !important;
+  padding-left: 4vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box .cart-item-content-top {
+  height: 9.3333333333vw;
+  display: flex;
+  margin-top: 2.6666666667vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box .cart-item-content-top .cart-item-content-title {
+  width: 46.4vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box .cart-item-content-top .cart-item-content-title .chinese {
+  font-weight: 700;
+  font-size: 3.2vw;
+  height: 4.48vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box .cart-item-content-top .cart-item-content-title .french {
+  font-size: 3.2vw;
+  color: #848484;
+  height: 4.48vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box .cart-item-content-btm {
+  display: flex;
+  height: 4.48vw;
+  font-size: 3.2vw;
+  margin-top: 4vw;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box .cart-item-content-btm .cart-item-price {
+  width: 24.8vw;
+  font-weight: 700;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .cart-item-content-box .cart-item-content-btm .cart-item-wight {
+  flex: 1;
+  text-align: right;
+}
+.cart-box .cart-box .cart-box-list li .cart-item-box .delete-item {
+  flex-shrink: 0;
+  width: 14.9333333333vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 1.3333333333vw 1.3333333333vw 0;
+  background-color: red;
+  height: 100%;
+  font-size: 3.4666666667vw;
+  color: #fff;
+}
+.cart-box .cart-box .cart-list {
+  height: 49.6vw;
+}
+.cart-box .cart-box .cart-list .recommend_goods {
+  height: 10.9333333333vw;
+  padding-left: 5.3333333333vw;
+  line-height: 10.9333333333vw;
+  font-size: 4vw;
+  font-weight: 700;
+  color: #000;
+}
+.cart-box .cart-box .cart-list .recommend_list {
+  display: flex;
+  height: 42.6666666667vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0 2.6666666667vw;
+  margin-bottom: 16vw;
+}
+.cart-box .cart-box .cart-list .recommend_list::-webkit-scrollbar {
+  width: 0px;
+}
+.cart-box .cart-box .cart-list .recommend_list li {
+  flex-shrink: 0;
+  margin: 0 0.5333333333vw;
+}
+.cart-box .cart-box .cart-list .recommend_list li figure {
+  width: 26.9333333333vw;
+  margin: 0;
+}
+.cart-box .cart-box .cart-list .recommend_list li figure img {
+  width: 100%;
+}
+.cart-box .cart-box .cart-list .recommend_list li figure figcaption {
+  position: relative;
+  font-size: 3.4666666667vw;
+}
+.cart-box .cart-box .cart-list .recommend_list li figure figcaption .recommend_item_tilte {
+  line-height: 5.3333333333vw;
+  height: 5.3333333333vw;
+}
+.cart-box .cart-box .cart-list .recommend_list li figure figcaption .recommend_item_add {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 6.4vw;
+  height: 6.4vw;
+  background-image: url("../assets/images/cart-icon.png");
+  background-size: 100%;
+}
+
+input[type=checkbox] {
+  width: 4vw;
+  height: 4vw;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  appearance: none;
+  /*关键代码*/
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url("../assets/images/Cart/uncheck.png");
+  background-size: 100% 100%;
+  margin: 0 2.6666666667vw;
+}
+
+input[type=checkbox]:checked {
+  background-image: url("../assets/images/Cart/checked.png");
+}
 
 .cart-footer {
   position: fixed;
@@ -163,4 +311,29 @@
   text-align: center;
   color: #000;
   font-size: 4.5333333333vw;
+}
+
+.cart-pay-footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  height: 12.8vw;
+  width: 100%;
+  align-items: center;
+  background-color: #fff;
+  font-size: 4.2666666667vw;
+}
+.cart-pay-footer .totalPrice {
+  margin-left: 5.3333333333vw;
+  flex: 1;
+}
+.cart-pay-footer .pay {
+  width: 28.5333333333vw;
+  background-color: #ffe32a;
+  color: #000;
+  height: 100%;
+  font-size: 4.8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

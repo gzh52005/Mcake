@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React from 'react'
 function Sadd(){
     return(
         <div className='sadd'>

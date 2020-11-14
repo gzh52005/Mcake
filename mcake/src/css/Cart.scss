@@ -154,6 +154,9 @@
             display: flex;
             flex-direction: column;
             padding: vw(7.5);
+            li+li{
+                border-top: vw(1) solid #c2c2c2;
+            }
             li{
                 height: vw(150);
                 overflow-x: scroll;
@@ -337,4 +340,5 @@
         justify-content: center;
         align-items: center;
     }
+
 }

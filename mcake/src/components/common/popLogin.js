@@ -1,8 +1,8 @@
-import React,{Component, useEffect, useRef} from 'react'
-import { NavLink } from 'react-router-dom';
+import React,{ useEffect, useRef} from 'react'
+// import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 function Pop(props) {
-    console.log(props);
+    // console.log(props);
     const {btn,changeBtn,history} = props
     const myEl = useRef(null)
     useEffect(function(){
@@ -12,9 +12,9 @@ function Pop(props) {
     return ( 
             <div className='mask' onClick={
                 (e)=>{
-                    console.log(e.target.className);
+                    // console.log(e.target.className);
                     if(e.target.className=="mask"||e.target.className=='btn1'){
-                       console.log(111111111111);
+                    //    console.log(111111111111);
                         changeBtn(false)
                     }
                 }

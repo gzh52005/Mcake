@@ -9,7 +9,7 @@ function Floor(props){
     // console.log("props=",props);
     const [showCart,changeShow] = useState(false);
     const [showData,changeData] = useState([]);
-    console.log("goods=",props.data);
+    // console.log("goods=",props.data);
     const cartShow = useCallback(function(goods){
         
         changeShow(!showCart);
@@ -18,9 +18,9 @@ function Floor(props){
     },[showData]);
     let chuan=useCallback(function(type,id){
         if(type=='周边商品'){
-            props.history.push('/details?'+props.location.pathname+'&'+'snack'+'&'+id)
+            props.history.push('/details?'+props.location.pathname+'&snack&'+id)
         }else if(type=='蛋糕'){
-            props.history.push('/details?'+props.location.pathname+'&'+'cake'+'&'+id)
+            props.history.push('/details?'+props.location.pathname+'&cake&'+id)
         }
     },[])
     return (
@@ -45,7 +45,14 @@ function Floor(props){
                             {
                                 item.source.goods.map(goods=>(
                                     <li className="conProduct" key={goods.id}>
-                                        <div className="conImg" onClick={chuan.bind(null,goods.bcname,goods.id)}><img src={goods.img} alt=""/></div>
+                                        <div className="conImg"><img  onClick={(e)=>{
+                                            e.stopPropagation()
+                                            if(goods.bcname=='周边商品'){
+                                                props.history.push('/details?'+props.location.pathname+'&snack&'+goods.id)
+                                            }else if(goods.bcname=='蛋糕'){
+                                                props.history.push('/details?'+props.location.pathname+'&cake&'+goods.id)
+                                            }
+                                        }} src={goods.img} alt=""/></div>
                                         <b>{goods.name}</b>
                                         <p>{goods.french}</p>
                                         <span>￥{goods.price}</span>

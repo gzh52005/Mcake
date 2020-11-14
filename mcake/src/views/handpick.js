@@ -1,10 +1,10 @@
-import React,{Component,useRef} from 'react'
-import {Link, Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
+import React,{Component} from 'react'
+import {withRouter} from 'react-router-dom'
 
 class Handpick extends Component{
     constructor(props){
         super(props)
-        console.log('handpick=',this.props);
+        // console.log('handpick=',this.props);
         this.state={
             tastelist:[{name:'拿破仑',icon:'elf_01'},{name:'奶油',icon:'elf_02'},{name:'慕斯',icon:'elf_03'},{name:'芝士',icon:'elf_04'},{name:'巧克力',icon:'elf_05'},{name:'咖啡',icon:'elf_06'},{name:'坚果',icon:'elf_07'},{name:'水果',icon:'elf_08'},{name:'冰淇淋',icon:'elf_09'}],
             scenelist:[{name:'生日',icon:'iconfont icon-shengri'},{name:'聚会',icon:'iconfont icon-qingdianhejuhui--copy'},{name:'情侣',icon:'iconfont icon-xin'},{name:'儿童',icon:'iconfont icon-10'},{name:'长辈',icon:'iconfont icon-changbei'},{name:'下午茶',icon:'iconfont icon-kafeiting'}],

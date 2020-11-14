@@ -113,7 +113,8 @@ export default function Reg(props){
                 <input type="password" placeholder="密码确认" onChange={(e)=>{changeagainpassword(e.currentTarget.value)}}/>
             </p>
             <div className='reg-que'><input type='checkbox' defaultChecked={tongyi} id="xuan"/><label for='xuan' onClick={()=>{changetongyi(!tongyi)}}></label><span>同意《MCAKE购物协议》</span></div>
-            <span onClick={()=>{props.history.push('/login')}}>已有账号，立即登录</span>
+            <p className='gologin'><span onClick={()=>{props.history.push('/login')}}>已有账号，立即登录</span></p>
+            
             <button onClick={fn1}>立即注册</button>
             {jieguo?<p className='reg-tishi'><span>{gaitishi}</span></p>:''}
             

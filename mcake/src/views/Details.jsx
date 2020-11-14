@@ -1,14 +1,14 @@
-import React, { useState,useEffect, useCallback, useMemo } from 'react';
+import React, { useState,useEffect, useCallback} from 'react';
 import {withRouter} from 'react-router-dom'
 //组件
 import Banner from '../components/Home/Banner';
-import { Tabs,WhiteSpace } from 'antd-mobile';
+// import { Tabs,WhiteSpace } from 'antd-mobile';
 import request from '../utils/request'
 // 样式
 import '../css/details.scss';
 
-import Data from '../assets/json/detailsTest.json';
-import { defaultProps } from 'antd-mobile/lib/search-bar/PropsType';
+// import Data from '../assets/json/detailsTest.json';
+// import { defaultProps } from 'antd-mobile/lib/search-bar/PropsType';
 
 // console.log("Details.data=",Data);
 // 促销数据
@@ -26,6 +26,8 @@ function Details(props){
     let [shoplist,setshoplist]=useState('')
     let [qiehuan,setqiehuan]=useState(1)
     let [shouwei,changeshouwei]=useState(false)
+    let [jieguo,setjieguo]=useState(false)
+    let [num,setnum]=useState(0)
     useEffect(function(){        
         if(datalist[0]){           
             let newBanner = [];
@@ -83,20 +85,69 @@ function Details(props){
         setshoplist(shop)
         // setGuige(currentItem);
     },[]);
-    let yanzheng = useCallback(function(){
+
+    let fn1=useCallback(function(){
         if(!localStorage.getItem('currentUser')){
             changeshouwei(true)
+        }else{
+            var bcname=props.location.search.slice(1).split('&')[1]
+            var id=parseInt(props.location.search.slice(1).split('&')[2])
+            // console.log(bcname)
+            // console.log(id)
+            // console.log('第一次',num)
+            // console.log(shoplist.id)
+             
+            setnum(num++)
+            // console.log('第二次',num)
+            request.put('/cart/push/'+JSON.parse(localStorage.getItem('currentUser')).username,{
+                id,
+                checkid:shoplist.id,
+                num,
+                bcname
+            }).then(res=>{
+                if(res.code==200){
+                    setjieguo(true)
+                    setTimeout(()=>{setjieguo(false)},2000)
+                }
+                
+            })
+            // console.log('第三次',num)
         }
-    },[]);
+        
+    },[shoplist])
+    let fn2=useCallback(function(){
+        if(!localStorage.getItem('currentUser')){
+            changeshouwei(true)
+        }else{
+            var bcname=props.location.search.slice(1).split('&')[1]
+            var id=parseInt(props.location.search.slice(1).split('&')[2])
+            setnum(num++)
+            request.put('/cart/push/'+JSON.parse(localStorage.getItem('currentUser')).username,{
+                id,
+                checkid:shoplist.id,
+                num,
+                bcname
+            }).then(res=>{
+                if(res.code==200){
+                    setjieguo(true)
+                    setTimeout(()=>{setjieguo(false)
+                        props.history.push('/cart')
+                    },500)
 
+                }
+                
+            })
+        }
+        
+    },[shoplist,datalist])
     let fn3=useCallback(function(){
-        console.log(props)
+        // console.log(props)
         props.history.push('/login')
     },[])
     let fn4=useCallback(function(){
         changeshouwei(false)        
     },[])
-
+    
     return (
         <div className="detailsContainer">
             {/* {console.log("currentGuige=",currentGuige)} */}
@@ -125,7 +176,7 @@ function Details(props){
                     <li className="mainGuige">
                         <p>{shoplist.ahead}</p>
                         <p>{shoplist.size}</p>
-                        <p>{shoplist.weight}</p>
+                        <p>{shoplist.spec}</p>
                         {Object.prototype.toString.call(shoplist.fittings) === "[object Object]" ? <p>{shoplist.fittings['51'].name}X{shoplist.fittings['51'].num}</p>:''}
                         
                     </li>
@@ -172,22 +223,14 @@ function Details(props){
             </div>
             
             <div className='kouwei'>
-            {datalist[0]?datalist[0].basic.list.map(item=>(<p key={item.gid}>
+            {(datalist[0] && datalist[0].basic.list)?datalist[0].basic.list.map(item=>(<p key={item.gid}>
                     <span>{`${item.french} ${item.name}`}</span>
                     <span>{item.value}</span>
                 </p>)):''}
-                {/* {datalist[0].basic.list.map(item=>(<p key={item.gid}>
-                    <span>{`${item.french} ${item.name}`}</span>
-                    <span>{item.value}</span>
-                </p>))} */}
-            
-                {/* <p>
-                    <span></span>
-                    <span></span>
-                </p> */}
+
             </div>
             <div className='country'>
-            {datalist[0]?datalist[0].mater.list.map((item,index)=>(
+            {(datalist[0] && datalist[0].mater.list)?datalist[0].mater.list.map((item,index)=>(
                 <span key={index}><img src={`${datalist[0].mater.url}${item.img}`}></img> {item.name}</span>
             )):''}
                 
@@ -198,8 +241,8 @@ function Details(props){
                 }
             })()}
             <p className='datail-caozuo'>
-                <span onClick={yanzheng}>加入购物车</span>
-                <span onClick={yanzheng}>立即购买</span>
+                <span onClick={fn1}>加入购物车</span>
+                <span onClick={fn2}>立即购买</span>
             </p>
             {shouwei?<div className='details-mask'>
                   <div>
@@ -211,6 +254,7 @@ function Details(props){
                       </p>
                   </div>
               </div>:''}
+              {jieguo?<p className='detail-tishi'><span>加入购物车成功</span></p>:''}
         </div>
     )
 }

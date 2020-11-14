@@ -55,7 +55,8 @@ export default function Login(props){
                 <img src={suo}></img>
                 <input type="password" placeholder="密码" onChange={(e)=>{changepassword(e.currentTarget.value)}}/>
             </p>
-            <span onClick={goto}>立即注册</span>
+            <p className='goreg'><span onClick={goto}>立即注册</span></p>
+            
             <span>其他登陆方式</span>
             
             <p>
