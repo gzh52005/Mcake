@@ -4,7 +4,7 @@ import request from '../utils/request';
 import cartLogo from '../assets/images/cart-icon.png'
 import context from '../context' 
 import CartMask from '../components/Home/CartMask.jsx'
-function Snack(){
+function Snack(props){
     let [goodslist,change] = useState([])
     const [show,isshow]=useState(false)
     const [cartShow,changeShow]= useState(false)
@@ -20,7 +20,9 @@ function Snack(){
              {goodslist.map((item)=>{
             return    <li key={item.id}>
             <div >
-                    <img src={item.img} style={{}}/>
+                    <img src={item.img} style={{}} onClick={(e)=>{e.stopPropagation()
+                         props.history.push('/details?'+props.location.pathname+'&snack&'+item.id)}}
+                          />
                     <div className={'describe'}>
                         <div className={"goodsdata"}>
                         <span className='goodsName'>{item.name}</span> <span className='tname'>{item.tname}</span>
