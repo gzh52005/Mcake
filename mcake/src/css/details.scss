@@ -278,4 +278,20 @@ background-color: #fff;
         }
     }
 }
+.detail-tishi{
+    position: fixed;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    span{
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, .7);
+        color: #fff;
+        height: vw(40);
+        font-size: vw(15);
+        padding: vw(10);
+        border-radius: vw(5);
+    }
+}
 }

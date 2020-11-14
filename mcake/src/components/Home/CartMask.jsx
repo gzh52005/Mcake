@@ -130,13 +130,13 @@ function CartMask(props){
                             }else if(showData.bcname=='周边商品'){
                                 bcname='snack'
                             }
-                            console.log(bcname);
-                            console.log(userData);
-                            console.log(userData.username);
-                            console.log(showData.id);
-                            console.log(showData.list[currentIdx].id);
-                            console.log(qty);
-                            console.log(bcname);
+                            console.log('bcname',bcname);
+                            console.log('userData',userData);
+                            console.log('userData.username',userData.username);
+                            console.log('showData.id',showData.id);
+                            console.log('showData.list[currentIdx].id',showData.list[currentIdx].id);
+                            console.log('qty',qty);
+                            console.log('bcname',bcname);
                             // fetch('http://120.27.231.166:3009/cart/push/'+userData.username,{method:'put',headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),body:{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname}}).then(reg=>{console.log(reg.json().then(reg=>{console.log(reg);}))})
                             request.put('/cart/push/'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname})
                             .then((reg)=>{
