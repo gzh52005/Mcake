@@ -4,10 +4,12 @@ import { withRouter } from 'react-router-dom';
 import '../../css/home.scss';
 import Pop from '../common/popLogin'
 import request from '../../utils/request'
+import Sadd from '../common/succeedAdd'
 function CartMask(props){
     const [qty,changeQty] = useState(1);
     const [weight,changeWeight] = useState(false);
     const [btn,changeBtn] = useState(false)
+    const [addHide,changeHide]=useState(false)
     console.log('props=',props);
     // 选择重量
     let {showCart,showData,changeShow,changeData} = props;
@@ -120,12 +122,6 @@ function CartMask(props){
                     <button onClick={()=>{
                         const userData = JSON.parse(localStorage.getItem('currentUser'))
                         if(userData){
-                            // console.log(userData);
-                            // console.log(userData.username);
-                            // console.log(showData.id);
-                            // console.log(showData.list[currentIdx].id);
-                            // console.log(qty);
-                            // console.log(showData.bcname);
                             let bcname ='';
                             if(showData.bcname=='蛋糕'){
                                  bcname = 'cake'
@@ -135,7 +131,20 @@ function CartMask(props){
                                 bcname='snack'
                             }
                             console.log(bcname);
-                            request.put('/cart/push/:'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname}).then((reg)=>{console.log(reg);})
+                            console.log(userData);
+                            console.log(userData.username);
+                            console.log(showData.id);
+                            console.log(showData.list[currentIdx].id);
+                            console.log(qty);
+                            console.log(bcname);
+                            // fetch('http://120.27.231.166:3009/cart/push/'+userData.username,{method:'put',headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),body:{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname}}).then(reg=>{console.log(reg.json().then(reg=>{console.log(reg);}))})
+                            request.put('/cart/push/'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname})
+                            .then((reg)=>{
+                                changeHide(true)
+                                    setTimeout(() => {
+                                    changeShow(false);
+                                }, 300);
+                            })
                         }else{
                             changeBtn(true)
                         }
@@ -143,6 +152,7 @@ function CartMask(props){
                 </div>
             </div>
            {btn? <Pop btn={btn} changeBtn={changeBtn} />:''}
+         {  addHide? <Sadd /> : ''}
         </div>
     )
     

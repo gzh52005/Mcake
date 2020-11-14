@@ -504,6 +504,23 @@
         background-position: center;
     }
 }
+.sadd{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: vw(50);
+    width:60vw;
+    border-radius: vw(10);
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.5);
+    transition: all .5;
+}
 .mr10{
     margin-right: vw(10);
 }
