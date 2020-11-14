@@ -120,7 +120,7 @@ class App extends React.Component{
                          </ul>
                     </div>:''}
                     
-                    <div className='container'  onScroll={throttle(that,500)}>
+                    <div className='container'  onScroll={throttle(that,400)}>
             <context.Provider value={{page:this.state.page}}>
             <Switch>
                    <Route path='/home' component={Home}></Route>
