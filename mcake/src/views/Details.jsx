@@ -22,7 +22,10 @@ function Details(props){
     const [bannerData,changeBanner] = useState([]);
     let [datalist,changedatalist]=useState([])
     let [musi,changemusi]=useState('')
-    // let [currentSku,setcurrentSku]=useState('')
+    let [currentSku,setcurrentSku]=useState('')
+    let [shoplist,setshoplist]=useState('')
+    let [qiehuan,setqiehuan]=useState(1)
+    let [shouwei,changeshouwei]=useState(false)
     useEffect(function(){        
         if(datalist[0]){           
             let newBanner = [];
@@ -31,53 +34,69 @@ function Details(props){
             });
             changeBanner(newBanner);
         }
-        console.log(datalist[0])
+        // console.log(datalist[0])
     },[datalist]);
     useEffect(function(){
        if(datalist[0]){
-        // let newBanner = [];
-        changemusi(datalist[0].fname.split(','))
+        
+        
+        let regs=/,/
+        if(regs.test(datalist[0].fname)){
+            changemusi(datalist[0].fname.split(','))
+            
+        }else if(datalist[0].fname){
+            let newmusi = [];
+            newmusi.push(datalist[0].fname)
+            changemusi(newmusi)
+            
+        }
+        
+        
        }
     },[datalist])
-    // useEffect(function(){
-    //     if(datalist[0]){
-    //      // let newBanner = [];
-    //      setcurrentSku(datalist[0].sku)
-    //     }
-    //  },[datalist])
+    useEffect(function(){
+        if(datalist[0]){
+         setcurrentSku(datalist[0].sku)
+        }
+     },[datalist])
+     useEffect(function(){
+        if(datalist[0]){
+         // let newBanner = [];
+         setshoplist(datalist[0])
+        }
+     },[datalist])
     useEffect(async function(){
-        let bcname=props.location.search.slice(1).split('&')[0]
-        console.log(bcname)
-        let id=parseInt(props.location.search.slice(1).split('&')[1])
-        console.log(id)
+        let bcname=props.location.search.slice(1).split('&')[1]
+        // console.log(bcname)
+        let id=parseInt(props.location.search.slice(1).split('&')[2])
+        // console.log(id)
         let p=await request('/goods/cakesearch',{
             bcname,
             id
         })
-        console.log(p)
+        // console.log(p.data[0])
         changedatalist(p.data)   
     },[])
-
-
-    /* 规格数据 */
-    const [currentSku,setSku] = useState(Data.sku);
-    const [currentGuige,setGuige] = useState(Data);
-
-    let changeSku = useCallback(function(currentItem){
-        setSku(currentItem.sku);
-        setGuige(currentItem);
+    let changeSku = useCallback(function(shop){
+        // console.log(shop)
+        setcurrentSku(shop.sku);
+        setshoplist(shop)
+        // setGuige(currentItem);
+    },[]);
+    let yanzheng = useCallback(function(){
+        if(!localStorage.getItem('currentUser')){
+            changeshouwei(true)
+        }
     },[]);
 
-    /* 不变部分的数据 */
-    // const [musi,setMusi] = useState([]);
-    // useEffect(function(){
-    //     setMusi(Data.fname.split(','));
-    // },[])
+    let fn3=useCallback(function(){
+        console.log(props)
+        props.history.push('/login')
+    },[])
+    let fn4=useCallback(function(){
+        changeshouwei(false)        
+    },[])
 
-    const tabs = [
-        { title: '商品详情', key: 't1' },
-        { title: '商品评论', key: 't2' },
-      ]
     return (
         <div className="detailsContainer">
             {/* {console.log("currentGuige=",currentGuige)} */}
@@ -100,14 +119,15 @@ function Details(props){
                        ))
                     }
                 </ul>:''}
-                {datalist[0]?<ul className="mainCon">
-                    <li className="mainprice">￥<span>{datalist[0].pprice}</span>
+                {shoplist?<ul className="mainCon">
+                    <li className="mainprice">￥<span>{shoplist.pprice}</span>
                     </li>
                     <li className="mainGuige">
-                        <p>{datalist[0].ahead}</p>
-                        <p>{datalist[0].size}</p>
-                        <p>{datalist[0].weight}</p>
-                        <p>{datalist[0].fittings['51'].name}X{datalist[0].fittings['51'].num}</p>
+                        <p>{shoplist.ahead}</p>
+                        <p>{shoplist.size}</p>
+                        <p>{shoplist.weight}</p>
+                        {Object.prototype.toString.call(shoplist.fittings) === "[object Object]" ? <p>{shoplist.fittings['51'].name}X{shoplist.fittings['51'].num}</p>:''}
+                        
                     </li>
                 </ul>:''}
                 
@@ -115,23 +135,21 @@ function Details(props){
 
             {/* 不变的部分 */}
             <div className="noChange">
-                <div className="musi floor">
-                    {musi?musi.map((item,index)=>(
+                {musi?<div className="musi floor">
+                    {musi.map((item,index)=>(
                             <span key={index}>{item}</span>
-                        )):''}
-                    {/* {
-                        musi.map((item,index)=>(
-                            <span key={index}>{item}</span>
-                        ))
-                    } */}
-                </div>
+                        ))}
+
+                </div>:''}
+                
                 <div className="tips floor">
                     <span>!</span>若不及时食用，请放置0-10℃冷藏
                 </div>
-                <div className="describe">
-                    <p>{Data.brief}</p>
-                    <p>{Data.frenchBrief}</p>
-                </div>
+                {datalist[0]? <div className="describe">
+                    <p>{datalist[0].brief}</p>
+                    <p>{datalist[0].frenchBrief}</p>
+                </div>:""}
+               
                 <div className="promotion floor">
                     <span>促销</span>
                     <ul>
@@ -149,24 +167,50 @@ function Details(props){
 
             {/* 商品详情和商品评价 */}
             <div className="product">
-                <div className="proTitle">
-                    <Tabs tabs={tabs} initialPage={0} animated={false} useOnPan={false}
-                    tabBarActiveTextColor={"#000"}
-                    tabBarInactiveTextColor={"#8d8d8d"}
-                    tabBarUnderlineStyle={{borderColor:"#ffe32a",}}
-                    tabBarTextStyle={{fontSize:18}}
-                    >
-                        <div  className="proDesc proSim">
-                            Content of first tab
-                        </div>
-                        <div className="proComment proSim">
-                            Content of second tab
-                        </div>
-                    </Tabs>
-
-                </div>
+               <span className={qiehuan==1?'active':''} onClick={()=>{setqiehuan(1)}}>商品详情</span>
+               <span className={qiehuan==2?'active':''} onClick={()=>{setqiehuan(2)}}>商品点评</span>
             </div>
             
+            <div className='kouwei'>
+            {datalist[0]?datalist[0].basic.list.map(item=>(<p key={item.gid}>
+                    <span>{`${item.french} ${item.name}`}</span>
+                    <span>{item.value}</span>
+                </p>)):''}
+                {/* {datalist[0].basic.list.map(item=>(<p key={item.gid}>
+                    <span>{`${item.french} ${item.name}`}</span>
+                    <span>{item.value}</span>
+                </p>))} */}
+            
+                {/* <p>
+                    <span></span>
+                    <span></span>
+                </p> */}
+            </div>
+            <div className='country'>
+            {datalist[0]?datalist[0].mater.list.map((item,index)=>(
+                <span key={index}><img src={`${datalist[0].mater.url}${item.img}`}></img> {item.name}</span>
+            )):''}
+                
+            </div>
+            {(()=>{
+                if(datalist[0]){
+                  return  <div className='datail-img'dangerouslySetInnerHTML={{__html:datalist[0].details}}></div>
+                }
+            })()}
+            <p className='datail-caozuo'>
+                <span onClick={yanzheng}>加入购物车</span>
+                <span onClick={yanzheng}>立即购买</span>
+            </p>
+            {shouwei?<div className='details-mask'>
+                  <div>
+                      <h4>温馨提示</h4>
+                      <p className='mask-ti'>您需要先登录才能继续您的操作</p>
+                      <p className='mask-an'>
+                          <span onClick={fn4}>以后再说</span>
+                          <span onClick={fn3}>立即登录</span>
+                      </p>
+                  </div>
+              </div>:''}
         </div>
     )
 }

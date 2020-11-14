@@ -11,6 +11,11 @@ function Cart(props){
     const [goods,changeGoods] = useState([])
     //设置推荐列表状态
     const [recommendList,changeList] = useState([])
+    //选择列表
+    const [checklists,changeCheckLists] = useState([])
+    const [allPick,changePick] = useState(false)
+    //total初始值
+    const [totalPrice,changeTotal] = useState([0,0])//第一位为总数，第二位为总价
     //改变推荐列表的数据
     const getRecommend = useEffect(function(){
         if(!goods.length){
@@ -24,23 +29,32 @@ function Cart(props){
              })
         }
     },[goods])
-    //给商品数据添加ischeck属性
-    useEffect(function(){
-        goods.forEach(good=>{
-            if(good.ischeck=='undefind'){
-                good.ischeck = false
-            }
-        })
-    },[goods])
-
+    
     //请求购物车数据
     useMemo(async function(){
         request('/cart/usergoods',{username:'刘德'}).then((data)=>{
             console.log(data.data[0].goods,'用户商品数据');
-            changeGoods(data.data[0].goods)
+            let arr =data.data[0].goods
+            let checklist = []
+            for(let i=0;i<arr.length;i++){
+                checklist.push(false)
+            }
+            changeCheckLists(checklist)
+            changeGoods(arr)
          })
     },[])
-
+    //总价,总数计算
+    useMemo(function(){
+        let totalP = 0
+        let total = 0
+        goods.forEach((good,index)=>{
+            if(checklists[index]){
+                totalP += ((good.pprice*1) * good.num)
+                total += good.num
+            }
+        })
+        changeTotal([total,totalP])
+    },[checklists])
     
     useEffect(function(){
         if(!localStorage.getItem('currentUser')){
@@ -50,6 +64,10 @@ function Cart(props){
         }
   },[])
 
+    //删除商品后数据
+    // useMemo(function(){
+        
+    // },[goods])
 
     let fn1=useCallback(function(){
     props.history.push('/login?/cart')
@@ -82,11 +100,16 @@ function Cart(props){
                 <div className="cart-box">
                     <ul className = "cart-box-list">
                         {
-                            goods.map(good=>{
+                            goods.map((good,goodIndex)=>{
                                 return (
                                     <li key={good.id}>
                                         <div className="cart-item-box">
-                                            <label htmlFor={"good"+good.id}><input type="checkbox" id={"good"+good.id}/></label>
+                                            <label htmlFor={"good"+good.id}><input type="checkbox" id={"good"+good.id} checked={checklists[goodIndex]} onChange={()=>{
+                                                checklists[goodIndex] = !checklists[goodIndex]
+                                                changeCheckLists([...checklists])
+                                                let isAllPick = checklists.every(good=>good)
+                                                changePick(isAllPick)
+                                            }}/></label>
                                            <img src={good.img}/>
                                            <div className="cart-item-content-box">
                                                <div className="cart-item-content-top">
@@ -100,7 +123,15 @@ function Cart(props){
                                                     <span className="cart-item-price">￥{good.pprice || good.price}</span>
                                                     <span className="cart-item-wight">{good.spec} ({good.weight}) x {good.num}</span>
                                                 </div>
+                                                
                                            </div>
+                                           <div className="delete-item" onClick={()=>{
+                                               goods.slice(goodIndex,1)
+                                               let arr = goods.filter((good,index)=>index != goodIndex)
+                                               let checkArr = checklists.filter((check,index)=>index != goodIndex)
+                                               changeGoods(arr)
+                                               changeCheckLists(checkArr)
+                                           }}>删除</div>
                                         </div>
                                     </li>
                                 )
@@ -131,10 +162,18 @@ function Cart(props){
                         </ul>
                         <div className="cart-pay-footer">
                             <label htmlFor="total">
-                            <input type="checkbox" id="total"/>
-                            </label>全选
-                            <span className="totalPrice">合计：￥500</span>
-                            <span className="pay">去结算(2)</span>
+                            <input type="checkbox" id="total" checked={allPick} onChange={()=>{
+                                    changePick(!allPick)
+                                    console.log(allPick);
+                                    let arr = new Array()
+                                    for(let i = 0;i<checklists.length;i++){
+                                        arr.push(!allPick)
+                                    }                  
+                                    changeCheckLists([...arr])
+                            }}/>全选
+                            </label>
+                        <span className="totalPrice">合计：￥{totalPrice[1]}</span>
+                        <span className="pay">去结算({totalPrice[0]})</span>
                         </div>
                     </div>
                 </div>

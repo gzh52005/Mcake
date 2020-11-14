@@ -75,6 +75,11 @@ class App extends React.Component{
     }
     goback=()=>{
         let path=this.props.location.search.slice(1)
+        let regs=/&/
+        if(regs.test(path)){
+            path=path.split('&')[0]
+            this.props.history.push(path)
+        }
         this.props.history.push(path)
     }
     resetPage=()=>{
