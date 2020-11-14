@@ -155,18 +155,25 @@
             flex-direction: column;
             padding: vw(7.5);
             li{
+                height: vw(150);
+                overflow-x: scroll;
+                overflow-y: hidden;
+                &::-webkit-scrollbar{width:0px}
                 .cart-item-box{
                     box-sizing: border-box;
                     padding:vw(7.5) 0;
-                    height: vw(189);
+                    height: vw(150);
                     display: flex;
+                    justify-content: space-between;
                     align-items: center;
+                    width: vw(430);
+                    
                     img{
                         width: vw(89);
                     }
                     .cart-item-content-box{
                         height: vw(89);
-                        width: vw(225);
+                        width: vw(220) !important;
                         padding-left: vw(15);
                         .cart-item-content-top{
                             height: vw(35);
@@ -201,8 +208,22 @@
                             }
                         }
                     }
+                    .delete-item{
+                        flex-shrink: 0;
+                        width: vw(56);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 0 vw(5) vw(5) 0;
+                        background-color: red;
+                        height: 100%;
+                        font-size: vw(13);
+                        color: #fff;
+                    }
                 }
+                
             }
+            
         }
         .cart-list{
             height: vw(186);
@@ -216,9 +237,12 @@
             }
             .recommend_list{
                 display: flex;
-                height: vw(144);
-                overflow: scroll;
+                height: vw(160);
+                overflow-x: scroll;
+                overflow-y: hidden;
                 padding: 0 vw(10);
+                margin-bottom: vw(60);
+                &::-webkit-scrollbar{width:0px}
                 li{ 
                     flex-shrink: 0;
                     margin: 0 vw(2);
