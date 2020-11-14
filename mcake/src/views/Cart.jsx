@@ -169,9 +169,7 @@ function Cart(props){
                                 recommendList.map(good=>{
                                     return (
                                         <li key={good.id}>
-                                            <figure className="recommend_item" onClick={()=>{
-                                                 props.history.push('/details?'+props.location.pathname+"&parts&"+good.id)
-                                            }}>
+                                            <figure className="recommend_item" >
                                                 <img src={good.img} alt=""/>
                                                 <figcaption>
                                     <p className="recommend_item_tilte">{good.name}</p>

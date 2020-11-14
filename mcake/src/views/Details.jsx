@@ -223,14 +223,14 @@ function Details(props){
             </div>
             
             <div className='kouwei'>
-            {datalist[0]?datalist[0].basic.list.map(item=>(<p key={item.gid}>
+            {(datalist[0] && datalist[0].basic.list)?datalist[0].basic.list.map(item=>(<p key={item.gid}>
                     <span>{`${item.french} ${item.name}`}</span>
                     <span>{item.value}</span>
                 </p>)):''}
 
             </div>
             <div className='country'>
-            {datalist[0]?datalist[0].mater.list.map((item,index)=>(
+            {(datalist[0] && datalist[0].mater.list)?datalist[0].mater.list.map((item,index)=>(
                 <span key={index}><img src={`${datalist[0].mater.url}${item.img}`}></img> {item.name}</span>
             )):''}
                 
