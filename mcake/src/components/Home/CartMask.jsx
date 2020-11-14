@@ -137,7 +137,6 @@ function CartMask(props){
                             console.log(showData.list[currentIdx].id);
                             console.log(qty);
                             console.log(bcname);
-                            // fetch('http://120.27.231.166:3009/cart/push/'+userData.username,{method:'put',headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),body:{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname}}).then(reg=>{console.log(reg.json().then(reg=>{console.log(reg);}))})
                             request.put('/cart/push/'+userData.username,{id:showData.id,checkid:showData.list[currentIdx].id,num:qty,bcname:bcname})
                             .then((reg)=>{
                                 changeHide(true)

@@ -4,7 +4,7 @@ import {Link, Route,Redirect,Switch,NavLink,withRouter} from 'react-router-dom'
 class Handpick extends Component{
     constructor(props){
         super(props)
-        // console.log(this.props);
+        console.log('handpick=',this.props);
         this.state={
             tastelist:[{name:'拿破仑',icon:'elf_01'},{name:'奶油',icon:'elf_02'},{name:'慕斯',icon:'elf_03'},{name:'芝士',icon:'elf_04'},{name:'巧克力',icon:'elf_05'},{name:'咖啡',icon:'elf_06'},{name:'坚果',icon:'elf_07'},{name:'水果',icon:'elf_08'},{name:'冰淇淋',icon:'elf_09'}],
             scenelist:[{name:'生日',icon:'iconfont icon-shengri'},{name:'聚会',icon:'iconfont icon-qingdianhejuhui--copy'},{name:'情侣',icon:'iconfont icon-xin'},{name:'儿童',icon:'iconfont icon-10'},{name:'长辈',icon:'iconfont icon-changbei'},{name:'下午茶',icon:'iconfont icon-kafeiting'}],
@@ -31,6 +31,7 @@ class Handpick extends Component{
     }
     render(){
         const {tastelist,scenelist,scene,taste} = this.state
+        const {history} = this.props
             return  (
                 <div className='drawer' ref={el=>{this.el = el}}>
                   <ul>
@@ -41,7 +42,10 @@ class Handpick extends Component{
                     }}>口味筛选<span> <i className='icon sjt' ></i>  </span></li>
                     <ul className='taste' style={{display:taste?'block':'none'}}>
                         {tastelist.map((item,index)=>{
-                            return <li key={index}><div className={'iconLogo '}><i className={item.icon}></i></div> <span className='select'><span>{item.name}</span> <i className='icon mr10 yjt'></i> </span></li>
+                            return <li key={index} onClick={()=>{
+                                history.push('/list/'+item.name)
+                                this.props.status.showFn()
+                            }}><div className={'iconLogo '}><i className={item.icon}></i></div> <span className='select'><span>{item.name}</span> <i className='icon mr10 yjt'></i> </span></li>
                         })}
                     </ul>
                     <li onClick={()=>{
@@ -62,4 +66,4 @@ class Handpick extends Component{
         }
         
 }
-export default Handpick
+export default withRouter(Handpick)
