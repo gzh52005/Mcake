@@ -3,7 +3,8 @@ import request from '../utils/request';
 import cartLogo from '../assets/images/cart-icon.png'
 import context from '../context' 
 import CartMask from '../components/Home/CartMask.jsx';
-function Cakes(){
+import { withRouter } from 'react-router-dom';
+function Cakes(props){
     let [goodslist,change] = useState([])
     let [show,isshow]=useState(false)
     const [cartShow,changeShow]= useState(false)
@@ -19,7 +20,10 @@ function Cakes(){
              {goodslist.map((item)=>{
             return    <li key={item.id}>
             <div >
-                    <img src={item.img} style={{}}/>
+                    <img src={item.img} style={{}} onClick={(e)=>{
+                        e.stopPropagation()
+                        props.history.push('/details?'+props.location.pathname+'&cake&'+item.id)                        
+                    }}/>
                     <div className={'describe'}>
                         <div className={"goodsdata"}>
                         <span className='goodsName'>{item.name}</span> <span className='tname'>{item.tname}</span>
@@ -41,4 +45,4 @@ function Cakes(){
     )
 }
 
-export default Cakes;
+export default withRouter(Cakes);

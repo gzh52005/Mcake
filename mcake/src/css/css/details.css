@@ -93,6 +93,9 @@
   border-radius: 50%;
   margin-right: 2.1333333333vw;
 }
+.detailsContainer .noChange .describe {
+  padding: 2.6666666667vw 1.3333333333vw;
+}
 .detailsContainer .noChange .describe p {
   line-height: 5.3333333333vw;
 }

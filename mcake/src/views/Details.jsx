@@ -176,7 +176,7 @@ function Details(props){
                     <li className="mainGuige">
                         <p>{shoplist.ahead}</p>
                         <p>{shoplist.size}</p>
-                        <p>{shoplist.weight}</p>
+                        <p>{shoplist.spec}</p>
                         {Object.prototype.toString.call(shoplist.fittings) === "[object Object]" ? <p>{shoplist.fittings['51'].name}X{shoplist.fittings['51'].num}</p>:''}
                         
                     </li>
