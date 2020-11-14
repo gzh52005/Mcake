@@ -1,16 +1,16 @@
-import React,{useEffect,useState,useRef, useContext} from 'react'
+import React,{useEffect,useState, useContext} from 'react'
 import request from '../utils/request';
 import cartLogo from '../assets/images/cart-icon.png'
-import context from '../context' 
-function Snack(){
+import { withRouter } from 'react-router-dom';
+function List(props){
+    const name =props.location.pathname.substring(6)
     let [goodslist,change] = useState([])
     let [show,isshow]=useState(false)
-    let data =  useContext(context).page
+    // let data =  useContext(context).page
     useEffect(function(){
-        console.log(data,99999999999999999999);
         isshow(true)
-       request.get('/goods/snacklist',{page:data,pageSize:6}).then(reg=>{change([...goodslist,...reg.data],isshow(false))})
-    },[data]);
+       request.get('/goods/regfind/',{fname:name}).then(reg=>{change(reg.data);isshow(false)})
+    },[name]);
     console.log(goodslist);
     return (
         <div className='snack'  >
@@ -31,12 +31,10 @@ function Snack(){
                     </div>
             </div>
         </li>
-      
         })}
             </ul>
             <div className='loading' style={{display:show?'block':'none'}}></div>
         </div>
     )
 }
-
-export default Snack;
+export default withRouter(List);
