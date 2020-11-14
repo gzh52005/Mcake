@@ -45,4 +45,13 @@ request.put = function(url,data={},options={}){
     }
     return request(url,data,options);
 }
+request.delete = function(url,data={},options={}){
+    options.method = 'delete';
+    options.body =  JSON.stringify(data)
+
+    options.headers= {
+        'Content-Type': 'application/json'
+    }
+    return request(url,data,options);
+}
 export default request;
