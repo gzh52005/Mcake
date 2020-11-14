@@ -10,7 +10,7 @@ function CartMask(props){
     const [weight,changeWeight] = useState(false);
     const [btn,changeBtn] = useState(false)
     const [addHide,changeHide]=useState(false)
-    console.log('props=',props);
+    // console.log('props=',props);
     // 选择重量
     let {showCart,showData,changeShow,changeData} = props;
     let eatNum = showData.list.filter(item=>(
@@ -18,8 +18,8 @@ function CartMask(props){
     ))[0];
     // 默认显示重量
     let moren=`${eatNum.spec} (${eatNum.weight}) -${eatNum.edible}`;
-    console.log("showData.list=",showData.list);
-    console.log("eatNum=",eatNum.weight);
+    // console.log("showData.list=",showData.list);
+    // console.log("eatNum=",eatNum.weight);
     
     // 默认重量下标
     let xiabiao;
@@ -44,11 +44,11 @@ function CartMask(props){
     },[qty]);
 
     const myel = useRef(null);
-    console.log("myel=",myel.current);
-    console.log("cartMask.props=",showCart,showData);
+    // console.log("myel=",myel.current);
+    // console.log("cartMask.props=",showCart,showData);
     // const [showMe,setShow] = useState(showCart);
     useEffect(function(){
-        console.log(showCart,myel,999);
+        // console.log(showCart,myel,999);
         if(showCart){
             myel.current.style.top = "200px";
         }
@@ -146,7 +146,7 @@ function CartMask(props){
                                 // console.log(props);
                                 if(props.location.pathname==='/cart'){
                                     window.history.go(0)
-                                    console.log('页面刷新');
+                                    // console.log('页面刷新');
                                 }
                                 // console.log(props,"props");
                             })

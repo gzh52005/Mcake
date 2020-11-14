@@ -9,7 +9,7 @@ function Floor(props){
     // console.log("props=",props);
     const [showCart,changeShow] = useState(false);
     const [showData,changeData] = useState([]);
-    console.log("goods=",props.data);
+    // console.log("goods=",props.data);
     const cartShow = useCallback(function(goods){
         
         changeShow(!showCart);

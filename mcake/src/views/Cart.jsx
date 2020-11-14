@@ -27,12 +27,12 @@ function Cart(props){
         if(!goods.length){
                 request('/goods/cakelist',{pageSize:10}).then((data)=>{
                    changeList(data.data)
-                   console.log(data.data,"推荐列表");
+                //    console.log(data.data,"推荐列表");
                 })
         }else{
             request('/goods/partslist',{pageSize:4}).then((data)=>{
                 changeList(data.data)
-                console.log(data.data,"推荐列表");
+                // console.log(data.data,"推荐列表");
              })
         }
     },[goods])
@@ -40,10 +40,10 @@ function Cart(props){
     //请求购物车数据
     useMemo(async function(){
         request('/cart/usergoods',{username}).then((data)=>{
-            console.log('user',username,data);
+            // console.log('user',username,data);
             if(data.data.length){
-                console.log(data.data,'用户商品');
-            console.log(data.data[0].goods,'用户商品数据');
+                // console.log(data.data,'用户商品');
+            // console.log(data.data[0].goods,'用户商品数据');
             let arr =data.data[0].goods
             let checklist = []
             for(let i=0;i<arr.length;i++){
@@ -53,7 +53,7 @@ function Cart(props){
             changeGoods(arr)
             }
          })
-         console.log('请求了');
+        //  console.log('请求了');
     },[username])
     //总价,总数计算
     useMemo(function(){
@@ -143,13 +143,13 @@ function Cart(props){
                                                changeGoods(arr)
                                                changeCheckLists(checkArr)
                                                if(goods.length>1){
-                                                   console.log(arr);
+                                                //    console.log(arr);
                                                 request.put('/cart/delete/'+username,{goods:arr}).then(data=>{
-                                                    console.log(data);
+                                                    // console.log(data);
                                                 })
                                                 }else{
                                                     request.delete('/cart/remove',{username}).then(data=>{
-                                                        console.log(data);
+                                                        // console.log(data);
                                                     })
                                                 }
                                            }}>删除</div>
@@ -193,7 +193,7 @@ function Cart(props){
                             <label htmlFor="total">
                             <input type="checkbox" id="total" checked={allPick} onChange={()=>{
                                     changePick(!allPick)
-                                    console.log(allPick);
+                                    // console.log(allPick);
                                     let arr = new Array()
                                     for(let i = 0;i<checklists.length;i++){
                                         arr.push(!allPick)
@@ -213,13 +213,13 @@ function Cart(props){
                                 changeGoods(arr)
                                 changeCheckLists(checkArr)
                                 request.put('/cart/delete/'+username,{goods:arr}).then(data=>{
-                                    console.log(data);
+                                    // console.log(data);
                                 })
                                 }else{
                                     changeGoods([])
                                 changeCheckLists([])
                                     request.delete('/cart/remove',{username}).then(data=>{
-                                        console.log(data);
+                                        // console.log(data);
                                     })
                                 }
                             

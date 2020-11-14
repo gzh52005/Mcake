@@ -1,14 +1,14 @@
-import React, { useState,useEffect, useCallback, useMemo } from 'react';
+import React, { useState,useEffect, useCallback} from 'react';
 import {withRouter} from 'react-router-dom'
 //组件
 import Banner from '../components/Home/Banner';
-import { Tabs,WhiteSpace } from 'antd-mobile';
+// import { Tabs,WhiteSpace } from 'antd-mobile';
 import request from '../utils/request'
 // 样式
 import '../css/details.scss';
 
-import Data from '../assets/json/detailsTest.json';
-import { defaultProps } from 'antd-mobile/lib/search-bar/PropsType';
+// import Data from '../assets/json/detailsTest.json';
+// import { defaultProps } from 'antd-mobile/lib/search-bar/PropsType';
 
 // console.log("Details.data=",Data);
 // 促销数据
@@ -76,7 +76,7 @@ function Details(props){
             bcname,
             id
         })
-        console.log(p.data[0])
+        // console.log(p.data[0])
         changedatalist(p.data)   
     },[])
     let changeSku = useCallback(function(shop){
@@ -95,7 +95,7 @@ function Details(props){
             // console.log(bcname)
             // console.log(id)
             // console.log('第一次',num)
-            console.log(shoplist.id)
+            // console.log(shoplist.id)
              
             setnum(num++)
             // console.log('第二次',num)

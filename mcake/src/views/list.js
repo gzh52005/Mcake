@@ -1,4 +1,4 @@
-import React,{useEffect,useState, useContext} from 'react'
+import React,{useEffect,useState} from 'react'
 import request from '../utils/request';
 import cartLogo from '../assets/images/cart-icon.png'
 import { withRouter } from 'react-router-dom';
@@ -11,7 +11,7 @@ function List(props){
         isshow(true)
        request.get('/goods/regfind/',{fname:name}).then(reg=>{change(reg.data);isshow(false)})
     },[name]);
-    console.log(goodslist);
+    // console.log(goodslist);
     return (
         <div className='snack'  >
             <ul className='snack-box' >
