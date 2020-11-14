@@ -1,0 +1,263 @@
+@import './base.css';
+.detailsContainer {
+  background-color: #fff;
+}
+.detailsContainer .detailsMain {
+  padding: 1.8666666667vw 1.8666666667vw 0;
+}
+.detailsContainer .detailsMain .mainTitle {
+  height: 20vw;
+  display: flex;
+  color: #8d8d8d;
+  font-size: 3.7333333333vw;
+  border-bottom: 0.2666666667vw solid #e9e9e9;
+}
+.detailsContainer .detailsMain .mainTitle li {
+  box-sizing: border-box;
+  flex: 1;
+  height: 100%;
+  padding: 1.3333333333vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.detailsContainer .detailsMain .mainTitle li span {
+  font-size: 3.2vw;
+}
+.detailsContainer .detailsMain .mainTitle .activeWeight {
+  border-bottom: 0.5333333333vw solid #ffe32a;
+  color: #000;
+}
+.detailsContainer .detailsMain .mainCon li {
+  border-bottom: 0.2666666667vw solid #e9e9e9;
+}
+.detailsContainer .detailsMain .mainCon .mainprice {
+  color: #000;
+  font-size: 3.2vw;
+  height: 8vw;
+  padding: 1.8666666667vw 0;
+  line-height: 9.6vw;
+}
+.detailsContainer .detailsMain .mainCon .mainprice span {
+  margin-left: 2.6666666667vw;
+  font-size: 5.8666666667vw;
+}
+.detailsContainer .detailsMain .mainCon .mainGuige {
+  height: 17.0666666667vw;
+  padding-top: 1.8666666667vw;
+  font-size: 3.2vw;
+  color: #8d8d8d;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.detailsContainer .detailsMain .mainCon .mainGuige p {
+  flex-wrap: 0;
+  padding-right: 9.3333333333vw;
+}
+.detailsContainer .noChange {
+  font-size: 3.2vw;
+  color: #000;
+  padding: 0 1.8666666667vw;
+}
+.detailsContainer .noChange .floor {
+  border-bottom: 1px solid #e9e9e9;
+}
+.detailsContainer .noChange .musi {
+  padding: 2.9333333333vw 0;
+}
+.detailsContainer .noChange .musi span {
+  display: inline-block;
+  height: 5.8666666667vw;
+  padding: 0 4vw;
+  margin-left: 5.3333333333vw;
+  border-radius: 1.0666666667vw;
+  border: 1px solid #c3c3c3;
+  text-align: center;
+  line-height: 5.8666666667vw;
+}
+.detailsContainer .noChange .tips {
+  color: #f0250f;
+  height: 7.4666666667vw;
+  padding: 2vw 0;
+  line-height: 7.4666666667vw;
+}
+.detailsContainer .noChange .tips span {
+  display: inline-block;
+  width: 4.2666666667vw;
+  height: 4.2666666667vw;
+  line-height: 4.2666666667vw;
+  text-align: center;
+  border: 1px solid #f0250f;
+  border-radius: 50%;
+  margin-right: 2.1333333333vw;
+}
+.detailsContainer .noChange .describe p {
+  line-height: 5.3333333333vw;
+}
+.detailsContainer .noChange .describe :nth-child(2) {
+  color: #8d8d8d;
+}
+.detailsContainer .noChange .promotion {
+  display: flex;
+  color: #8d8d8d;
+  padding-top: 3.2vw;
+}
+.detailsContainer .noChange .promotion span {
+  display: block;
+  width: 11.2vw;
+}
+.detailsContainer .noChange .promotion ul {
+  flex: 1;
+}
+.detailsContainer .noChange .promotion ul li {
+  margin-bottom: 4vw;
+}
+.detailsContainer .noChange .promotion ul li i {
+  font-style: normal;
+  padding: 0.5333333333vw 2.1333333333vw;
+  color: #f0250f;
+  border: 1px solid #f0250f;
+  border-radius: 5.3333333333vw;
+  margin-right: 2.1333333333vw;
+}
+.detailsContainer .product {
+  height: 11.4666666667vw;
+  display: flex;
+  padding: 2vw;
+}
+.detailsContainer .product span {
+  flex: 1;
+  text-align: center;
+  line-height: 11.4666666667vw;
+  border-bottom: 0.2666666667vw solid #eee;
+  font-size: 5vw;
+  color: #8d8d8d;
+  line-height: 11.4666666667vw;
+}
+.detailsContainer .product .active {
+  color: #000;
+  border-bottom: 0.5333333333vw solid #ffe32a;
+}
+.detailsContainer .kouwei {
+  padding: 2vw;
+  padding-top: 2.1333333333vw;
+  padding-bottom: 0;
+}
+.detailsContainer .kouwei > p {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.6666666667vw;
+  height: 4.9333333333vw;
+  font-size: 3.2vw;
+}
+.detailsContainer .kouwei > p > span:nth-child(1) {
+  color: #8d8d8d;
+}
+.detailsContainer .kouwei > p > span:nth-child(2) {
+  color: #000;
+}
+.detailsContainer .country {
+  padding: 0 2vw;
+  font-size: 3.2vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.detailsContainer .country span {
+  flex-shrink: 0;
+  height: 5.8666666667vw;
+  padding: 1.3333333333vw;
+  display: flex;
+  align-items: center;
+}
+.detailsContainer .country span img {
+  width: 5.5546666667vw;
+  height: 3.568vw;
+  margin-left: 2.6666666667vw;
+}
+.detailsContainer .datail-img {
+  margin-bottom: 16vw;
+}
+.detailsContainer .datail-img p img {
+  width: 100%;
+}
+.detailsContainer .datail-caozuo {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  height: 16vw;
+  padding: 2vw 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+}
+.detailsContainer .datail-caozuo span {
+  width: 47vw;
+  line-height: 12vw;
+  border-radius: 2.6666666667vw;
+  text-align: center;
+  font-size: 4.5333333333vw;
+}
+.detailsContainer .datail-caozuo > span:nth-child(1) {
+  background-color: #8d8d8d;
+  color: #fff;
+}
+.detailsContainer .datail-caozuo > span:nth-child(2) {
+  background-color: #ffe32a;
+  color: #000;
+}
+.detailsContainer .details-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detailsContainer .details-mask div {
+  background-color: #fff;
+  height: 32.2666666667vw;
+  width: 84.8vw;
+  border-radius: 2.6666666667vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.detailsContainer .details-mask div h4 {
+  height: 9.3333333333vw;
+  padding-top: 4vw;
+  color: #333;
+  font-size: 4vw;
+  text-align: center;
+}
+.detailsContainer .details-mask div .mask-ti {
+  height: 12.9333333333vw;
+  color: #888;
+  font-size: 3.4vw;
+  padding-top: 2.6666666667vw;
+  text-align: center;
+}
+.detailsContainer .details-mask div .mask-an {
+  flex: 1;
+  display: flex;
+  color: #fff;
+  font-size: 4vw;
+}
+.detailsContainer .details-mask div .mask-an span {
+  flex: 1;
+  line-height: 10vw;
+  text-align: center;
+}
+.detailsContainer .details-mask div .mask-an span:nth-child(1) {
+  background-color: #857a72;
+}
+.detailsContainer .details-mask div .mask-an span:nth-child(2) {
+  color: #000;
+  background-color: #ffe32a;
+}

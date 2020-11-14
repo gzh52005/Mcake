@@ -18,9 +18,9 @@ function Floor(props){
     },[showData]);
     let chuan=useCallback(function(type,id){
         if(type=='周边商品'){
-            props.history.push('/details?'+'snack'+'&'+id)
+            props.history.push('/details?'+props.location.pathname+'&'+'snack'+'&'+id)
         }else if(type=='蛋糕'){
-            props.history.push('/details?'+'cake'+'&'+id)
+            props.history.push('/details?'+props.location.pathname+'&'+'cake'+'&'+id)
         }
     },[])
     return (
