@@ -76,15 +76,18 @@
   font-size: 4vw;
   outline: none;
 }
-.login-box > span:nth-of-type(1) {
+.login-box .goreg {
   height: 11.4906666667vw;
-  line-height: 11.4906666667vw;
   padding-right: 8vw;
-  text-align: right;
   font-size: 3.6vw;
   color: #8d8d8d;
+  display: flex;
+  justify-content: flex-end !important;
 }
-.login-box > span:nth-of-type(2) {
+.login-box .goreg span {
+  line-height: 11.4906666667vw;
+}
+.login-box > span:nth-of-type(1) {
   text-align: center;
   margin-top: 10vw;
   margin-bottom: 5vw;
@@ -92,16 +95,16 @@
   color: #8d8d8d;
   font-weight: none;
 }
-.login-box > p:nth-of-type(3) {
+.login-box > p:nth-of-type(4) {
   height: 10vw;
   display: flex;
   justify-content: center;
 }
-.login-box > p:nth-of-type(3) img {
+.login-box > p:nth-of-type(4) img {
   height: 10vw;
   height: 10vw;
 }
-.login-box > p:nth-of-type(3) img + img {
+.login-box > p:nth-of-type(4) img + img {
   margin-left: 2.6666666667vw;
 }
 .login-box button {
