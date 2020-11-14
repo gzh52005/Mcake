@@ -73,7 +73,7 @@
   font-size: 3.6vw;
   color: #8d8d8d;
 }
-.reg-box > span:nth-of-type(3) {
+.reg-box .gologin {
   height: 11.4666666667vw;
   font-size: 3.6vw;
   line-height: 11.4666666667vw;

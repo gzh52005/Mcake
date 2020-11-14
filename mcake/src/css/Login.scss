@@ -76,15 +76,20 @@
             outline: none;
         }
     }
-    >span:nth-of-type(1){
+    .goreg{
         height: vw(43.09);
-        line-height: vw(43.09);
+        
         padding-right: vw(30);
-        text-align: right;
+        // text-align: right;
         font-size: vw(13.5);
         color: #8d8d8d;
+        display: flex;
+        justify-content: flex-end !important;
+        span{
+            line-height: vw(43.09);
+        }
     }
-    >span:nth-of-type(2){
+    >span:nth-of-type(1){
         text-align: center;
         margin-top: vw(37.5);
         margin-bottom: vw(18.75);
@@ -92,7 +97,7 @@
         color: #8d8d8d;
         font-weight: none;
     }
-    >p:nth-of-type(3){
+    >p:nth-of-type(4){
         height: vw(37.5);
         display: flex;
         justify-content: center;
