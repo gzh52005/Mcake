@@ -36,7 +36,10 @@ class Handpick extends Component{
                 <div className='drawer' ref={el=>{this.el = el}}>
                   <ul>
                   {/* {this.state.goodslist.map((item=>( */}
-                    <li>全部蛋糕<span> <i>32</i>  </span></li>
+                    <li onClick={()=>{
+                        history.push('/cakes')
+                        this.props.status.showFn()
+                    }}>全部蛋糕<span> <i>32</i>  </span></li>
                     <li onClick={()=>{
                         this.setState({taste:!this.state.taste})
                     }}>口味筛选<span> <i className='icon sjt' ></i>  </span></li>
@@ -57,8 +60,11 @@ class Handpick extends Component{
 
                         })}
                     </ul>
-                    <li>所有小食<span> <i>18</i>  </span></li>
-                    <li>所有配件<span> <i>4</i>  </span></li>
+                    <li onClick={()=>{
+                        history.push('/snack')
+                        this.props.status.showFn()
+                    }}>所有小食<span> <i>18</i>  </span></li>
+                    {/* <li>所有配件<span> <i>4</i>  </span></li> */}
                     {/* )))} */}
                   </ul>
                 </div>
