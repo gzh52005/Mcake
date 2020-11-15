@@ -145,7 +145,21 @@ function CartMask(props){
                                 }, 300);
                                 // console.log(props);
                                 if(props.location.pathname==='/cart'){
-                                    window.history.go(0)
+                                    request('/cart/usergoods',{username:props.username}).then((data)=>{
+                                        // console.log('user',username,data);
+                                        if(data.data.length){
+                                            // console.log(data.data,'用户商品');
+                                        // console.log(data.data[0].goods,'用户商品数据');
+                                        let arr =data.data[0].goods
+                                        let checklist = []
+                                        for(let i=0;i<arr.length;i++){
+                                            checklist.push(false)
+                                        }
+                                        props.changeCheckLists(checklist)
+                                        props.changeGoods(arr)
+                                        props.changePick(false)
+                                        }
+                                     })
                                     // console.log('页面刷新');
                                 }
                                 // console.log(props,"props");

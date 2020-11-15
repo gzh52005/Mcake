@@ -108,7 +108,11 @@ function Cart(props){
                 //渲染结构（有数据/无数据）
                 goods.length > 0 ?
                 <div className="cart-box">
-                     {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}
+                     {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}
+                     changeGoods={changeGoods}
+                     changeCheckLists={changeCheckLists} username={username}
+                     changePick={changePick}
+                     />:''}
                     <ul className = "cart-box-list">
                         {
                             goods.map((good,goodIndex)=>{
@@ -234,7 +238,9 @@ function Cart(props){
                 
                 
                 <div className="no-cart-box">{/*无数据时结构*/}
-                {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow}/>:''}
+                {cartShow ?<CartMask showCart={cartShow} showData={goodsData} changeShow={changeShow} changeGoods={changeGoods}
+                changeCheckLists={changeCheckLists} username={username} changePick={changePick}
+                />:''}
                 <div className="no-cart-box-pic">
                     <p>
                         <span>您的购物车还是空的，</span>

@@ -147,7 +147,13 @@ class App extends React.Component{
                         <li className='jing' onClick={this.gaibian}>精选</li>
                         <li><NavLink to='/cakes' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>蛋糕</NavLink></li>
                         <li><NavLink to='/snack' onClick={this.resetPage} activeStyle={{color:'#000',fontWeight: 700}}>小食</NavLink></li>
-                        <li><NavLink to={`/cart?${this.props.location.pathname}`} activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
+                        <li><NavLink to={
+                            {
+                                // `/cart?${this.props.location.pathname}`
+                                pathname:'/cart',
+                                search:this.props.location.pathname
+                            }
+                        } activeStyle={{color:'#000',fontWeight: 700}}>购物车</NavLink></li>
                     </ul>
                     }
                 </div>
