@@ -37,6 +37,6 @@
 └─views
 
 ## 项目页面截图
-<img src="./macke/src/doc/img/1.png" alt="首页">
-<img src="./macke/src/doc/img/2.png" alt="列表页和精选列表">
-<img src="./macke/src/doc/img/3.png" alt="购物车">
+![首页](./macke/src/doc/img/1.png)
+![列表页](./macke/src/doc/img/1.png)
+![购物车](./macke/src/doc/img/1.png)
